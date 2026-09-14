@@ -1,4 +1,4 @@
-const CACHE_NAME = 'elham-fitness-v2';
+const CACHE_NAME = 'elham-fitness-v6';
 const ASSETS = [
   './',
   './index.html',
