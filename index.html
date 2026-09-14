@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | حساب السعرات والمنظومة الغذائية</title>
+  <title>كابتن إلهام الجزار | صُنع بحب بيد حَمُودِك</title>
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -292,9 +292,9 @@
 
     .canvas-container {
       width: 100%;
-      height: 310px;
-      background: radial-gradient(circle at 50% 50%, #172338 0%, #030712 100%);
-      border-radius: 24px;
+      height: 330px;
+      background: radial-gradient(circle at 50% 45%, #182438 0%, #030712 100%);
+      border-radius: 26px;
       border: 1.5px solid rgba(255, 255, 255, 0.1);
       position: relative;
       display: flex;
@@ -439,45 +439,6 @@
       border-right: 4px solid var(--accent-rose);
     }
 
-    .schedule-card.rest-day {
-      border-right-color: var(--accent-rest);
-      opacity: 0.85;
-    }
-
-    .schedule-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-
-    .schedule-day {
-      font-weight: 900;
-      font-size: 0.95rem;
-      color: #FFF;
-    }
-
-    .schedule-tag {
-      font-size: 0.68rem;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 8px;
-      background: rgba(244, 63, 94, 0.15);
-      color: var(--accent-rose);
-    }
-
-    .schedule-tag.rest {
-      background: rgba(59, 130, 246, 0.15);
-      color: var(--accent-rest);
-    }
-
-    .schedule-details {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* كروت التغذية الاحترافية مع تفصيل السعرات لكل عنصر */
     .diet-card {
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
@@ -536,10 +497,6 @@
       color: #CBD5E1;
       padding: 2px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-    }
-
-    .item-row:last-child {
-      border-bottom: none;
     }
 
     .item-cal {
@@ -602,99 +559,6 @@
       font-size: 0.9rem;
       font-weight: 700;
       outline: none;
-    }
-
-    .bmi-badge-box {
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      border-radius: 12px;
-      padding: 10px 14px;
-      margin-top: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-    }
-
-    .setting-toggle-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .setting-toggle-row:last-child {
-      border-bottom: none;
-    }
-
-    .toggle-meta {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .toggle-label {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #CBD5E1;
-    }
-
-    .toggle-desc {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 44px;
-      height: 24px;
-    }
-
-    .switch input { opacity: 0; width: 0; height: 0; }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      inset: 0;
-      background-color: rgba(255, 255, 255, 0.1);
-      transition: .3s;
-      border-radius: 24px;
-      border: 1px solid var(--surface-border);
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 18px;
-      width: 18px;
-      left: 3px;
-      bottom: 2px;
-      background-color: white;
-      transition: .3s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: var(--accent-rose);
-      border-color: var(--accent-rose);
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(19px);
-    }
-
-    .btn-save-settings {
-      width: 100%;
-      background: linear-gradient(135deg, var(--primary), #059669);
-      color: #030712;
-      border: none;
-      border-radius: 16px;
-      padding: 14px;
-      font-weight: 900;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 4px;
     }
 
     .made-with-love-footer {
@@ -764,7 +628,7 @@
       <div class="pill-badge">PRO ELITE</div>
     </header>
 
-    <!-- 1. شاشة التمرين الرئيسية والمشغل -->
+    <!-- 1. شاشة التمرين الرئيسية -->
     <div id="workoutScreen" class="screen-view">
       <div class="hero-banner">
         <div class="hero-content">
@@ -839,7 +703,7 @@
       </div>
     </div>
 
-    <!-- 2. مشغل التمرين والأنيميشن الحركي -->
+    <!-- 2. مشغل التمرين الحركي المحترف -->
     <div id="playerScreen" class="screen-view hidden">
       <div class="player-header">
         <button class="round-btn-icon" onclick="exitWorkout()">✕</button>
@@ -852,7 +716,7 @@
           <div id="anchorBadge" class="tag-pill tag-anchor">⚓ تحت القدمين</div>
           <div id="muscleBadge" class="tag-pill tag-muscle">عضلة البايسبس</div>
         </div>
-        <canvas id="animCanvas" width="400" height="310"></canvas>
+        <canvas id="animCanvas" width="400" height="330"></canvas>
       </div>
 
       <div class="exercise-meta-text">
@@ -883,7 +747,7 @@
       </div>
     </div>
 
-    <!-- 3. شاشة جدول التمارين الأسبوعي -->
+    <!-- 3. شاشة جدول التمارين -->
     <div id="scheduleScreen" class="screen-view hidden">
       <div class="hero-banner" style="margin-bottom:12px;">
         <div class="hero-content">
@@ -894,71 +758,28 @@
       </div>
 
       <div class="schedule-card">
-        <div class="schedule-header">
-          <span class="schedule-day">السبت: يوم السحب ونحت الظهر (Pull)</span>
-          <span class="schedule-tag">تمرين نشط</span>
-        </div>
-        <div class="schedule-details">
-          • سحب المجنص بمثبت الباب (Lat Pulldown): 3 مجموعات × 12 تكرار.<br>
-          • سحب الظهر جالساً (Seated Row): 3 مجموعات × 12 تكرار.<br>
-          • تبادل البايسبس بالحزام (Bicep Curl): 3 مجموعات × 12 تكرار.
-        </div>
+        <div style="font-weight:900; color:#FFF; margin-bottom:6px;">السبت: سحب ونحت الظهر (Pull)</div>
+        <div style="font-size:0.78rem; color:var(--text-muted);">سحب مجنص + سحب جالس + تبادل بايسبس (3×12)</div>
       </div>
 
       <div class="schedule-card">
-        <div class="schedule-header">
-          <span class="schedule-day">الأحد: نحت وشد الجزء السفلي (Legs & Glutes)</span>
-          <span class="schedule-tag">تمرين نشط</span>
-        </div>
-        <div class="schedule-details">
-          • سكوات المقاومة (Band Squat): 3 مجموعات × 15 تكرار.<br>
-          • الرفعة الرومانية (Romanian Deadlift): 3 مجموعات × 12 تكرار.<br>
-          • جسر الأرداف بالحزام (Glute Bridge): 3 مجموعات × 15 تكرار.
-        </div>
+        <div style="font-weight:900; color:#FFF; margin-bottom:6px;">الأحد: الجزء السفلي (Legs & Glutes)</div>
+        <div style="font-size:0.78rem; color:var(--text-muted);">سكوات مقاومة + رفعة رومانية + جسر أرداف (3×15)</div>
       </div>
 
-      <div class="schedule-card rest-day">
-        <div class="schedule-header">
-          <span class="schedule-day">الإثنين: استشفاء نشط وتجديد مرونة (Recovery)</span>
-          <span class="schedule-tag rest">راحة واستشفاء ☕</span>
-        </div>
-        <div class="schedule-details">
-          • مشي خفيف لمدة 30-40 دقيقة.<br>
-          • إطالات هادئة لعضلات الحوض والظهر لتفادي الشد العضلي.
-        </div>
+      <div class="schedule-card" style="border-right-color:var(--accent-rest);">
+        <div style="font-weight:900; color:#93C5FD; margin-bottom:6px;">الإثنين: استشفاء نشط (Recovery)</div>
+        <div style="font-size:0.78rem; color:var(--text-muted);">مشي خفيف 30-40 دقيقة + إطالات مرونة هادئة</div>
       </div>
 
       <div class="schedule-card">
-        <div class="schedule-header">
-          <span class="schedule-day">الثلاثاء: شد الصدر والأكتاف والذراعين (Push)</span>
-          <span class="schedule-tag">تمرين نشط</span>
-        </div>
-        <div class="schedule-details">
-          • دفع الصدر بمثبت الباب (Chest Press): 3 مجموعات × 12 تكرار.<br>
-          • دفع الأكتاف للأعلى (Overhead Press): 3 مجموعات × 12 تكرار.<br>
-          • شد الترايسبس بالحزام (Triceps Pushdown): 3 مجموعات × 15 تكرار.
-        </div>
+        <div style="font-weight:900; color:#FFF; margin-bottom:6px;">الثلاثاء: الصدر والأكتاف (Push)</div>
+        <div style="font-size:0.78rem; color:var(--text-muted);">دفع صدر + دفع أكتاف علوي + ترايسبس (3×12)</div>
       </div>
 
       <div class="schedule-card">
-        <div class="schedule-header">
-          <span class="schedule-day">الأربعاء: نحت شامل لكامل الجسم وحرق (Full Body)</span>
-          <span class="schedule-tag">تمرين نشط</span>
-        </div>
-        <div class="schedule-details">
-          • توليفة تمارين مركبة تجمع السكوات مع دفع الكتف، وسحب الظهر الدائري.<br>
-          • 4 مجموعات × 12 تكرار بإيقاع سريع لرفع معدل الأيض.
-        </div>
-      </div>
-
-      <div class="schedule-card rest-day">
-        <div class="schedule-header">
-          <span class="schedule-day">الخميس والجمعة: راحة كاملة وتغذية عضلية</span>
-          <span class="schedule-tag rest">عطلة نهاية الأسبوع 🌿</span>
-        </div>
-        <div class="schedule-details">
-          • نوم عميق (7-8 ساعات) لتجديد ألياف العضلات واستعادة الحيوية.
-        </div>
+        <div style="font-weight:900; color:#FFF; margin-bottom:6px;">الأربعاء: شامل نحت وحرق (Full Body)</div>
+        <div style="font-size:0.78rem; color:var(--text-muted);">توليفة شاملة لرفع معدل الحرق ونحت كامل الألياف</div>
       </div>
 
       <div class="made-with-love-footer">
@@ -966,7 +787,7 @@
       </div>
     </div>
 
-    <!-- 4. شاشة جدول التغذية والشرب مع حساب السعرات لكل عنصر وإجمالي كل وجبة -->
+    <!-- 4. شاشة جدول التغذية والشرب -->
     <div id="nutritionScreen" class="screen-view hidden">
       <div class="hero-banner" style="margin-bottom:12px;">
         <div class="hero-content">
@@ -976,168 +797,59 @@
         <span style="font-size:1.6rem;">📊</span>
       </div>
 
-      <!-- السبت -->
       <div class="diet-card">
         <div class="diet-day-title">
           <span>السبت: يوم السحب ونحت الظهر</span>
-          <span style="font-size:0.75rem; color:#A7F3D0;">1,650 سعرة • 112 جم بروتين</span>
+          <span style="font-size:0.75rem; color:#A7F3D0;">1,650 kcal • 112g P</span>
         </div>
 
         <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🥞 وجبة الفطور</span>
-            <span class="meal-badge">380 سعرة • 24 جم بروتين</span>
-          </div>
+          <div class="meal-header-row"><span class="meal-title">🥞 وجبة الفطور</span><span class="meal-badge">380 kcal • 24g P</span></div>
           <div class="item-row"><span>2 بيضة مسلوقة كاملة</span><span class="item-cal">140 kcal (12g P)</span></div>
-          <div class="item-row"><span>نصف رغيف خبز بلدي أسمر (50 جم)</span><span class="item-cal">130 kcal (5g P)</span></div>
-          <div class="item-row"><span>قطعة جبن قريش (50 جم)</span><span class="item-cal">50 kcal (6g P)</span></div>
-          <div class="item-row"><span>طبق سلطة خضار (خيار وجرجير وطماطم)</span><span class="item-cal">30 kcal (1g P)</span></div>
-          <div class="item-row"><span>ملعقة صغيرة زيت زيتون (5 مل)</span><span class="item-cal">45 kcal (0g P)</span></div>
+          <div class="item-row"><span>نصف رغيف بلدي أسمر (50 جم)</span><span class="item-cal">130 kcal (5g P)</span></div>
+          <div class="item-row"><span>جبن قريش وزيت زيتون (50 جم)</span><span class="item-cal">95 kcal (6g P)</span></div>
         </div>
 
         <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">⚡ سناك قبل التمرين بـ 45 دقيقة</span>
-            <span class="meal-badge">140 سعرة • 2 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>ثمرة موز متوسطة</span><span class="item-cal">105 kcal (1.3g P)</span></div>
-          <div class="item-row"><span>كوب قهوة سوداء أو شاي بدون سكر</span><span class="item-cal">5 kcal (0g P)</span></div>
-          <div class="item-row"><span>حبة تمر سكري واحدة</span><span class="item-cal">30 kcal (0.4g P)</span></div>
+          <div class="meal-header-row"><span class="meal-title">⚡ سناك قبل التمرين بـ 45 دقيقة</span><span class="meal-badge">140 kcal • 2g P</span></div>
+          <div class="item-row"><span>موزة متوسطة + حبة تمر + قهوة سوداء</span><span class="item-cal">140 kcal (2g P)</span></div>
         </div>
 
         <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🍗 وجبة الغداء الرئيسية</span>
-            <span class="meal-badge">610 سعرة • 52 جم بروتين</span>
-          </div>
+          <div class="meal-header-row"><span class="meal-title">🍗 وجبة الغداء الرئيسية</span><span class="meal-badge">610 kcal • 52g P</span></div>
           <div class="item-row"><span>صدر دجاج مشوي متبل (150 جم)</span><span class="item-cal">250 kcal (46g P)</span></div>
-          <div class="item-row"><span>أرز بني أو بسمتي مطبوخ (5 ملاعق - 120 جم)</span><span class="item-cal">160 kcal (3.5g P)</span></div>
-          <div class="item-row"><span>خضار مشوي أو سوتيه (كوسة وفاصوليا)</span><span class="item-cal">60 kcal (2g P)</span></div>
-          <div class="item-row"><span>سلطة خضراء مع ملعقة زيت زيتون بكر</span><span class="item-cal">90 kcal (1g P)</span></div>
+          <div class="item-row"><span>أرز بني أو بسمتي (5 ملاعق - 120 جم)</span><span class="item-cal">160 kcal (3.5g P)</span></div>
+          <div class="item-row"><span>خضار سوتيه وسلطة بزيت زيتون</span><span class="item-cal">150 kcal (3g P)</span></div>
         </div>
 
         <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🌙 وجبة العشاء الخفيف</span>
-            <span class="meal-badge">280 سعرة • 22 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>زبادي يوناني طبيعي (170 جم)</span><span class="item-cal">130 kcal (17g P)</span></div>
-          <div class="item-row"><span>ملعقة طعام بذور شيا (10 جم)</span><span class="item-cal">50 kcal (2g P)</span></div>
-          <div class="item-row"><span>نصف تفاحة شرائح مع رشة قرفة</span><span class="item-cal">45 kcal (0.3g P)</span></div>
+          <div class="meal-header-row"><span class="meal-title">🌙 وجبة العشاء الخفيف</span><span class="meal-badge">280 kcal • 22g P</span></div>
+          <div class="item-row"><span>زبادي يوناني طبيعي + بذور شيا وتفاح</span><span class="item-cal">225 kcal (19g P)</span></div>
           <div class="item-row"><span>5 حبات لوز نيء</span><span class="item-cal">35 kcal (1.3g P)</span></div>
         </div>
 
         <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء موزع على مدار اليوم.</div>
       </div>
 
-      <!-- الأحد -->
       <div class="diet-card">
         <div class="diet-day-title">
           <span>الأحد: بناء وتناسق الأرجل والأفخاذ</span>
-          <span style="font-size:0.75rem; color:#A7F3D0;">1,680 سعرة • 115 جم بروتين</span>
+          <span style="font-size:0.75rem; color:#A7F3D0;">1,680 kcal • 115g P</span>
         </div>
 
         <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🍳 وجبة الفطور</span>
-            <span class="meal-badge">390 سعرة • 26 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>أومليت بيضتين مع سبانخ ومشروم</span><span class="item-cal">180 kcal (14g P)</span></div>
-          <div class="item-row"><span>شريحة توست حبوب كاملة (35 جم)</span><span class="item-cal">80 kcal (4g P)</span></div>
-          <div class="item-row"><span>شريحة جبن شيدر خفيف أو حلوم لايت</span><span class="item-cal">70 kcal (6g P)</span></div>
-          <div class="item-row"><span>شرائح خيار وطماطم كرزية</span><span class="item-cal">25 kcal (1g P)</span></div>
+          <div class="meal-header-row"><span class="meal-title">🍳 وجبة الفطور</span><span class="meal-badge">390 kcal • 26g P</span></div>
+          <div class="item-row"><span>أومليت بيضتين بسبانخ ومشروم + توست أسمر</span><span class="item-cal">260 kcal (18g P)</span></div>
+          <div class="item-row"><span>شريحة حلوم لايت + خيار وطماطم</span><span class="item-cal">95 kcal (7g P)</span></div>
         </div>
 
         <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">⚡ سناك الطاقة</span>
-            <span class="meal-badge">160 سعرة • 4 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>تفاحة خضراء متوسطة</span><span class="item-cal">80 kcal (0.4g P)</span></div>
-          <div class="item-row"><span>10 حبات كاجو أو لوز نيء</span><span class="item-cal">75 kcal (3g P)</span></div>
-        </div>
-
-        <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🐟 وجبة الغداء</span>
-            <span class="meal-badge">620 سعرة • 48 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>شريحة سلمون أو سمك فيليه مشوي (180 جم)</span><span class="item-cal">320 kcal (40g P)</span></div>
-          <div class="item-row"><span>حبة بطاطا حلوة مشوية (150 جم)</span><span class="item-cal">135 kcal (2.5g P)</span></div>
-          <div class="item-row"><span>طبق سلطة جرجير ورمان بزيت الزيتون</span><span class="item-cal">110 kcal (2g P)</span></div>
-        </div>
-
-        <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🌙 وجبة العشاء</span>
-            <span class="meal-badge">260 سعرة • 21 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>جبن قريش مهروس بزيت الزيتون والزعتر (100 جم)</span><span class="item-cal">140 kcal (18g P)</span></div>
-          <div class="item-row"><span>شريحة توست أسمر مقرمشة</span><span class="item-cal">80 kcal (2.5g P)</span></div>
-          <div class="item-row"><span>خيار وخس غير محدود</span><span class="item-cal">20 kcal (0.8g P)</span></div>
+          <div class="meal-header-row"><span class="meal-title">🐟 وجبة الغداء</span><span class="meal-badge">620 kcal • 48g P</span></div>
+          <div class="item-row"><span>شريحة سلمون أو فيليه مشوي (180 جم)</span><span class="item-cal">320 kcal (40g P)</span></div>
+          <div class="item-row"><span>حبة بطاطا مشوية (150 جم) + سلطة رمان</span><span class="item-cal">245 kcal (4.5g P)</span></div>
         </div>
 
         <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لترطيب أوتار ومفاصل الركبة.</div>
-      </div>
-
-      <!-- الإثنين -->
-      <div class="diet-card" style="border-right-color: var(--accent-rest);">
-        <div class="diet-day-title" style="color:var(--accent-rest);">
-          <span>الإثنين: يوم الاستشفاء النشط وتنقية الجسم</span>
-          <span style="font-size:0.75rem; color:#93C5FD;">1,580 سعرة • 105 جم بروتين</span>
-        </div>
-
-        <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🥣 وجبة الفطور</span>
-            <span class="meal-badge">360 سعرة • 20 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>شوفان كامل الحبة (4 ملاعق - 40 جم)</span><span class="item-cal">150 kcal (5g P)</span></div>
-          <div class="item-row"><span>حليب قليل الدسم أو حليب لوز مدعم (150 مل)</span><span class="item-cal">70 kcal (5g P)</span></div>
-          <div class="item-row"><span>سكوب صغير بروتين أو بياض بيضتين</span><span class="item-cal">80 kcal (10g P)</span></div>
-          <div class="item-row"><span>ملعقة عسل نحل طبيعي وتوت بري</span><span class="item-cal">60 kcal (0.3g P)</span></div>
-        </div>
-
-        <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🥗 وجبة الغداء</span>
-            <span class="meal-badge">560 سعرة • 45 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>علبة تونة مصفاة من الزيت ومغسولة (140 جم)</span><span class="item-cal">180 kcal (40g P)</span></div>
-          <div class="item-row"><span>فاصوليا حمراء مسلوقة (نصف كوب)</span><span class="item-cal">110 kcal (7g P)</span></div>
-          <div class="item-row"><span>ذرة حلوة وخضار مشكل بالليمون</span><span class="item-cal">90 kcal (2g P)</span></div>
-          <div class="item-row"><span>ملعقة زيت زيتون بكر في التتبيلة</span><span class="item-cal">90 kcal (0g P)</span></div>
-        </div>
-
-        <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🌙 وجبة العشاء</span>
-            <span class="meal-badge">270 سعرة • 18 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>طبق شوربة خضار دافئة (كوسة وجزر وبروكلي)</span><span class="item-cal">80 kcal (3g P)</span></div>
-          <div class="item-row"><span>كوب زبادي طبيعي + ملعقة بذور يقطين</span><span class="item-cal">140 kcal (12g P)</span></div>
-          <div class="item-row"><span>كوب شاي أخضر بالنعناع قبل النوم</span><span class="item-cal">0 kcal (0g P)</span></div>
-        </div>
-
-        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء مع شرائح خيار وليمون.</div>
-      </div>
-
-      <!-- باقي الأسبوع -->
-      <div class="diet-card">
-        <div class="diet-day-title">
-          <span>الثلاثاء والأربعاء: وجبات أيام الدفع والشامل</span>
-          <span style="font-size:0.75rem; color:#A7F3D0;">متوسط 1,650 سعرة • 110 جم بروتين</span>
-        </div>
-        <div class="meal-block">
-          <div class="meal-header-row">
-            <span class="meal-title">🍗 الغداء المقترح (كفتة دجاج أو لحم بقري خالي الدهن)</span>
-            <span class="meal-badge">580 سعرة • 48 جم بروتين</span>
-          </div>
-          <div class="item-row"><span>150 جم كفتة مشوية بالفرن</span><span class="item-cal">260 kcal (42g P)</span></div>
-          <div class="item-row"><span>4 ملاعق برغل أو فريك أو أرز بسمتي</span><span class="item-cal">150 kcal (4g P)</span></div>
-          <div class="item-row"><span>سلطة طحينة لايت أو زبادي بالخيار</span><span class="item-cal">80 kcal (2g P)</span></div>
-        </div>
-        <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لتعويض المجهود العضلي ورفع الحرق.</div>
       </div>
 
       <div class="made-with-love-footer">
@@ -1166,47 +878,14 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           <div class="input-field-wrap">
             <label>الوزن الحالي (كجم):</label>
-            <input type="number" id="settingWeight" class="settings-input" value="62" oninput="updateBmiDisplay()">
+            <input type="number" id="settingWeight" class="settings-input" value="62">
           </div>
           <div class="input-field-wrap">
             <label>الطول (سم):</label>
-            <input type="number" id="settingHeight" class="settings-input" value="165" oninput="updateBmiDisplay()">
+            <input type="number" id="settingHeight" class="settings-input" value="165">
           </div>
-        </div>
-
-        <div class="bmi-badge-box">
-          <span style="color:var(--text-muted); font-weight:700;">مؤشر كتلة الجسم (BMI):</span>
-          <span id="bmiResultText" style="color:var(--primary); font-weight:900;">22.8 (وزن مثالي ورشيق 🌿)</span>
         </div>
       </div>
-
-      <div class="settings-group">
-        <div class="settings-title"><span>⚡</span> تفضيلات الجلسة التدريبية</div>
-        
-        <div class="setting-toggle-row">
-          <div class="toggle-meta">
-            <span class="toggle-label">الاهتزاز عند كل عدّة (Haptic)</span>
-            <span class="toggle-desc">اهتزاز خفيف بالهاتف عند إتمام العدة</span>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="toggleHaptic" checked>
-            <span class="slider"></span>
-          </label>
-        </div>
-
-        <div class="setting-toggle-row">
-          <div class="toggle-meta">
-            <span class="toggle-label">التوجيه الصوتي التلقائي</span>
-            <span class="toggle-desc">نطق التعليمات والأرقام تلقائياً بصوت كابتن إلهام</span>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="toggleVoice" checked>
-            <span class="slider"></span>
-          </label>
-        </div>
-      </div>
-
-      <button class="btn-save-settings" onclick="saveAllSettings()">💾 حفظ التعديلات في ملف كابتن إلهام</button>
 
       <div class="made-with-love-footer">
         <span>صُنع بحب بيد حَمُودِك ❤️</span>
@@ -1397,9 +1076,7 @@
       if (isResting) return;
       currentReps++;
       document.getElementById('currentRepVal').innerText = currentReps;
-      
-      const enableHaptic = document.getElementById('toggleHaptic').checked;
-      if (enableHaptic && 'vibrate' in navigator) navigator.vibrate(35);
+      if ('vibrate' in navigator) navigator.vibrate(35);
 
       if (currentReps >= targetReps) {
         speakText("عاش يا بطلة! أنجزتي التكرارات كاملة");
@@ -1481,7 +1158,7 @@
     }
 
     // =========================================================================
-    // محرك الرسم المتجهي المحسن للتمارين (Pro Vector Style Canvas)
+    // محرك الرسم الاحترافي المحسن للتمارين (Pro Vector Athletic Figure)
     // =========================================================================
     function startCanvasLoop() {
       const canvas = document.getElementById('animCanvas');
@@ -1495,7 +1172,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         if (currentEx) {
-          drawExerciseOnCanvas(ctx, currentEx.id, t);
+          drawProAthleticCanvas(ctx, currentEx.id, t);
         }
 
         animId = requestAnimationFrame(loop);
@@ -1505,42 +1182,101 @@
       animId = requestAnimationFrame(loop);
     }
 
-    function drawExerciseOnCanvas(ctx, exId, t) {
+    function drawProAthleticCanvas(ctx, exId, t) {
       const w = ctx.canvas.width;
-      const h = ctx.canvas.height;
       const cx = w / 2;
 
-      const groundGrad = ctx.createRadialGradient(cx, 275, 10, cx, 275, 130);
-      groundGrad.addColorStop(0, "rgba(244, 63, 94, 0.18)");
-      groundGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = groundGrad;
+      // أرضية متوهجة بنعومة
+      const floorGrad = ctx.createRadialGradient(cx, 280, 10, cx, 280, 140);
+      floorGrad.addColorStop(0, "rgba(244, 63, 94, 0.22)");
+      floorGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = floorGrad;
       ctx.beginPath();
-      ctx.ellipse(cx, 275, 130, 14, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, 280, 140, 14, 0, 0, Math.PI * 2);
       ctx.fill();
 
       switch (exId) {
+        // 1. سحب المجنص لأسفل (Lat Pulldown) - تمرين صورتك
+        case 'lat_pulldown': {
+          const pull = t * 55;
+
+          // مثبت أعلى الباب الذهبي
+          ctx.fillStyle = "#F59E0B";
+          ctx.beginPath();
+          ctx.roundRect(cx - 50, 18, 100, 10, 5);
+          ctx.fill();
+
+          // حبال المقاومة النيون الوردية المشدودة
+          ctx.strokeStyle = "#F43F5E";
+          ctx.lineWidth = 5;
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          ctx.moveTo(cx, 23);
+          ctx.lineTo(cx - 65 + pull * 0.25, 75 + pull);
+          ctx.moveTo(cx, 23);
+          ctx.lineTo(cx + 65 - pull * 0.25, 75 + pull);
+          ctx.stroke();
+
+          // رسم مجسم كابتن إلهام الرياضي
+          drawProFigure(ctx, cx, 180, 0);
+
+          // توهج عضلات المجنص (Lats Wings) باللون الناري
+          ctx.fillStyle = `rgba(255, 23, 68, ${0.45 + t * 0.55})`;
+          ctx.beginPath();
+          ctx.ellipse(cx - 24, 165, 12, 22 + t * 4, 0.35, 0, Math.PI * 2);
+          ctx.ellipse(cx + 24, 165, 12, 22 + t * 4, -0.35, 0, Math.PI * 2);
+          ctx.fill();
+
+          // الأذرع الرياضية المنثنية بزاوية طبيعية نحو الأسفل
+          ctx.strokeStyle = "#38455A";
+          ctx.lineWidth = 11;
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          // الذراع الأيسر
+          ctx.moveTo(cx - 22, 142);
+          ctx.lineTo(cx - 55, 120 + pull * 0.45);
+          ctx.lineTo(cx - 65 + pull * 0.25, 75 + pull);
+          // الذراع الأيمن
+          ctx.moveTo(cx + 22, 142);
+          ctx.lineTo(cx + 55, 120 + pull * 0.45);
+          ctx.lineTo(cx + 65 - pull * 0.25, 75 + pull);
+          ctx.stroke();
+
+          // قبضات ومقابض يد أنيقة
+          ctx.fillStyle = "#F59E0B";
+          ctx.beginPath();
+          ctx.arc(cx - 65 + pull * 0.25, 75 + pull, 6, 0, Math.PI * 2);
+          ctx.arc(cx + 65 - pull * 0.25, 75 + pull, 6, 0, Math.PI * 2);
+          ctx.fill();
+          break;
+        }
+
+        // 2. سحب الظهر جالساً (Seated Row)
         case 'seated_row': {
           const pull = t * 45;
           const torsoLean = -4 + t * 8;
 
-          ctx.strokeStyle = "#334155";
-          ctx.lineWidth = 14;
+          // الساقين الممدودتين
+          ctx.strokeStyle = "#0F172A";
+          ctx.lineWidth = 15;
           ctx.lineCap = "round";
           ctx.beginPath();
           ctx.moveTo(cx - 25, 255);
           ctx.lineTo(cx + 25, 250);
-          ctx.lineTo(cx + 75, 255);
+          ctx.lineTo(cx + 80, 255);
           ctx.stroke();
 
+          // مثبت الحزام الذهبي
           ctx.fillStyle = "#F59E0B";
           ctx.beginPath();
-          ctx.roundRect(cx + 70, 240, 12, 24, 4);
+          ctx.roundRect(cx + 74, 240, 14, 24, 4);
           ctx.fill();
 
+          // حبل المقاومة المشدود
           ctx.strokeStyle = "#F43F5E";
-          ctx.lineWidth = 4;
+          ctx.lineWidth = 4.5;
           ctx.beginPath();
-          ctx.moveTo(cx + 75, 252);
+          ctx.moveTo(cx + 80, 252);
           ctx.lineTo(cx + 5 - pull, 205);
           ctx.stroke();
 
@@ -1548,145 +1284,110 @@
           ctx.translate(cx - 25, 250);
           ctx.rotate((torsoLean * Math.PI) / 180);
 
+          // توهج عضلات الظهر
           ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
           ctx.beginPath();
           ctx.ellipse(-14, -45, 12 + t * 4, 20, 0, 0, Math.PI * 2);
           ctx.fill();
 
+          // الجذع واللباس الرياضي
           ctx.fillStyle = "#1E293B";
           ctx.beginPath();
-          ctx.roundRect(-12, -75, 26, 75, 8);
+          ctx.roundRect(-14, -75, 28, 75, 8);
           ctx.fill();
 
+          // الرأس وتسريحة الشعر
           ctx.fillStyle = "#64748B";
           ctx.beginPath();
-          ctx.arc(0, -90, 15, 0, Math.PI * 2);
+          ctx.arc(0, -90, 16, 0, Math.PI * 2);
           ctx.fill();
-
           ctx.fillStyle = "#F43F5E";
           ctx.beginPath();
           ctx.arc(-14, -94, 6, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.strokeStyle = "#475569";
-          ctx.lineWidth = 10;
+          // الأذرع الساحبة
+          ctx.strokeStyle = "#38455A";
+          ctx.lineWidth = 11;
           ctx.beginPath();
           ctx.moveTo(0, -65);
-          ctx.lineTo(-pull * 0.4, -30);
-          ctx.lineTo(25 - pull * 0.9, -35);
+          ctx.lineTo(-pull * 0.45, -28);
+          ctx.lineTo(25 - pull * 0.9, -34);
           ctx.stroke();
 
           ctx.fillStyle = "#F59E0B";
           ctx.beginPath();
-          ctx.arc(25 - pull * 0.9, -35, 5, 0, Math.PI * 2);
+          ctx.arc(25 - pull * 0.9, -34, 6, 0, Math.PI * 2);
           ctx.fill();
 
           ctx.restore();
           break;
         }
 
+        // 3. تبادل البايسبس (Bicep Curl)
         case 'bicep_curl': {
-          const handY = 225 - t * 75;
+          const handY = 225 - t * 80;
 
+          // الحبل المطاطي من تحت القدمين للأعلى
           ctx.strokeStyle = "#F59E0B";
           ctx.lineWidth = 5;
           ctx.beginPath();
-          ctx.moveTo(cx - 32, 270);
+          ctx.moveTo(cx - 32, 275);
           ctx.lineTo(cx - 32, handY);
-          ctx.moveTo(cx + 32, 270);
+          ctx.moveTo(cx + 32, 275);
           ctx.lineTo(cx + 32, handY);
           ctx.stroke();
 
-          drawProFemaleBody(ctx, cx, 185, 0);
+          drawProFigure(ctx, cx, 185, 0);
 
-          ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
+          // توهج البايسبس
+          ctx.fillStyle = `rgba(255, 23, 68, ${0.45 + t * 0.55})`;
           ctx.beginPath();
-          ctx.ellipse(cx - 28, 175, 8 + t * 4, 12, 0.2, 0, Math.PI * 2);
-          ctx.ellipse(cx + 28, 175, 8 + t * 4, 12, -0.2, 0, Math.PI * 2);
+          ctx.ellipse(cx - 28, 175, 9 + t * 4, 13, 0.2, 0, Math.PI * 2);
+          ctx.ellipse(cx + 28, 175, 9 + t * 4, 13, -0.2, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.strokeStyle = "#475569";
-          ctx.lineWidth = 9;
+          // الذراعين والساعدين
+          ctx.strokeStyle = "#38455A";
+          ctx.lineWidth = 10;
           ctx.lineCap = "round";
           ctx.beginPath();
-          ctx.moveTo(cx - 26, 145);
+          ctx.moveTo(cx - 24, 142);
           ctx.lineTo(cx - 30, 185);
           ctx.lineTo(cx - 32, handY);
 
-          ctx.moveTo(cx + 26, 145);
+          ctx.moveTo(cx + 24, 142);
           ctx.lineTo(cx + 30, 185);
           ctx.lineTo(cx + 32, handY);
           ctx.stroke();
-
-          ctx.fillStyle = "#0F172A";
-          ctx.fillRect(cx - 37, handY - 4, 10, 8);
-          ctx.fillRect(cx + 27, handY - 4, 10, 8);
           break;
         }
 
-        case 'lat_pulldown': {
-          const pull = t * 55;
-
-          ctx.fillStyle = "#F59E0B";
-          ctx.beginPath();
-          ctx.roundRect(cx - 35, 15, 70, 8, 4);
-          ctx.fill();
-
-          ctx.strokeStyle = "#F43F5E";
-          ctx.lineWidth = 4;
-          ctx.beginPath();
-          ctx.moveTo(cx, 19);
-          ctx.lineTo(cx - 55 + pull * 0.2, 75 + pull);
-          ctx.moveTo(cx, 19);
-          ctx.lineTo(cx + 55 - pull * 0.2, 75 + pull);
-          ctx.stroke();
-
-          drawProFemaleBody(ctx, cx, 180, 0);
-
-          ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
-          ctx.beginPath();
-          ctx.ellipse(cx - 18, 165, 10, 18 + t * 4, 0.3, 0, Math.PI * 2);
-          ctx.ellipse(cx + 18, 165, 10, 18 + t * 4, -0.3, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.strokeStyle = "#475569";
-          ctx.lineWidth = 9;
-          ctx.beginPath();
-          ctx.moveTo(cx - 24, 145);
-          ctx.lineTo(cx - 50, 120 + pull * 0.4);
-          ctx.lineTo(cx - 55 + pull * 0.2, 75 + pull);
-
-          ctx.moveTo(cx + 24, 145);
-          ctx.lineTo(cx + 50, 120 + pull * 0.4);
-          ctx.lineTo(cx + 55 - pull * 0.2, 75 + pull);
-          ctx.stroke();
-          break;
-        }
-
+        // 4. دفع الصدر (Chest Press)
         case 'chest_press': {
           const push = t * 55;
 
           ctx.fillStyle = "#F59E0B";
           ctx.beginPath();
-          ctx.roundRect(35, 150, 10, 30, 3);
+          ctx.roundRect(35, 150, 12, 30, 4);
           ctx.fill();
 
           ctx.strokeStyle = "#F43F5E";
-          ctx.lineWidth = 4;
+          ctx.lineWidth = 4.5;
           ctx.beginPath();
-          ctx.moveTo(40, 165);
+          ctx.moveTo(42, 165);
           ctx.lineTo(cx - 15 + push, 175);
           ctx.stroke();
 
-          drawProFemaleBody(ctx, cx, 190, 0);
+          drawProFigure(ctx, cx, 190, 0);
 
           ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
           ctx.beginPath();
-          ctx.ellipse(cx + 12, 165, 10 + t * 3, 14, 0, 0, Math.PI * 2);
+          ctx.ellipse(cx + 12, 165, 11 + t * 3, 15, 0, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.strokeStyle = "#475569";
-          ctx.lineWidth = 10;
+          ctx.strokeStyle = "#38455A";
+          ctx.lineWidth = 11;
           ctx.beginPath();
           ctx.moveTo(cx - 5, 155);
           ctx.lineTo(cx - 25 + push * 0.3, 185);
@@ -1695,50 +1396,20 @@
           break;
         }
 
-        case 'overhead_press': {
-          const pressY = 160 - t * 75;
-
-          ctx.strokeStyle = "#F59E0B";
-          ctx.lineWidth = 5;
-          ctx.beginPath();
-          ctx.moveTo(cx - 30, 270);
-          ctx.lineTo(cx - 30, pressY);
-          ctx.moveTo(cx + 30, 270);
-          ctx.lineTo(cx + 30, pressY);
-          ctx.stroke();
-
-          drawProFemaleBody(ctx, cx, 190, 0);
-
-          ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
-          ctx.beginPath();
-          ctx.ellipse(cx - 25, 150, 11 + t * 3, 11 + t * 3, 0, 0, Math.PI * 2);
-          ctx.ellipse(cx + 25, 150, 11 + t * 3, 11 + t * 3, 0, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.strokeStyle = "#475569";
-          ctx.lineWidth = 10;
-          ctx.beginPath();
-          ctx.moveTo(cx - 24, 150);
-          ctx.lineTo(cx - 30, pressY);
-          ctx.moveTo(cx + 24, 150);
-          ctx.lineTo(cx + 30, pressY);
-          ctx.stroke();
-          break;
-        }
-
+        // 5. سكوات المقاومة (Band Squat)
         case 'band_squat': {
           const drop = t * 45;
 
           ctx.strokeStyle = "#F59E0B";
           ctx.lineWidth = 5;
           ctx.beginPath();
-          ctx.moveTo(cx - 30, 270);
+          ctx.moveTo(cx - 32, 275);
           ctx.lineTo(cx - 24, 145 + drop);
           ctx.lineTo(cx + 24, 145 + drop);
-          ctx.lineTo(cx + 30, 270);
+          ctx.lineTo(cx + 32, 275);
           ctx.stroke();
 
-          drawProFemaleBody(ctx, cx, 185 + drop, drop);
+          drawProFigure(ctx, cx, 185 + drop, drop);
 
           ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
           ctx.beginPath();
@@ -1748,100 +1419,72 @@
           break;
         }
 
-        case 'romanian_deadlift': {
-          const hinge = t * 35;
-          ctx.strokeStyle = "#F59E0B";
-          ctx.lineWidth = 5;
-          ctx.beginPath();
-          ctx.moveTo(cx - 25, 270);
-          ctx.lineTo(cx - 20, 220 + hinge * 0.8);
-          ctx.stroke();
-
-          ctx.strokeStyle = "#334155";
-          ctx.lineWidth = 14;
-          ctx.beginPath();
-          ctx.moveTo(cx - 15, 210);
-          ctx.lineTo(cx - 15, 270);
-          ctx.stroke();
-
-          ctx.save();
-          ctx.translate(cx - 15, 210);
-          ctx.rotate((hinge * Math.PI) / 180);
-          ctx.fillStyle = "#1E293B";
-          ctx.beginPath();
-          ctx.roundRect(-14, -70, 28, 70, 6);
-          ctx.fill();
-          ctx.fillStyle = "#64748B";
-          ctx.beginPath();
-          ctx.arc(0, -85, 14, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.restore();
-
-          ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
-          ctx.beginPath();
-          ctx.ellipse(cx - 15, 230, 11 + t * 4, 16, 0, 0, Math.PI * 2);
-          ctx.fill();
-          break;
-        }
-
         default: {
-          drawProFemaleBody(ctx, cx, 185, 0);
+          drawProFigure(ctx, cx, 185, 0);
           break;
         }
       }
     }
 
-    function drawProFemaleBody(ctx, x, y, drop) {
-      ctx.fillStyle = "#64748B";
+    // الدالة المسؤولة عن رسم المجسم الرياضي الاحترافي بالملامح الكاملة
+    function drawProFigure(ctx, x, y, drop) {
+      // 1. الرأس وتسريحة الشعر الرياضية
+      ctx.fillStyle = "#475569";
       ctx.beginPath();
-      ctx.arc(x, y - 62, 15, 0, Math.PI * 2);
+      ctx.arc(x, y - 62, 16, 0, Math.PI * 2);
       ctx.fill();
 
+      // كعكة شعر وردية أنيقة (Pink Hairbun)
       ctx.fillStyle = "#F43F5E";
       ctx.beginPath();
-      ctx.arc(x, y - 76, 6, 0, Math.PI * 2);
+      ctx.arc(x, y - 77, 7, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.fillStyle = "#475569";
-      ctx.fillRect(x - 4, y - 48, 8, 10);
+      // 2. الرقبة
+      ctx.fillStyle = "#334155";
+      ctx.fillRect(x - 5, y - 48, 10, 10);
 
+      // 3. الجزء العلوي (لباس رياضي مجسم بنحت الخصر)
       ctx.fillStyle = "#1E293B";
       ctx.beginPath();
-      ctx.moveTo(x - 22, y - 40);
-      ctx.lineTo(x + 22, y - 40);
-      ctx.lineTo(x + 14, y + 10);
-      ctx.lineTo(x - 14, y + 10);
+      ctx.moveTo(x - 24, y - 40);
+      ctx.lineTo(x + 24, y - 40);
+      ctx.lineTo(x + 14, y + 12);
+      ctx.lineTo(x - 14, y + 12);
       ctx.closePath();
       ctx.fill();
 
+      // شريط الخصر الوردي
       ctx.fillStyle = "#F43F5E";
-      ctx.fillRect(x - 14, y + 8, 28, 4);
+      ctx.fillRect(x - 14, y + 9, 28, 4);
 
+      // 4. الساقين بالليجن الرياضي الأنيق
       ctx.strokeStyle = "#0F172A";
-      ctx.lineWidth = 11;
+      ctx.lineWidth = 12;
       ctx.lineCap = "round";
       ctx.beginPath();
       if (drop > 0) {
         ctx.moveTo(x - 12, y + 14);
-        ctx.lineTo(x - 26, y + 42);
-        ctx.lineTo(x - 18, 270);
+        ctx.lineTo(x - 28, y + 44);
+        ctx.lineTo(x - 18, 275);
 
         ctx.moveTo(x + 12, y + 14);
-        ctx.lineTo(x + 26, y + 42);
-        ctx.lineTo(x + 18, 270);
+        ctx.lineTo(x + 28, y + 44);
+        ctx.lineTo(x + 18, 275);
       } else {
         ctx.moveTo(x - 12, y + 14);
-        ctx.lineTo(x - 14, 270);
+        ctx.lineTo(x - 14, 275);
 
         ctx.moveTo(x + 12, y + 14);
-        ctx.lineTo(x + 14, 270);
+        ctx.lineTo(x + 14, 275);
       }
       ctx.stroke();
 
+      // أحذية رياضية أنيقة
       ctx.fillStyle = "#F43F5E";
       ctx.beginPath();
-      ctx.roundRect(x - 22, 266, 15, 7, 3);
-      ctx.roundRect(x + 7, 266, 15, 7, 3);
+      ctx.roundRect(x - 23, 270, 16, 8, 4);
+      ctx.roundRect(x + 7, 270, 16, 8, 4);
       ctx.fill();
     }
 
@@ -1851,69 +1494,15 @@
     }
 
     function speakText(text) {
-      const voiceEnabled = document.getElementById('toggleVoice').checked;
-      if (soundMuted || !voiceEnabled) return;
+      if (soundMuted) return;
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'ar-SA';
         utterance.rate = 1.0;
-        utterance.pitch = 1.45;
         window.speechSynthesis.speak(utterance);
       }
     }
-
-    function updateBmiDisplay() {
-      const w = parseFloat(document.getElementById('settingWeight').value) || 62;
-      const h = parseFloat(document.getElementById('settingHeight').value) || 165;
-      const bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
-      
-      let note = "وزن مثالي ورشيق 🌿";
-      if (bmi < 18.5) note = "أقل من المثالي";
-      else if (bmi >= 25) note = "زيادة خفيفة";
-
-      document.getElementById('bmiResultText').innerText = `${bmi} (${note})`;
-    }
-
-    function saveAllSettings() {
-      const name = document.getElementById('settingName').value;
-      const weight = document.getElementById('settingWeight').value;
-      const height = document.getElementById('settingHeight').value;
-      const haptic = document.getElementById('toggleHaptic').checked;
-      const voice = document.getElementById('toggleVoice').checked;
-
-      const profile = { name, weight, height, haptic, voice };
-      localStorage.setItem('elham_profile_data', JSON.stringify(profile));
-
-      document.getElementById('headerNameTitle').innerText = name;
-      document.getElementById('heroGreetingTitle').innerText = `أهلاً يا كابتن ${name} 🌸`;
-
-      speakText("تم حفظ الإعدادات بنجاح");
-      alert("تم حفظ جميع البيانات والإعدادات بنجاح يا كابتن " + name);
-    }
-
-    function loadSavedSettings() {
-      const saved = localStorage.getItem('elham_profile_data');
-      if (saved) {
-        try {
-          const p = JSON.parse(saved);
-          if (p.name) {
-            document.getElementById('settingName').value = p.name;
-            document.getElementById('headerNameTitle').innerText = p.name;
-            document.getElementById('heroGreetingTitle').innerText = `أهلاً يا كابتن ${p.name} 🌸`;
-          }
-          if (p.weight) document.getElementById('settingWeight').value = p.weight;
-          if (p.height) document.getElementById('settingHeight').value = p.height;
-          if (p.haptic !== undefined) document.getElementById('toggleHaptic').checked = p.haptic;
-          if (p.voice !== undefined) document.getElementById('toggleVoice').checked = p.voice;
-        } catch(e) {}
-      }
-      updateBmiDisplay();
-    }
-
-    window.onload = function() {
-      loadSavedSettings();
-    };
   </script>
 </body>
 </html>
