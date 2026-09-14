@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | صُنع بحب بيد حَمُودِك</title>
+  <title>كابتن إلهام الجزار | حساب السعرات والمنظومة الغذائية</title>
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -477,12 +477,13 @@
       line-height: 1.5;
     }
 
+    /* كروت التغذية الاحترافية مع تفصيل السعرات لكل عنصر */
     .diet-card {
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
       border-radius: 18px;
       padding: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       border-right: 4px solid var(--primary);
     }
 
@@ -492,20 +493,59 @@
       color: var(--primary);
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
+      align-items: center;
+      margin-bottom: 10px;
       border-bottom: 1px dashed rgba(255,255,255,0.08);
       padding-bottom: 6px;
     }
 
-    .meal-row {
-      margin-bottom: 6px;
-      font-size: 0.78rem;
-      line-height: 1.5;
+    .meal-block {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
     }
 
-    .meal-name {
+    .meal-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .meal-title {
       color: #FFF;
       font-weight: 800;
+      font-size: 0.82rem;
+    }
+
+    .meal-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: #CBD5E1;
+      padding: 2px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .item-row:last-child {
+      border-bottom: none;
+    }
+
+    .item-cal {
+      color: var(--accent-gold);
+      font-weight: 700;
+      direction: ltr;
     }
 
     .water-meter {
@@ -926,67 +966,178 @@
       </div>
     </div>
 
-    <!-- 4. شاشة جدول التغذية والشرب -->
+    <!-- 4. شاشة جدول التغذية والشرب مع حساب السعرات لكل عنصر وإجمالي كل وجبة -->
     <div id="nutritionScreen" class="screen-view hidden">
       <div class="hero-banner" style="margin-bottom:12px;">
         <div class="hero-content">
-          <h2>الجدول الغذائي وخطة الترطيب 🥗</h2>
-          <p>1,650 سعرة حرارية • 110 جم بروتين صافي • ترطيب 2.5 إلى 3 لتر</p>
+          <h2>الجدول الغذائي وحساب السعرات 🥗</h2>
+          <p>إجمالي اليوم: 1,650 سعرة حرارية • 110 جم بروتين صافي</p>
         </div>
-        <span style="font-size:1.6rem;">💧</span>
+        <span style="font-size:1.6rem;">📊</span>
       </div>
 
+      <!-- السبت -->
       <div class="diet-card">
-        <div class="diet-day-title"><span>السبت: طاقة التمرين ونحت الظهر</span> <span>يوم سحب</span></div>
-        <div class="meal-row"><span class="meal-name">الفطور:</span> 2 بيضة مسلوقة + نصف رغيف بلدي أسمر + خيار وجرجير.</div>
-        <div class="meal-row"><span class="meal-name">سناك:</span> قهوة بدون سكر + حبة موز قبل التمرين بـ 45 دقيقة.</div>
-        <div class="meal-row"><span class="meal-name">الغداء:</span> 150 جم صدر دجاج مشوي + 4 ملاعق رز بني + سلطة خضراء بزيت زيتون.</div>
-        <div class="meal-row"><span class="meal-name">العشاء:</span> علبة زبادي يوناني + ملعقة بذور شيا + رشة قرفة.</div>
+        <div class="diet-day-title">
+          <span>السبت: يوم السحب ونحت الظهر</span>
+          <span style="font-size:0.75rem; color:#A7F3D0;">1,650 سعرة • 112 جم بروتين</span>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🥞 وجبة الفطور</span>
+            <span class="meal-badge">380 سعرة • 24 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>2 بيضة مسلوقة كاملة</span><span class="item-cal">140 kcal (12g P)</span></div>
+          <div class="item-row"><span>نصف رغيف خبز بلدي أسمر (50 جم)</span><span class="item-cal">130 kcal (5g P)</span></div>
+          <div class="item-row"><span>قطعة جبن قريش (50 جم)</span><span class="item-cal">50 kcal (6g P)</span></div>
+          <div class="item-row"><span>طبق سلطة خضار (خيار وجرجير وطماطم)</span><span class="item-cal">30 kcal (1g P)</span></div>
+          <div class="item-row"><span>ملعقة صغيرة زيت زيتون (5 مل)</span><span class="item-cal">45 kcal (0g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">⚡ سناك قبل التمرين بـ 45 دقيقة</span>
+            <span class="meal-badge">140 سعرة • 2 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>ثمرة موز متوسطة</span><span class="item-cal">105 kcal (1.3g P)</span></div>
+          <div class="item-row"><span>كوب قهوة سوداء أو شاي بدون سكر</span><span class="item-cal">5 kcal (0g P)</span></div>
+          <div class="item-row"><span>حبة تمر سكري واحدة</span><span class="item-cal">30 kcal (0.4g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🍗 وجبة الغداء الرئيسية</span>
+            <span class="meal-badge">610 سعرة • 52 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>صدر دجاج مشوي متبل (150 جم)</span><span class="item-cal">250 kcal (46g P)</span></div>
+          <div class="item-row"><span>أرز بني أو بسمتي مطبوخ (5 ملاعق - 120 جم)</span><span class="item-cal">160 kcal (3.5g P)</span></div>
+          <div class="item-row"><span>خضار مشوي أو سوتيه (كوسة وفاصوليا)</span><span class="item-cal">60 kcal (2g P)</span></div>
+          <div class="item-row"><span>سلطة خضراء مع ملعقة زيت زيتون بكر</span><span class="item-cal">90 kcal (1g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🌙 وجبة العشاء الخفيف</span>
+            <span class="meal-badge">280 سعرة • 22 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>زبادي يوناني طبيعي (170 جم)</span><span class="item-cal">130 kcal (17g P)</span></div>
+          <div class="item-row"><span>ملعقة طعام بذور شيا (10 جم)</span><span class="item-cal">50 kcal (2g P)</span></div>
+          <div class="item-row"><span>نصف تفاحة شرائح مع رشة قرفة</span><span class="item-cal">45 kcal (0.3g P)</span></div>
+          <div class="item-row"><span>5 حبات لوز نيء</span><span class="item-cal">35 kcal (1.3g P)</span></div>
+        </div>
+
         <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء موزع على مدار اليوم.</div>
       </div>
 
+      <!-- الأحد -->
       <div class="diet-card">
-        <div class="diet-day-title"><span>الأحد: بناء واستشفاء الجزء السفلي</span> <span>يوم أرجل</span></div>
-        <div class="meal-row"><span class="meal-name">الفطور:</span> أومليت بيضتين مع سبانخ ومشروم + شريحة توست حبوب كاملة.</div>
-        <div class="meal-row"><span class="meal-name">سناك:</span> 5 حبات لوز نيء + تفاحة خضراء.</div>
-        <div class="meal-row"><span class="meal-name">الغداء:</span> 150 جم سمك فيليه مشوي + بطاطا مشوية متوسطة + سلطة جرجير.</div>
-        <div class="meal-row"><span class="meal-name">العشاء:</span> جبن قريش بقطع الطماطم والزعتر وقطرات زيت زيتون + خيار.</div>
+        <div class="diet-day-title">
+          <span>الأحد: بناء وتناسق الأرجل والأفخاذ</span>
+          <span style="font-size:0.75rem; color:#A7F3D0;">1,680 سعرة • 115 جم بروتين</span>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🍳 وجبة الفطور</span>
+            <span class="meal-badge">390 سعرة • 26 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>أومليت بيضتين مع سبانخ ومشروم</span><span class="item-cal">180 kcal (14g P)</span></div>
+          <div class="item-row"><span>شريحة توست حبوب كاملة (35 جم)</span><span class="item-cal">80 kcal (4g P)</span></div>
+          <div class="item-row"><span>شريحة جبن شيدر خفيف أو حلوم لايت</span><span class="item-cal">70 kcal (6g P)</span></div>
+          <div class="item-row"><span>شرائح خيار وطماطم كرزية</span><span class="item-cal">25 kcal (1g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">⚡ سناك الطاقة</span>
+            <span class="meal-badge">160 سعرة • 4 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>تفاحة خضراء متوسطة</span><span class="item-cal">80 kcal (0.4g P)</span></div>
+          <div class="item-row"><span>10 حبات كاجو أو لوز نيء</span><span class="item-cal">75 kcal (3g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🐟 وجبة الغداء</span>
+            <span class="meal-badge">620 سعرة • 48 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>شريحة سلمون أو سمك فيليه مشوي (180 جم)</span><span class="item-cal">320 kcal (40g P)</span></div>
+          <div class="item-row"><span>حبة بطاطا حلوة مشوية (150 جم)</span><span class="item-cal">135 kcal (2.5g P)</span></div>
+          <div class="item-row"><span>طبق سلطة جرجير ورمان بزيت الزيتون</span><span class="item-cal">110 kcal (2g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🌙 وجبة العشاء</span>
+            <span class="meal-badge">260 سعرة • 21 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>جبن قريش مهروس بزيت الزيتون والزعتر (100 جم)</span><span class="item-cal">140 kcal (18g P)</span></div>
+          <div class="item-row"><span>شريحة توست أسمر مقرمشة</span><span class="item-cal">80 kcal (2.5g P)</span></div>
+          <div class="item-row"><span>خيار وخس غير محدود</span><span class="item-cal">20 kcal (0.8g P)</span></div>
+        </div>
+
         <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لترطيب أوتار ومفاصل الركبة.</div>
       </div>
 
+      <!-- الإثنين -->
       <div class="diet-card" style="border-right-color: var(--accent-rest);">
-        <div class="diet-day-title" style="color:var(--accent-rest);"><span>الإثنين: تنقية واستشفاء مفاصل</span> <span>يوم استشفاء</span></div>
-        <div class="meal-row"><span class="meal-name">الفطور:</span> 4 ملاعق شوفان بحليب لوز + ملعقة عسل نحل طبيعي + توت.</div>
-        <div class="meal-row"><span class="meal-name">سناك:</span> شاي أخضر بالنعناع والليمون.</div>
-        <div class="meal-row"><span class="meal-name">الغداء:</span> علبة تونة مصفاة من الزيت + فاصوليا حمراء + سلطة ذرة وخضار ورقية.</div>
-        <div class="meal-row"><span class="meal-name">العشاء:</span> طبق شوربة خضار دافئة + نصف كوب زبادي.</div>
+        <div class="diet-day-title" style="color:var(--accent-rest);">
+          <span>الإثنين: يوم الاستشفاء النشط وتنقية الجسم</span>
+          <span style="font-size:0.75rem; color:#93C5FD;">1,580 سعرة • 105 جم بروتين</span>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🥣 وجبة الفطور</span>
+            <span class="meal-badge">360 سعرة • 20 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>شوفان كامل الحبة (4 ملاعق - 40 جم)</span><span class="item-cal">150 kcal (5g P)</span></div>
+          <div class="item-row"><span>حليب قليل الدسم أو حليب لوز مدعم (150 مل)</span><span class="item-cal">70 kcal (5g P)</span></div>
+          <div class="item-row"><span>سكوب صغير بروتين أو بياض بيضتين</span><span class="item-cal">80 kcal (10g P)</span></div>
+          <div class="item-row"><span>ملعقة عسل نحل طبيعي وتوت بري</span><span class="item-cal">60 kcal (0.3g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🥗 وجبة الغداء</span>
+            <span class="meal-badge">560 سعرة • 45 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>علبة تونة مصفاة من الزيت ومغسولة (140 جم)</span><span class="item-cal">180 kcal (40g P)</span></div>
+          <div class="item-row"><span>فاصوليا حمراء مسلوقة (نصف كوب)</span><span class="item-cal">110 kcal (7g P)</span></div>
+          <div class="item-row"><span>ذرة حلوة وخضار مشكل بالليمون</span><span class="item-cal">90 kcal (2g P)</span></div>
+          <div class="item-row"><span>ملعقة زيت زيتون بكر في التتبيلة</span><span class="item-cal">90 kcal (0g P)</span></div>
+        </div>
+
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🌙 وجبة العشاء</span>
+            <span class="meal-badge">270 سعرة • 18 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>طبق شوربة خضار دافئة (كوسة وجزر وبروكلي)</span><span class="item-cal">80 kcal (3g P)</span></div>
+          <div class="item-row"><span>كوب زبادي طبيعي + ملعقة بذور يقطين</span><span class="item-cal">140 kcal (12g P)</span></div>
+          <div class="item-row"><span>كوب شاي أخضر بالنعناع قبل النوم</span><span class="item-cal">0 kcal (0g P)</span></div>
+        </div>
+
         <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء مع شرائح خيار وليمون.</div>
       </div>
 
+      <!-- باقي الأسبوع -->
       <div class="diet-card">
-        <div class="diet-day-title"><span>الثلاثاء: بروتين للأكتاف والصدر</span> <span>يوم دفع</span></div>
-        <div class="meal-row"><span class="meal-name">الفطور:</span> 2 بيضة مسلوقة + 30 جم جبن فيتا لايت + شرائح طماطم وأوراق خس.</div>
-        <div class="meal-row"><span class="meal-name">سناك:</span> 1 تمرة سكري + فنجان قهوة قبل التمرين.</div>
-        <div class="meal-row"><span class="meal-name">الغداء:</span> 150 جم لحم بقري مفروم قليل الدهن مطبوخ بالخضار + 4 ملاعق برغل.</div>
-        <div class="meal-row"><span class="meal-name">العشاء:</span> سلطة بيض مسلوق بالخضار والليمون.</div>
-        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء لتعويض السوائل.</div>
-      </div>
-
-      <div class="diet-card">
-        <div class="diet-day-title"><span>الأربعاء: طاقة الحرق والنشاط الشامل</span> <span>يوم كامل</span></div>
-        <div class="meal-row"><span class="meal-name">الفطور:</span> بان كيك صحي (شوفان + بيضة + موز مهروس) بدون سكر.</div>
-        <div class="meal-row"><span class="meal-name">سناك:</span> جزرتين طازجتين + 4 أنصاف جوز (عين جمل).</div>
-        <div class="meal-row"><span class="meal-name">الغداء:</span> كرات كفتة دجاج مشوية (150 جم) + أرز بسمتي (4 ملاعق) + سلطة زبادي بالخيار.</div>
-        <div class="meal-row"><span class="meal-name">العشاء:</span> 2 شريحة جبن حلوم لايت مشوية + سلطة خيار وخس ورشة سماق.</div>
-        <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لرفع كفاءة الحرق.</div>
-      </div>
-
-      <div class="diet-card" style="border-right-color: var(--accent-gold);">
-        <div class="diet-day-title" style="color:var(--accent-gold);"><span>الخميس والجمعة: توازن واستشفاء عائلي</span> <span>راحة</span></div>
-        <div class="meal-row"><span class="meal-name">الفطور:</span> فول مدمس بزيت الزيتون والليمون + بيضة مسلوقة + خضار ورقي.</div>
-        <div class="meal-row"><span class="meal-name">الغداء:</span> وجبة عائلية متوازنة مع التركيز على البروتين والسلطة والتحكم بالنشويات.</div>
-        <div class="meal-row"><span class="meal-name">العشاء:</span> سلطة يونانية خفيفة + زبادي يوناني.</div>
-        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء للمحافظة على نضارة الجسم.</div>
+        <div class="diet-day-title">
+          <span>الثلاثاء والأربعاء: وجبات أيام الدفع والشامل</span>
+          <span style="font-size:0.75rem; color:#A7F3D0;">متوسط 1,650 سعرة • 110 جم بروتين</span>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header-row">
+            <span class="meal-title">🍗 الغداء المقترح (كفتة دجاج أو لحم بقري خالي الدهن)</span>
+            <span class="meal-badge">580 سعرة • 48 جم بروتين</span>
+          </div>
+          <div class="item-row"><span>150 جم كفتة مشوية بالفرن</span><span class="item-cal">260 kcal (42g P)</span></div>
+          <div class="item-row"><span>4 ملاعق برغل أو فريك أو أرز بسمتي</span><span class="item-cal">150 kcal (4g P)</span></div>
+          <div class="item-row"><span>سلطة طحينة لايت أو زبادي بالخيار</span><span class="item-cal">80 kcal (2g P)</span></div>
+        </div>
+        <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لتعويض المجهود العضلي ورفع الحرق.</div>
       </div>
 
       <div class="made-with-love-footer">
@@ -1330,7 +1481,7 @@
     }
 
     // =========================================================================
-    // محرك الرسم الاحترافي المحسن للتمارين (Pro Vector Style Canvas)
+    // محرك الرسم المتجهي المحسن للتمارين (Pro Vector Style Canvas)
     // =========================================================================
     function startCanvasLoop() {
       const canvas = document.getElementById('animCanvas');
@@ -1359,7 +1510,6 @@
       const h = ctx.canvas.height;
       const cx = w / 2;
 
-      // ظل أرضي ناعم ومتدرج
       const groundGrad = ctx.createRadialGradient(cx, 275, 10, cx, 275, 130);
       groundGrad.addColorStop(0, "rgba(244, 63, 94, 0.18)");
       groundGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
@@ -1369,7 +1519,6 @@
       ctx.fill();
 
       switch (exId) {
-        // 1. سحب الظهر جالساً (Seated Row)
         case 'seated_row': {
           const pull = t * 45;
           const torsoLean = -4 + t * 8;
@@ -1436,7 +1585,6 @@
           break;
         }
 
-        // 2. تبادل البايسبس (Bicep Curl)
         case 'bicep_curl': {
           const handY = 225 - t * 75;
 
@@ -1476,7 +1624,6 @@
           break;
         }
 
-        // 3. سحب المجنص لأسفل (Lat Pulldown)
         case 'lat_pulldown': {
           const pull = t * 55;
 
@@ -1516,7 +1663,6 @@
           break;
         }
 
-        // 4. دفع الصدر (Chest Press)
         case 'chest_press': {
           const push = t * 55;
 
@@ -1549,7 +1695,6 @@
           break;
         }
 
-        // 5. دفع الأكتاف للأعلى (Overhead Press)
         case 'overhead_press': {
           const pressY = 160 - t * 75;
 
@@ -1581,7 +1726,6 @@
           break;
         }
 
-        // 6. سكوات المقاومة (Band Squat)
         case 'band_squat': {
           const drop = t * 45;
 
@@ -1604,7 +1748,6 @@
           break;
         }
 
-        // 7. الرفعة الرومانية (RDL)
         case 'romanian_deadlift': {
           const hinge = t * 35;
           ctx.strokeStyle = "#F59E0B";
