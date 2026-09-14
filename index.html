@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | المنظومة الرياضية والغذائية الذكية</title>
+  <title>كابتن إلهام الجزار | تدريب التكرارات ومؤشرات الأمان</title>
   
-  <!-- إعدادات PWA والتثبيت على الموبايل -->
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -68,30 +67,6 @@
       position: relative;
     }
 
-    /* شريط تنبيه التثبيت على الشاشة الرئيسية */
-    .install-banner {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(17, 24, 39, 0.9));
-      border: 1px solid var(--primary);
-      border-radius: 16px;
-      padding: 12px 14px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
-    }
-
-    .install-btn {
-      background: var(--primary);
-      color: #030712;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 10px;
-      font-weight: 800;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-
     header {
       display: flex;
       justify-content: space-between;
@@ -152,33 +127,6 @@
       display: none !important;
     }
 
-    .gamification-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .gamify-card {
-      background: var(--surface-glass);
-      border: 1px solid var(--surface-border);
-      border-radius: 14px;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .gamify-val {
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: var(--accent-gold);
-    }
-
-    .gamify-lbl {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
     .hero-banner {
       background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
       border: 1px solid var(--surface-border);
@@ -197,44 +145,6 @@
 
     .hero-content p {
       font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .express-banner {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(244, 63, 94, 0.15));
-      border: 1.5px dashed var(--accent-gold);
-      border-radius: 18px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.3s;
-      animation: pulseGold 3s infinite;
-    }
-
-    @keyframes pulseGold {
-      0%, 100% { box-shadow: 0 0 0 rgba(245, 158, 11, 0); }
-      50% { box-shadow: 0 0 16px rgba(245, 158, 11, 0.3); }
-    }
-
-    .express-banner:active {
-      transform: scale(0.98);
-    }
-
-    .express-title {
-      font-size: 0.95rem;
-      font-weight: 900;
-      color: var(--accent-gold);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .express-desc {
-      font-size: 0.75rem;
       color: var(--text-muted);
       margin-top: 2px;
     }
@@ -293,25 +203,52 @@
       transform: translateY(-2px);
     }
 
-    .select-card.active h4 {
-      color: #FFF !important;
-    }
+    .select-card.active h4 { color: #FFF !important; }
+    .select-card.active span { color: #FECDD3 !important; }
 
-    .select-card.active span {
-      color: #FECDD3 !important;
-    }
-
-    .session-preview-box {
-      background: rgba(255, 255, 255, 0.03);
+    .reps-setup-card {
+      background: var(--surface-card);
       border: 1px solid var(--surface-border);
-      border-radius: 14px;
-      padding: 10px 14px;
-      margin-bottom: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .reps-input-box label {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 700;
       color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .reps-stepper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      padding: 6px 12px;
+    }
+
+    .reps-stepper button {
+      background: transparent;
+      border: none;
+      color: var(--accent-rose);
+      font-size: 1.3rem;
+      font-weight: 900;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+    }
+
+    .reps-stepper span {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFF;
     }
 
     .btn-main-action {
@@ -332,6 +269,7 @@
       transform: scale(0.98);
     }
 
+    /* مشغل التمرين ودليل التثبيت والأمان */
     .player-header {
       display: flex;
       justify-content: space-between;
@@ -363,7 +301,7 @@
 
     .theater-display {
       width: 100%;
-      height: 330px;
+      height: 310px;
       background: radial-gradient(circle at 50% 45%, #182337 0%, #030712 100%);
       border-radius: 28px;
       border: 1.5px solid rgba(255, 255, 255, 0.12);
@@ -372,7 +310,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     #stageSvg {
@@ -393,6 +331,40 @@
       z-index: 5;
     }
 
+    /* ويدجت نقطة تثبيت الباب البصرية */
+    .door-anchor-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(3, 7, 18, 0.88);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 10px;
+      border-radius: 12px;
+      color: var(--accent-gold);
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .door-mini-graphic {
+      width: 14px;
+      height: 22px;
+      border: 1.5px solid #64748B;
+      border-radius: 2px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .anchor-point-dot {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 6px var(--accent-gold);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     .indicator-tag {
       font-size: 0.72rem;
       font-weight: 800;
@@ -403,15 +375,34 @@
       white-space: nowrap;
     }
 
-    .indicator-tag.status {
-      color: var(--accent-rose);
-      border-color: rgba(244, 63, 94, 0.3);
-    }
-
     .indicator-tag.muscle {
       color: #FF1744;
       background: rgba(255, 23, 68, 0.15);
       border-color: rgba(255, 23, 68, 0.35);
+    }
+
+    /* بطاقة حماية المفاصل ومنع الارتداد العكسي */
+    .joint-safety-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(3, 7, 18, 0.7));
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 14px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .safety-icon {
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .safety-text {
+      font-size: 0.74rem;
+      color: #D1FAE5;
+      font-weight: 700;
+      line-height: 1.4;
     }
 
     .cue-box {
@@ -433,109 +424,94 @@
 
     .exercise-meta-text {
       text-align: center;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .exercise-meta-text h2 {
-      font-size: 1.22rem;
+      font-size: 1.25rem;
       font-weight: 900;
     }
 
     .exercise-meta-text .equip-note {
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--accent-rose);
     }
 
-    .clock-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    .clock-svg-wrap {
-      position: relative;
-      width: 108px;
-      height: 108px;
-    }
-
-    .clock-svg {
-      transform: rotate(-90deg);
-      width: 100%;
-      height: 100%;
-    }
-
-    .clock-track {
-      stroke: rgba(255, 255, 255, 0.05);
-      stroke-width: 8;
-      fill: transparent;
-    }
-
-    .clock-fill {
-      stroke: var(--ring-color, var(--accent-rose));
-      stroke-width: 8;
-      stroke-linecap: round;
-      fill: transparent;
-      stroke-dasharray: 377;
-      stroke-dashoffset: 0;
-    }
-
-    .clock-readout {
-      position: absolute;
-      inset: 0;
+    .reps-counter-display {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
     }
 
-    .clock-number {
-      font-size: 2.1rem;
+    .reps-tracker-btn {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.2) 0%, rgba(17, 24, 39, 0.9) 100%);
+      border: 3px solid var(--accent-rose);
+      box-shadow: 0 0 25px var(--accent-rose-glow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+
+    .reps-tracker-btn:active {
+      transform: scale(0.92);
+      box-shadow: 0 0 35px var(--accent-rose);
+    }
+
+    .reps-number {
+      font-size: 2.4rem;
       font-weight: 900;
       line-height: 1;
+      color: #FFF;
     }
 
-    .clock-unit {
-      font-size: 0.68rem;
+    .reps-target-label {
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--text-muted);
       margin-top: 2px;
     }
 
-    .controls-deck {
+    .reps-actions-deck {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
+      gap: 12px;
+      width: 100%;
     }
 
-    .ctrl-btn {
+    .btn-complete-set {
+      flex: 2;
+      background: linear-gradient(135deg, var(--primary), #059669);
+      color: #030712;
+      border: none;
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: 900;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-skip-exercise {
+      flex: 1;
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
-      color: var(--text);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--text-muted);
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: 800;
+      font-size: 0.9rem;
       cursor: pointer;
-    }
-
-    .ctrl-btn-play {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--play-color, var(--accent-rose)), #E11D48);
-      color: #FFF;
-      border: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .content-panel {
@@ -571,69 +547,6 @@
       border-right: 3px solid var(--accent-rose);
     }
 
-    .macro-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .macro-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--surface-border);
-      border-radius: 12px;
-      padding: 8px 4px;
-      text-align: center;
-    }
-
-    .macro-num {
-      font-size: 0.95rem;
-      font-weight: 900;
-      color: var(--primary);
-    }
-
-    .macro-lbl {
-      font-size: 0.62rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .profile-input-group {
-      margin-bottom: 12px;
-    }
-
-    .profile-input-group label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .profile-input {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--surface-border);
-      border-radius: 12px;
-      padding: 10px 14px;
-      color: #FFF;
-      font-size: 0.95rem;
-      font-weight: 700;
-      outline: none;
-    }
-
-    .btn-save-profile {
-      width: 100%;
-      background: linear-gradient(135deg, var(--primary), #059669);
-      color: #030712;
-      border: none;
-      border-radius: 14px;
-      padding: 12px;
-      font-weight: 900;
-      cursor: pointer;
-      margin-top: 8px;
-    }
-
     .dock-navigation {
       position: fixed;
       bottom: 0;
@@ -663,94 +576,73 @@
       transition: color 0.15s;
     }
 
-    .dock-tab .icon-wrap {
-      font-size: 1.25rem;
-    }
-
-    .dock-tab span {
-      font-size: 0.68rem;
-      font-weight: 800;
-    }
-
-    .dock-tab.active {
-      color: var(--accent-rose);
-    }
+    .dock-tab .icon-wrap { font-size: 1.25rem; }
+    .dock-tab span { font-size: 0.68rem; font-weight: 800; }
+    .dock-tab.active { color: var(--accent-rose); }
   </style>
 </head>
 <body>
 
   <div class="app-viewport">
     
-    <!-- شريط تثبيت التطبيق -->
-    <div id="pwaInstallBanner" class="install-banner hidden">
-      <div>
-        <strong style="font-size: 0.85rem; color:#FFF; display:block;">تثبيت تطبيق كابتن إلهام</strong>
-        <span style="font-size: 0.7rem; color:var(--text-muted);">أضيفي المنظومة للشاشة الرئيسية لفتحها بملء الشاشة وبدون نت</span>
-      </div>
-      <button class="install-btn" onclick="triggerPwaInstall()">تثبيت 📲</button>
-    </div>
-
     <header>
       <div class="brand-meta">
         <div class="brand-avatar">👑</div>
         <div class="brand-titles">
           <h1 id="headerNameTitle">كابتن إلهام الجزار</h1>
-          <span>المنظومة التدريبية والغذائية الذكية</span>
+          <span>دليل تثبيت الباب وحماية المفاصل</span>
         </div>
       </div>
-      <div class="pill-badge">PRO ELITE VIP</div>
+      <div class="pill-badge">SAFE REPS</div>
     </header>
 
-    <div class="gamification-strip">
-      <div class="gamify-card">
-        <div id="statStreak" class="gamify-val">🔥 5</div>
-        <div class="gamify-lbl">أيام متتالية</div>
-      </div>
-      <div class="gamify-card">
-        <div id="statXP" class="gamify-val">⭐ 1,450</div>
-        <div class="gamify-lbl">نقاط الخبرة (XP)</div>
-      </div>
-      <div class="gamify-card">
-        <div id="statLevel" class="gamify-val" style="color: var(--accent-rose);">👑 المستوى 3</div>
-        <div class="gamify-lbl">بطلة النحت</div>
-      </div>
-    </div>
-
-    <!-- 1. شاشة التمرين الرئيسية -->
+    <!-- 1. شاشة إعداد التمرين الرئيسي -->
     <div id="workoutScreen" class="screen-view">
       <div class="hero-banner">
         <div class="hero-content">
           <h2 id="heroGreetingTitle">أهلاً يا كابتن إلهام 🌸</h2>
-          <p>جاهزة لجلسة تدريب اليوم ونحت القوام؟</p>
+          <p>تمرين آمن وموجه بنقاط تثبيت دقيقة لحماية المفاصل.</p>
         </div>
         <span style="font-size: 1.6rem; z-index: 2;">⚡</span>
       </div>
 
-      <div class="express-banner" onclick="startExpressWorkout()">
-        <div>
-          <div class="express-title">⚡ جلسة الإنقاذ السريعة (12 دقيقة)</div>
-          <div class="express-desc">مشغولة اليوم؟ حافظي على الاستمرارية بـ 3 حركات شاملة ومكثفة.</div>
-        </div>
-        <span style="font-size:1.6rem;">⏱️</span>
-      </div>
-
       <div class="field-label"><span>🎯</span> 1. اختاري هدف الجلسة:</div>
       <div class="options-grid">
-        <div class="select-card active" onclick="setGoal('hypertrophy', this)">
-          <h4>شد ونحت</h4>
-          <span>45ث ضغط / 45ث راحة</span>
+        <div class="select-card active" onclick="setGoalConfig('hypertrophy', 12, 45, this)">
+          <h4>نحت وتناسق</h4>
+          <span>12 عدّة • راحة 45ث</span>
         </div>
-        <div class="select-card" onclick="setGoal('fatburn', this)">
+        <div class="select-card" onclick="setGoalConfig('fatburn', 15, 30, this)">
           <h4>حرق وتنشيف</h4>
-          <span>35ث سرعة / 15ث راحة</span>
+          <span>15 عدّة • راحة 30ث</span>
         </div>
-        <div class="select-card" onclick="setGoal('strength', this)">
-          <h4>مرونة وقوة</h4>
-          <span>30ث تحكم / 25ث راحة</span>
+        <div class="select-card" onclick="setGoalConfig('strength', 8, 60, this)">
+          <h4>قوة ومرونة</h4>
+          <span>8 عدات • راحة 60ث</span>
         </div>
       </div>
 
-      <div class="field-label"><span>📊</span> 2. تقسيم اليوم التدريبي (Split):</div>
+      <div class="field-label"><span>🔢</span> 2. تخصيص التكرارات والمجموعات:</div>
+      <div class="reps-setup-card">
+        <div class="reps-input-box">
+          <label>العدات المستهدفة (Reps):</label>
+          <div class="reps-stepper">
+            <button onclick="adjustRepsConfig('reps', -1)">-</button>
+            <span id="targetRepsVal">12</span>
+            <button onclick="adjustRepsConfig('reps', 1)">+</button>
+          </div>
+        </div>
+        <div class="reps-input-box">
+          <label>عدد الجولات (Sets):</label>
+          <div class="reps-stepper">
+            <button onclick="adjustRepsConfig('sets', -1)">-</button>
+            <span id="targetSetsVal">3</span>
+            <button onclick="adjustRepsConfig('sets', 1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-label"><span>📊</span> 3. تقسيم اليوم التدريبي (Split):</div>
       <div class="options-grid options-grid-2">
         <div class="select-card active" onclick="setSplit('pull', this)">
           <h4>يوم السحب (Pull)</h4>
@@ -766,31 +658,33 @@
         </div>
         <div class="select-card" onclick="setSplit('full', this)">
           <h4>شامل متكامل (Full Body)</h4>
-          <span>توازن عالي 1:1</span>
+          <span>توازن كامل للجسم</span>
         </div>
       </div>
 
-      <div class="session-preview-box">
-        <span id="previewRoutineCount">📋 التمارين المقررة: 2 حركات</span>
-        <span id="previewTotalTime" style="color:var(--accent-rose); font-weight:800;">⏱️ الوقت التقديري: 6 دقائق</span>
-      </div>
-
       <button class="btn-main-action" onclick="startConfiguredWorkout()">
-        <span>⚡ بدء جلسة التدريب المعتادة (+100 XP)</span>
+        <span>⚡ بدء جلسة التكرارات الذكية</span>
       </button>
     </div>
 
-    <!-- 2. مشغل التمرين الحركي -->
+    <!-- 2. مشغل التمرين بنظام العد التفاعلي ودليل التثبيت والأمان -->
     <div id="playerScreen" class="screen-view hidden">
       <div class="player-header">
         <button class="round-btn-icon" onclick="exitWorkout()" title="إنهاء">✕</button>
-        <div id="roundIndicator" class="round-chip">تمرين 1 من 4</div>
+        <div id="roundIndicator" class="round-chip">تمرين 1 من 3 • جولة 1 من 3</div>
         <button id="soundToggleBtn" class="round-btn-icon" onclick="toggleSound()" title="كتم/تشغيل">🔔</button>
       </div>
 
       <div id="stageCard" class="theater-display">
         <div class="theater-top-bar">
-          <div id="statusBadge" class="indicator-tag status">تمرين نشط 🔥</div>
+          <!-- دليل نقطة تثبيت الباب البصري -->
+          <div class="door-anchor-badge" id="doorAnchorBadge">
+            <div class="door-mini-graphic">
+              <div class="anchor-point-dot" id="anchorDot" style="top: 2px;"></div>
+            </div>
+            <span id="anchorLabelText">تثبيت أعلى الباب</span>
+          </div>
+
           <div id="activeMuscleTag" class="indicator-tag muscle">
             <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#FF1744;"></span>
             <span id="muscleName">عضلة البايسبس</span>
@@ -821,142 +715,91 @@
         </svg>
       </div>
 
+      <!-- بطاقة تنبيهات حماية المفاصل ومنع الارتداد المفاجئ -->
+      <div class="joint-safety-card">
+        <span class="safety-icon">🛡️</span>
+        <div class="safety-text" id="jointSafetyCue">
+          أمان المفاصل: تحكمي في الرجوع ببطء (ثانيتين) ولا تدعي الحزام يسحبك فجأة!
+        </div>
+      </div>
+
       <div class="cue-box">
         <span style="font-size: 1.4rem;">🌸</span>
-        <div id="coachText" class="cue-text">ثبّتي كوعك في جنبك واطلعي بذراعك واعتصري البايسبس في القمة!</div>
+        <div id="coachText" class="cue-text">اضغطي على الدائرة بعد كل عدة تنتهي منها!</div>
       </div>
 
       <div class="exercise-meta-text">
         <h2 id="exerciseTitle">تبادل البايسبس (Bicep Curl)</h2>
-        <div id="exerciseEquip" class="equip-note">عضلة البايسبس الأمامية • الوقوف بالقدمين على الحزام</div>
+        <div id="exerciseEquip" class="equip-note">الهدف: 12 تكراراً محكماً</div>
       </div>
 
-      <div class="clock-container">
-        <div class="clock-svg-wrap">
-          <svg class="clock-svg" viewBox="0 0 140 140">
-            <circle class="clock-track" cx="70" cy="70" r="60"/>
-            <circle id="ringProgress" class="clock-fill" cx="70" cy="70" r="60"/>
-          </svg>
-          <div class="clock-readout">
-            <div id="timeDigits" class="clock-number">45</div>
-            <div id="timeLabel" class="clock-unit">ثانية</div>
-          </div>
+      <div id="repsTrackerSection" class="reps-counter-display">
+        <div class="reps-tracker-btn" onclick="incrementRep()">
+          <span id="currentRepVal" class="reps-number">0</span>
+          <span id="targetRepTotal" class="reps-target-label">من 12 عدّة</span>
         </div>
+        <span style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;">اضغطي على الدائرة لزيادة عدّة 👆</span>
       </div>
 
-      <div class="controls-deck">
-        <button class="ctrl-btn" onclick="resetCurrentInterval()" title="إعادة الجولة">↺</button>
-        <button id="mainPlayBtn" class="ctrl-btn-play" onclick="togglePlayPause()">❚❚</button>
-        <button class="ctrl-btn" onclick="skipInterval()" title="تخطي">⏭</button>
+      <div id="restTimerSection" class="reps-counter-display hidden">
+        <div style="font-size: 2.8rem; font-weight: 900; color: var(--accent-rest); line-height: 1;" id="restTimerDigits">45</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">ثانية استراحة وتنفس بعمق ☕</span>
+      </div>
+
+      <div class="reps-actions-deck">
+        <button id="completeSetBtn" class="btn-complete-set" onclick="completeCurrentSet()">
+          <span>✅ تمّت المجموعة</span>
+        </button>
+        <button class="btn-skip-exercise" onclick="skipToNextExercise()">
+          <span>تخطي ⏭</span>
+        </button>
       </div>
     </div>
 
-    <!-- 3. شاشة الجدول الأسبوعي -->
+    <!-- 3. شاشة الجدول -->
     <div id="scheduleScreen" class="screen-view hidden">
       <div class="content-panel">
-        <div class="panel-header plan"><span>📅</span> الجدول الأسبوعي المعتمد</div>
-        
+        <div class="panel-header plan"><span>📅</span> الجدول الأسبوعي المقترح</div>
         <div class="schedule-day-row">
           <div>
             <div style="font-weight:800; font-size:0.88rem; color:#FFF;">السبت: يوم السحب والظهر (Pull)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">سحب جالس، مجنص، وبايسبس لنحت الظهر</div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">سحب جالس، مجنص، وبايسبس</div>
           </div>
-          <span class="pill-badge">تمرين 🔥</span>
+          <span class="pill-badge">3 جولات 🔥</span>
         </div>
-
         <div class="schedule-day-row">
           <div>
             <div style="font-weight:800; font-size:0.88rem; color:#FFF;">الأحد: يوم الأرجل والأرداف (Legs)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">سكوات بالحزام، وجسر الأرداف</div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">سكوات بالحزام، وأرداف</div>
           </div>
-          <span class="pill-badge">تمرين 🔥</span>
-        </div>
-
-        <div class="schedule-day-row" style="border-right-color: var(--accent-rest);">
-          <div>
-            <div style="font-weight:800; font-size:0.88rem; color:#FFF;">الإثنين: استشفاء نشط (Recovery)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">مشي خفيف 30 دقيقة وإطالات هادئة</div>
-          </div>
-          <span class="pill-badge" style="background:rgba(59,130,246,0.15); color:var(--accent-rest); border-color:rgba(59,130,246,0.3);">راحة ☕</span>
-        </div>
-
-        <div class="schedule-day-row">
-          <div>
-            <div style="font-weight:800; font-size:0.88rem; color:#FFF;">الثلاثاء: يوم الدفع والأكتاف (Push)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">دفع الصدر، رفرفة كتاف، وترايسبس</div>
-          </div>
-          <span class="pill-badge">تمرين 🔥</span>
-        </div>
-
-        <div class="schedule-day-row">
-          <div>
-            <div style="font-weight:800; font-size:0.88rem; color:#FFF;">الأربعاء: نحت شامل (Full Body)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">توليفة حزام شاملة لرفع معدل الحرق</div>
-          </div>
-          <span class="pill-badge">تمرين 🔥</span>
+          <span class="pill-badge">3 جولات 🔥</span>
         </div>
       </div>
     </div>
 
-    <!-- 4. شاشة التغذية وحاسبة السعرات -->
+    <!-- 4. شاشة التغذية -->
     <div id="nutritionScreen" class="screen-view hidden">
       <div class="content-panel">
         <div class="panel-header diet"><span>📊</span> حاسبة الماكروز والاحتياج اليومي</div>
-        <div class="macro-grid">
-          <div class="macro-box"><div id="calcCalories" class="macro-num">1,650</div><div class="macro-lbl">سعرة يومياً</div></div>
-          <div class="macro-box"><div id="calcProtein" class="macro-num">110g</div><div class="macro-lbl">بروتين صافي</div></div>
-          <div class="macro-box"><div id="calcBMR" class="macro-num">1,380</div><div class="macro-lbl">معدل BMR</div></div>
-          <div class="macro-box"><div id="calcBMI" class="macro-num">22.8</div><div class="macro-lbl">مؤشر BMI</div></div>
-        </div>
-      </div>
-
-      <div class="content-panel">
-        <div class="panel-header profile"><span>🥗</span> نظام الوجبات المقترح</div>
-        <div style="font-size:0.82rem; color:#CBD5E1; line-height:1.6; margin-bottom:8px;">
-          <strong>الفطور:</strong> 2 بيضة أومليت بزيت زيتون + سبانخ + توست حبوب كاملة + خيار.
-        </div>
-        <div style="font-size:0.82rem; color:#CBD5E1; line-height:1.6; margin-bottom:8px;">
-          <strong>الغداء:</strong> 150 جم صدر دجاج أو سلمون مشوي + 4 ملاعق رز بني + سلطة جرجير.
-        </div>
-        <div style="font-size:0.82rem; color:#CBD5E1; line-height:1.6;">
-          <strong>سناك قبل التمرين:</strong> قهوة إسبريسو أو شاي ماتشا لرفع طاقة الحرق.
+        <div style="font-size:0.85rem; color:#CBD5E1; line-height:1.6;">
+          الهدف اليومي لشد الجسم: <strong>1,650 سعرة</strong> • بروتين صافي: <strong>110 جرام</strong> لتغذية الألياف بعد تدريب التكرارات.
         </div>
       </div>
     </div>
 
-    <!-- 5. شاشة المكتبة التشريحية -->
+    <!-- 5. شاشة المكتبة -->
     <div id="libraryScreen" class="screen-view hidden">
       <div class="content-panel">
-        <div class="panel-header lib"><span>📚</span> الدليل الفني والتشريحي للتمارين</div>
-        <div style="font-size:0.82rem; color:#CBD5E1; line-height:1.6;">
-          أحزمة المقاومة تمنح توتراً عضلياً مستمراً طوال مدى الحركة، مما ينحت الألياف ويحمي المفاصل.
-        </div>
+        <div class="panel-header lib"><span>📚</span> الدليل التشريحي والتكنيكي للتمارين</div>
       </div>
       <div id="libraryListContainer"></div>
     </div>
 
-    <!-- 6. شاشة الملف الشخصي والإعدادات -->
+    <!-- 6. شاشة الإعدادات -->
     <div id="profileScreen" class="screen-view hidden">
       <div class="content-panel">
         <div class="panel-header profile"><span>⚙️</span> إعدادات الملف الرياضي</div>
-        
-        <div class="profile-input-group">
-          <label>اسم اللاعب:</label>
-          <input type="text" id="inputName" class="profile-input" value="إلهام الجزار">
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-          <div class="profile-input-group">
-            <label>الوزن (كجم):</label>
-            <input type="number" id="inputWeight" class="profile-input" value="62">
-          </div>
-          <div class="profile-input-group">
-            <label>الطول (سم):</label>
-            <input type="number" id="inputHeight" class="profile-input" value="165">
-          </div>
-        </div>
-
-        <button class="btn-save-profile" onclick="saveProfileData()">💾 حفظ التعديلات</button>
+        <p style="font-size:0.85rem; color:#CBD5E1;">الاسم: <strong>إلهام الجزار</strong> • المنظومة: <strong>نظام التكرارات الآمن ومثبت الباب</strong></p>
       </div>
     </div>
 
@@ -987,33 +830,7 @@
   </div>
 
   <script>
-    // تسجيل ملف الـ Service Worker ليعمل التطبيق كتطبيق هاتف مثبت
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
-      });
-    }
-
-    let deferredPrompt = null;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      const banner = document.getElementById('pwaInstallBanner');
-      if (banner) banner.classList.remove('hidden');
-    });
-
-    function triggerPwaInstall() {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then(() => {
-          deferredPrompt = null;
-          document.getElementById('pwaInstallBanner').classList.add('hidden');
-        });
-      } else {
-        alert("لتثبيت التطبيق على آيفون: اضغطي على زر المشاركة (Share) في سفاري ثم اختاري 'إضافة إلى الشاشة الرئيسية (Add to Home Screen)'.");
-      }
-    }
-
+    // مكتبة التمارين متضمنة موضع مثبت الباب وإرشادات حماية المفاصل
     const exerciseLibrary = [
       {
         id: "bicep_curl",
@@ -1023,6 +840,9 @@
         targetMuscleArabic: "عضلة البايسبس",
         muscle: "العضلة ذات الرأسين العضدية والساعد",
         equip: "الوقوف بالقدمين على منتصف الحزام",
+        anchorPosition: "underfoot",
+        anchorText: "تحت القدمين (بدون باب)",
+        jointSafetyText: "أمان الكوع: لا تقفلي مفصل الكوع 100% في الأسفل، وانزلي ببطء.",
         motion: "bicep_curl"
       },
       {
@@ -1033,7 +853,23 @@
         targetMuscleArabic: "عضلات المجنص (Lats)",
         muscle: "عضلات الظهر العريضة والمجنص",
         equip: "تثبيت الباب في أعلى نقطة",
+        anchorPosition: "top",
+        anchorText: "أعلى الباب (Top)",
+        jointSafetyText: "أمان الكتف: لا تدعي الحزام يسحب ذراعيكِ فجأة لأعلى، قاومي الارتداد.",
         motion: "lat_pulldown"
+      },
+      {
+        id: "seated_row",
+        title: "سحب الظهر جالساً (Seated Row)",
+        coachCue: "افردي ضهرك واسحبي المقابض لبطنك ورجّعي كتافك لورا!",
+        category: "pull",
+        targetMuscleArabic: "منتصف الظهر والترابيس",
+        muscle: "عضلات الظهر والترابيس الوسطى",
+        equip: "تثبيت الحزام حول منتصف باطن القدمين أو مقبض الباب",
+        anchorPosition: "middle",
+        anchorText: "منتصف الباب (عند المقبض)",
+        jointSafetyText: "أمان أسفل الظهر: حافظي على استقامة العمود الفقري وتجنبي الانحناء للأمام.",
+        motion: "seated_row"
       },
       {
         id: "chest_press",
@@ -1043,6 +879,9 @@
         targetMuscleArabic: "عضلة الصدر الكبرى",
         muscle: "عضلة الصدر الكبرى والترايسبس",
         equip: "تثبيت الحزام بمنتصف الباب",
+        anchorPosition: "middle",
+        anchorText: "منتصف الباب (ارتفاع الصدر)",
+        jointSafetyText: "أمان الكتف والكوع: لا ترجعي بكوعيكِ خلف مستوى ظهرك لتجنب إجهاد أوتار الكتف.",
         motion: "chest_press"
       },
       {
@@ -1052,25 +891,274 @@
         category: "legs",
         targetMuscleArabic: "الفخذ والأرداف",
         muscle: "الأفخاذ والأرداف",
-        equip: "شريط عريض على الكتفين",
+        equip: "شريط عريض على الكتفين وتحت القدمين",
+        anchorPosition: "underfoot",
+        anchorText: "تحت باطن القدمين",
+        jointSafetyText: "أمان الركبة: ادفعي ركبتيكِ للخارج باتجاه أصابع القدم وتجنبي انهيارهما للداخل.",
         motion: "band_squat"
       }
     ];
 
-    let selectedGoal = 'hypertrophy';
+    let workoutConfig = {
+      targetReps: 12,
+      targetSets: 3,
+      restDuration: 45
+    };
+
     let selectedSplit = 'pull';
     let activeRoutine = [];
-    let currentTiming = { work: 45, rest: 45 };
-
-    let currentIndex = 0;
+    let currentExerciseIndex = 0;
+    let currentSet = 1;
+    let currentReps = 0;
     let isResting = false;
-    let isPaused = false;
-    let remainingSeconds = 0;
-    let totalCurrentDuration = 0;
-    let timerInterval = null;
+    let restTimerInterval = null;
+    let restRemaining = 0;
+    let soundMuted = false;
     let animFrameId = null;
     let motionPhase = 0;
-    let soundMuted = false;
+
+    function setGoalConfig(goal, reps, restTime, elem) {
+      workoutConfig.targetReps = reps;
+      workoutConfig.restDuration = restTime;
+      document.getElementById('targetRepsVal').innerText = reps;
+
+      elem.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
+      elem.classList.add('active');
+    }
+
+    function adjustRepsConfig(type, delta) {
+      if (type === 'reps') {
+        workoutConfig.targetReps = Math.max(5, Math.min(30, workoutConfig.targetReps + delta));
+        document.getElementById('targetRepsVal').innerText = workoutConfig.targetReps;
+      } else {
+        workoutConfig.targetSets = Math.max(1, Math.min(6, workoutConfig.targetSets + delta));
+        document.getElementById('targetSetsVal').innerText = workoutConfig.targetSets;
+      }
+    }
+
+    function setSplit(split, elem) {
+      selectedSplit = split;
+      elem.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
+      elem.classList.add('active');
+    }
+
+    function startConfiguredWorkout() {
+      activeRoutine = exerciseLibrary.filter(e => e.category === selectedSplit || selectedSplit === 'full');
+      if (activeRoutine.length === 0) return;
+
+      currentExerciseIndex = 0;
+      currentSet = 1;
+      currentReps = 0;
+      isResting = false;
+
+      document.getElementById('workoutScreen').classList.add('hidden');
+      document.getElementById('playerScreen').classList.remove('hidden');
+
+      loadExerciseState();
+      if (!animFrameId) animLoop();
+    }
+
+    function loadExerciseState() {
+      const ex = activeRoutine[currentExerciseIndex];
+      document.getElementById('roundIndicator').innerText = `تمرين ${currentExerciseIndex + 1} من ${activeRoutine.length} • جولة ${currentSet} من ${workoutConfig.targetSets}`;
+      document.getElementById('exerciseTitle').innerText = ex.title;
+      document.getElementById('exerciseEquip').innerText = `الهدف: ${workoutConfig.targetReps} عدّة محكمة وبتحكم`;
+      document.getElementById('muscleName').innerText = ex.targetMuscleArabic;
+
+      // تحديث مؤشر نقطة تثبيت الباب البصري
+      const anchorDot = document.getElementById('anchorDot');
+      const anchorLabel = document.getElementById('anchorLabelText');
+      anchorLabel.innerText = ex.anchorText;
+
+      if (ex.anchorPosition === 'top') {
+        anchorDot.style.top = '2px';
+        anchorDot.style.bottom = 'auto';
+      } else if (ex.anchorPosition === 'middle') {
+        anchorDot.style.top = '8px';
+        anchorDot.style.bottom = 'auto';
+      } else if (ex.anchorPosition === 'bottom') {
+        anchorDot.style.top = 'auto';
+        anchorDot.style.bottom = '2px';
+      } else {
+        anchorDot.style.top = 'auto';
+        anchorDot.style.bottom = '-2px';
+      }
+
+      // تحديث إرشاد حماية المفاصل ومنع الارتداد
+      document.getElementById('jointSafetyCue').innerText = ex.jointSafetyText;
+
+      currentReps = 0;
+      document.getElementById('currentRepVal').innerText = currentReps;
+      document.getElementById('targetRepTotal').innerText = `من ${workoutConfig.targetReps} عدّة`;
+
+      document.getElementById('repsTrackerSection').classList.remove('hidden');
+      document.getElementById('restTimerSection').classList.add('hidden');
+      document.getElementById('completeSetBtn').style.display = 'flex';
+
+      speakText(ex.coachCue);
+    }
+
+    function incrementRep() {
+      if (isResting) return;
+      currentReps++;
+      document.getElementById('currentRepVal').innerText = currentReps;
+      if ('vibrate' in navigator) navigator.vibrate(30);
+
+      if (currentReps >= workoutConfig.targetReps) {
+        speakText("عاش يا بطلة! أنجزتي التكرارات كاملة");
+        completeCurrentSet();
+      }
+    }
+
+    function completeCurrentSet() {
+      clearInterval(restTimerInterval);
+      isResting = true;
+
+      document.getElementById('repsTrackerSection').classList.add('hidden');
+      document.getElementById('restTimerSection').classList.remove('hidden');
+      document.getElementById('completeSetBtn').style.display = 'none';
+
+      restRemaining = workoutConfig.restDuration;
+      document.getElementById('restTimerDigits').innerText = restRemaining;
+      speakText("استريحي وتنفسي بعمق، استعداداً للجولة القادمة");
+
+      restTimerInterval = setInterval(() => {
+        restRemaining--;
+        document.getElementById('restTimerDigits').innerText = restRemaining;
+
+        if (restRemaining <= 3 && restRemaining > 0) {
+          speakText(`${restRemaining}`);
+        }
+
+        if (restRemaining <= 0) {
+          clearInterval(restTimerInterval);
+          advanceNextSetOrExercise();
+        }
+      }, 1000);
+    }
+
+    function advanceNextSetOrExercise() {
+      isResting = false;
+      if (currentSet < workoutConfig.targetSets) {
+        currentSet++;
+        loadExerciseState();
+      } else {
+        if (currentExerciseIndex < activeRoutine.length - 1) {
+          currentExerciseIndex++;
+          currentSet = 1;
+          loadExerciseState();
+        } else {
+          finishWorkout();
+        }
+      }
+    }
+
+    function skipToNextExercise() {
+      clearInterval(restTimerInterval);
+      if (currentExerciseIndex < activeRoutine.length - 1) {
+        currentExerciseIndex++;
+        currentSet = 1;
+        isResting = false;
+        loadExerciseState();
+      } else {
+        finishWorkout();
+      }
+    }
+
+    function finishWorkout() {
+      clearInterval(restTimerInterval);
+      speakText("مبروك يا كابتن إلهام! أتممتِ جميع التكرارات بنجاح وأمان");
+      alert("الله ينور عليكي يا إلهام يا بطلة! 🌸 أنجزتي جميع المجموعات والتكرارات اليوم بجدارة.");
+      exitWorkout();
+    }
+
+    function exitWorkout() {
+      clearInterval(restTimerInterval);
+      if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      document.getElementById('playerScreen').classList.add('hidden');
+      document.getElementById('workoutScreen').classList.remove('hidden');
+    }
+
+    function renderSvgMotionFrame(motion, t) {
+      const group = document.getElementById('dynamicMotionGroup');
+      let html = '';
+
+      switch (motion) {
+        case 'bicep_curl': {
+          const handY = 320 - t * 90;
+          const handX = 265 - t * 15;
+          html += `<rect x="250" y="395" width="140" height="10" rx="5" fill="#F59E0B" />`;
+          html += `<line x1="260" y1="400" x2="${handX}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
+          html += `<line x1="380" y1="400" x2="${375 + t * 15}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
+          html += `<line x1="290" y1="285" x2="280" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
+          html += `<line x1="350" y1="285" x2="360" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
+          html += `<path d="M 275 185 Q 320 195 365 185 L 350 290 L 290 290 Z" fill="url(#bodySkin)" />`;
+          html += `<ellipse cx="${272 - t * 4}" cy="${220 - t * 5}" rx="${12 + t * 4}" ry="${16 + t * 2}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(-15 ${272} ${220})" />`;
+          html += `<ellipse cx="${368 + t * 4}" cy="${220 - t * 5}" rx="${12 + t * 4}" ry="${16 + t * 2}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(15 ${368} ${220})" />`;
+          html += `<rect x="312" y="145" width="16" height="24" rx="4" fill="#475569" />`;
+          html += `<ellipse cx="320" cy="125" rx="20" ry="24" fill="#64748B" />`;
+          html += `<line x1="280" y1="190" x2="265" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
+          html += `<line x1="360" y1="190" x2="375" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
+          html += `<line x1="265" y1="255" x2="${handX}" y2="${handY}" stroke="#38455A" stroke-width="16" stroke-linecap="round" />`;
+          html += `<circle cx="${handX}" cy="${handY}" r="9" fill="#0F172A" />`;
+          html += `<line x1="375" y1="255" x2="${375 + t * 15}" y2="${handY}" stroke="#38455A" stroke-width="16" stroke-linecap="round" />`;
+          html += `<circle cx="${375 + t * 15}" cy="${handY}" r="9" fill="#0F172A" />`;
+          break;
+        }
+        case 'lat_pulldown': {
+          const pullProgress = t * 65;
+          html += `<rect x="230" y="28" width="180" height="14" rx="4" fill="#F59E0B" />`;
+          html += `<line x1="260" y1="36" x2="${270 + t * 20}" y2="${100 + pullProgress}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
+          html += `<line x1="380" y1="36" x2="${370 - t * 20}" y2="${100 + pullProgress}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
+          html += `<path d="M 285 320 Q 250 360 210 395" stroke="#334155" stroke-width="26" stroke-linecap="round" fill="none" />`;
+          html += `<path d="M 355 320 Q 390 360 430 395" stroke="#334155" stroke-width="26" stroke-linecap="round" fill="none" />`;
+          html += `<path d="M 280 205 Q 320 215 360 205 L 345 320 L 295 320 Z" fill="url(#bodySkin)" />`;
+          html += `<path d="M 280 210 Q 255 245 288 285 Q 295 245 280 210 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
+          html += `<path d="M 360 210 Q 385 245 352 285 Q 345 245 360 210 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
+          html += `<rect x="312" y="165" width="16" height="24" rx="4" fill="#475569" />`;
+          html += `<ellipse cx="320" cy="145" rx="20" ry="24" fill="#64748B" />`;
+          html += `<line x1="285" y1="205" x2="${250 - t * 15}" y2="${175 + t * 25}" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
+          html += `<line x1="${250 - t * 15}" y1="${175 + t * 25}" x2="${270 + t * 20}" y2="${100 + pullProgress}" stroke="#334155" stroke-width="17" stroke-linecap="round" />`;
+          html += `<line x1="355" y1="205" x2="${390 + t * 15}" y2="${175 + t * 25}" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
+          html += `<line x1="${390 + t * 15}" y1="${175 + t * 25}" x2="${370 - t * 20}" y2="${100 + pullProgress}" stroke="#334155" stroke-width="17" stroke-linecap="round" />`;
+          break;
+        }
+        case 'band_squat': {
+          const drop = t * 55;
+          const bodyY = 190 + drop;
+          html += `<line x1="270" y1="395" x2="285" y2="${bodyY + 10}" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
+          html += `<line x1="370" y1="395" x2="355" y2="${bodyY + 10}" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
+          html += `<path d="M 290 ${bodyY + 70} Q 255 ${bodyY + 110} 270 395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" fill="none" filter="url(#neonRedGlow)" />`;
+          html += `<path d="M 350 ${bodyY + 70} Q 385 ${bodyY + 110} 370 395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" fill="none" filter="url(#neonRedGlow)" />`;
+          html += `<rect x="295" y="${bodyY}" width="50" height="85" rx="14" fill="url(#bodySkin)" />`;
+          html += `<ellipse cx="320" cy="${bodyY - 45}" rx="20" ry="24" fill="#64748B" />`;
+          break;
+        }
+        default: {
+          const push = t * 65;
+          html += `<rect x="90" y="210" width="14" height="42" rx="4" fill="#F59E0B" />`;
+          html += `<line x1="97" y1="230" x2="${230 + push}" y2="230" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
+          html += `<g transform="translate(310, 220)"><rect x="-26" y="-50" width="52" height="100" rx="14" fill="url(#bodySkin)" /><path d="M -22 -35 Q 0 -55 22 -35 Q 0 -10 -22 -35 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" /></g>`;
+          html += `<ellipse cx="310" cy="140" rx="20" ry="24" fill="#64748B" />`;
+          html += `<line x1="310" y1="195" x2="${280 - (1 - t) * 35}" y2="230" stroke="#475569" stroke-width="22" stroke-linecap="round" />`;
+          html += `<line x1="${280 - (1 - t) * 35}" y1="230" x2="${230 + push}" y2="230" stroke="#FF1744" stroke-width="18" stroke-linecap="round" />`;
+          break;
+        }
+      }
+
+      group.innerHTML = html;
+    }
+
+    function animLoop() {
+      motionPhase += 0.038;
+      const currentEx = activeRoutine[currentExerciseIndex];
+      if (currentEx) {
+        const t = (Math.sin(motionPhase * 2.8) + 1) / 2;
+        renderSvgMotionFrame(currentEx.motion, t);
+      }
+      animFrameId = requestAnimationFrame(animLoop);
+    }
 
     function switchNavTab(tabName, element) {
       document.querySelectorAll('.dock-tab').forEach(i => i.classList.remove('active'));
@@ -1078,20 +1166,11 @@
 
       document.querySelectorAll('.screen-view').forEach(s => s.classList.add('hidden'));
 
-      if (tabName === 'workout') {
-        document.getElementById('workoutScreen').classList.remove('hidden');
-      } else if (tabName === 'schedule') {
-        document.getElementById('scheduleScreen').classList.remove('hidden');
-      } else if (tabName === 'nutrition') {
-        document.getElementById('nutritionScreen').classList.remove('hidden');
-      } else if (tabName === 'library') {
-        renderLibraryScreen();
-        document.getElementById('libraryScreen').classList.remove('hidden');
-      } else if (tabName === 'profile') {
-        document.getElementById('profileScreen').classList.remove('hidden');
-      }
-
-      if (tabName !== 'workout') pauseWorkout();
+      if (tabName === 'workout') document.getElementById('workoutScreen').classList.remove('hidden');
+      else if (tabName === 'schedule') document.getElementById('scheduleScreen').classList.remove('hidden');
+      else if (tabName === 'nutrition') document.getElementById('nutritionScreen').classList.remove('hidden');
+      else if (tabName === 'library') { renderLibraryScreen(); document.getElementById('libraryScreen').classList.remove('hidden'); }
+      else if (tabName === 'profile') document.getElementById('profileScreen').classList.remove('hidden');
     }
 
     function renderLibraryScreen() {
@@ -1103,220 +1182,15 @@
         item.innerHTML = `
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
             <strong style="color:var(--accent-rose); font-size:0.95rem;">${idx + 1}. ${ex.title}</strong>
-            <span style="font-size:0.7rem; color:var(--primary); background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:8px;">${ex.targetMuscleArabic}</span>
+            <span style="font-size:0.7rem; color:var(--accent-gold); background:rgba(245,158,11,0.1); padding:2px 8px; border-radius:8px;">${ex.anchorText}</span>
           </div>
           <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">
             <strong>الأداة والتثبيت:</strong> ${ex.equip}<br>
-            <strong>العضلات المشغلة:</strong> ${ex.muscle}
+            <strong>أمان المفصل:</strong> ${ex.jointSafetyText}
           </div>
         `;
         container.appendChild(item);
       });
-    }
-
-    function updatePreviewSummary() {
-      const pool = exerciseLibrary.filter(e => e.category === selectedSplit || selectedSplit === 'full');
-      const count = pool.length;
-      const totalSec = count * (currentTiming.work + currentTiming.rest);
-      const mins = Math.ceil(totalSec / 60);
-
-      document.getElementById('previewRoutineCount').innerText = `📋 التمارين المقررة: ${count} حركات`;
-      document.getElementById('previewTotalTime').innerText = `⏱️ الوقت التقديري: ${mins} دقيقة`;
-    }
-
-    function setGoal(goal, element) {
-      selectedGoal = goal;
-      element.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
-      element.classList.add('active');
-
-      if (goal === 'hypertrophy') currentTiming = { work: 45, rest: 45 };
-      else if (goal === 'fatburn') currentTiming = { work: 35, rest: 15 };
-      else if (goal === 'strength') currentTiming = { work: 30, rest: 25 };
-
-      updatePreviewSummary();
-    }
-
-    function setSplit(split, element) {
-      selectedSplit = split;
-      element.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
-      element.classList.add('active');
-      updatePreviewSummary();
-    }
-
-    function startExpressWorkout() {
-      activeRoutine = [
-        exerciseLibrary.find(e => e.id === 'band_squat'),
-        exerciseLibrary.find(e => e.id === 'chest_press'),
-        exerciseLibrary.find(e => e.id === 'lat_pulldown')
-      ];
-
-      currentTiming = { work: 40, rest: 20 };
-      currentIndex = 0;
-      isResting = false;
-      isPaused = false;
-
-      document.getElementById('workoutScreen').classList.add('hidden');
-      document.getElementById('playerScreen').classList.remove('hidden');
-
-      loadCurrentState();
-      startTimer();
-      if (!animFrameId) animLoop();
-    }
-
-    function startConfiguredWorkout() {
-      activeRoutine = exerciseLibrary.filter(e => e.category === selectedSplit || selectedSplit === 'full');
-      currentIndex = 0;
-      isResting = false;
-      isPaused = false;
-
-      document.getElementById('workoutScreen').classList.add('hidden');
-      document.getElementById('playerScreen').classList.remove('hidden');
-
-      loadCurrentState();
-      startTimer();
-      if (!animFrameId) animLoop();
-    }
-
-    function renderSvgMotionFrame(motion, t) {
-      const group = document.getElementById('dynamicMotionGroup');
-      let html = '';
-
-      switch (motion) {
-        case 'bicep_curl': {
-          const handY = 320 - t * 90;
-          const handX = 265 - t * 15;
-
-          html += `<rect x="250" y="395" width="140" height="10" rx="5" fill="#F59E0B" />`;
-          html += `<line x1="260" y1="400" x2="${handX}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="380" y1="400" x2="${375 + t * 15}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="290" y1="285" x2="280" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<line x1="350" y1="285" x2="360" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<path d="M 275 185 Q 320 195 365 185 L 350 290 L 290 290 Z" fill="url(#bodySkin)" />`;
-          html += `<rect x="312" y="145" width="16" height="24" rx="4" fill="#475569" />`;
-          html += `<ellipse cx="320" cy="125" rx="20" ry="24" fill="#64748B" />`;
-          html += `<line x1="280" y1="190" x2="265" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<line x1="360" y1="190" x2="375" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<ellipse cx="${272 - t * 4}" cy="${220 - t * 5}" rx="${12 + t * 4}" ry="${16 + t * 2}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(-15 ${272} ${220})" />`;
-          html += `<ellipse cx="${368 + t * 4}" cy="${220 - t * 5}" rx="${12 + t * 4}" ry="${16 + t * 2}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(15 ${368} ${220})" />`;
-          html += `<line x1="265" y1="255" x2="${handX}" y2="${handY}" stroke="#38455A" stroke-width="16" stroke-linecap="round" />`;
-          html += `<line x1="375" y1="255" x2="${375 + t * 15}" y2="${handY}" stroke="#38455A" stroke-width="16" stroke-linecap="round" />`;
-          break;
-        }
-        default: {
-          const drop = t * 50;
-          const bodyY = 190 + drop;
-          html += `<rect x="295" y="${bodyY}" width="50" height="85" rx="14" fill="url(#bodySkin)" />`;
-          html += `<ellipse cx="320" cy="${bodyY - 45}" rx="20" ry="24" fill="#64748B" />`;
-          break;
-        }
-      }
-
-      group.innerHTML = html;
-    }
-
-    function animLoop() {
-      if (!isPaused) {
-        motionPhase += 0.038;
-        if (!isResting) {
-          const currentEx = activeRoutine[currentIndex];
-          if (currentEx) {
-            const t = (Math.sin(motionPhase * 2.8) + 1) / 2;
-            renderSvgMotionFrame(currentEx.motion, t);
-          }
-        }
-      }
-      animFrameId = requestAnimationFrame(animLoop);
-    }
-
-    function loadCurrentState() {
-      const exercise = activeRoutine[currentIndex];
-      document.getElementById('roundIndicator').innerText = `تمرين ${currentIndex + 1} من ${activeRoutine.length}`;
-      document.getElementById('exerciseTitle').innerText = exercise.title;
-      document.getElementById('exerciseEquip').innerText = `${exercise.muscle} • ${exercise.equip}`;
-
-      const muscleTag = document.getElementById('activeMuscleTag');
-      const muscleName = document.getElementById('muscleName');
-
-      if (isResting) {
-        totalCurrentDuration = currentTiming.rest;
-        remainingSeconds = currentTiming.rest;
-        document.getElementById('statusBadge').innerText = "فترة راحة";
-        document.getElementById('timeLabel').innerText = "استريحي";
-        muscleTag.classList.add('hidden');
-        const restSpeech = "ريّحي شوية يا قمر وخذي نفس عميق";
-        document.getElementById('coachText').innerText = restSpeech;
-        speakText(restSpeech);
-      } else {
-        totalCurrentDuration = currentTiming.work;
-        remainingSeconds = currentTiming.work;
-        document.getElementById('statusBadge').innerText = "تمرين نشط 🔥";
-        document.getElementById('timeLabel').innerText = "ثانية تمرين";
-        
-        muscleTag.classList.remove('hidden');
-        muscleName.innerText = exercise.targetMuscleArabic;
-
-        document.getElementById('coachText').innerText = exercise.coachCue;
-        speakText(exercise.coachCue);
-      }
-      updateTimerDisplay();
-    }
-
-    function updateTimerDisplay() {
-      document.getElementById('timeDigits').innerText = remainingSeconds;
-      const circumference = 377;
-      const offset = circumference * (1 - (totalCurrentDuration - remainingSeconds) / totalCurrentDuration);
-      document.getElementById('ringProgress').style.strokeDashoffset = offset;
-    }
-
-    function startTimer() {
-      clearInterval(timerInterval);
-      timerInterval = setInterval(() => {
-        if (!isPaused && remainingSeconds > 0) {
-          remainingSeconds--;
-          updateTimerDisplay();
-          
-          if (remainingSeconds <= 3 && remainingSeconds > 0) {
-            speakText(`${remainingSeconds}`);
-          }
-          
-          if (remainingSeconds === 0) handleIntervalEnd();
-        }
-      }, 1000);
-    }
-
-    function handleIntervalEnd() {
-      if (!isResting) { 
-        isResting = true; 
-        loadCurrentState(); 
-      } else {
-        if (currentIndex < activeRoutine.length - 1) { 
-          currentIndex++; 
-          isResting = false; 
-          loadCurrentState(); 
-        } else {
-          finishWorkout();
-        }
-      }
-    }
-
-    function togglePlayPause() { isPaused = !isPaused; document.getElementById('mainPlayBtn').innerText = isPaused ? '▶' : '❚❚'; }
-    function pauseWorkout() { isPaused = true; const btn = document.getElementById('mainPlayBtn'); if (btn) btn.innerText = '▶'; }
-    function resetCurrentInterval() { remainingSeconds = isResting ? currentTiming.rest : currentTiming.work; updateTimerDisplay(); }
-    function skipInterval() { handleIntervalEnd(); }
-    
-    function finishWorkout() { 
-      clearInterval(timerInterval); 
-      speakText('مبروك يا بطلة! أنجزتي جلسة التمرين بنجاح');
-      alert("الله ينور عليكي يا إلهام يا بطلة! 🌸 أنجزتي تمرين اليوم بجدارة.");
-      exitWorkout();
-    }
-
-    function exitWorkout() {
-      clearInterval(timerInterval);
-      if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-      document.getElementById('playerScreen').classList.add('hidden');
-      document.getElementById('workoutScreen').classList.remove('hidden');
     }
 
     function toggleSound() {
@@ -1335,38 +1209,6 @@
         window.speechSynthesis.speak(utterance);
       }
     }
-
-    function saveProfileData() {
-      const name = document.getElementById('inputName').value;
-      const weight = document.getElementById('inputWeight').value;
-      const height = document.getElementById('inputHeight').value;
-
-      localStorage.setItem('elham_fitness_profile', JSON.stringify({ name, weight, height }));
-      document.getElementById('headerNameTitle').innerText = name;
-      document.getElementById('heroGreetingTitle').innerText = `أهلاً يا كابتن ${name} 🌸`;
-      alert("تم حفظ البيانات بنجاح يا كابتن " + name);
-    }
-
-    function loadProfileData() {
-      const saved = localStorage.getItem('elham_fitness_profile');
-      if (saved) {
-        try {
-          const p = JSON.parse(saved);
-          if (p.name) {
-            document.getElementById('inputName').value = p.name;
-            document.getElementById('headerNameTitle').innerText = p.name;
-            document.getElementById('heroGreetingTitle').innerText = `أهلاً يا كابتن ${p.name} 🌸`;
-          }
-          if (p.weight) document.getElementById('inputWeight').value = p.weight;
-          if (p.height) document.getElementById('inputHeight').value = p.height;
-        } catch(e) {}
-      }
-      updatePreviewSummary();
-    }
-
-    window.onload = function() {
-      loadProfileData();
-    };
   </script>
 </body>
 </html>
