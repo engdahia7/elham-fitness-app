@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | تدريب التكرارات</title>
+  <title>كابتن إلهام الجزار | المنظومة التدريبية والدليل التشريحي</title>
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,6 +24,7 @@
       --accent-rose: #F43F5E;
       --accent-rose-glow: rgba(244, 63, 94, 0.35);
       --accent-gold: #F59E0B;
+      --accent-purple: #A855F7;
       --accent-rest: #3B82F6;
       --text: #F8FAFC;
       --text-muted: #94A3B8;
@@ -244,7 +245,6 @@
       box-shadow: 0 8px 24px var(--accent-rose-glow);
     }
 
-    /* مشغل التمرين */
     .player-header {
       display: flex;
       justify-content: space-between;
@@ -414,6 +414,159 @@
       cursor: pointer;
     }
 
+    /* كروت الجداول والتغذية */
+    .schedule-card {
+      background: var(--surface-glass);
+      border: 1px solid var(--surface-border);
+      border-radius: 18px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-right: 4px solid var(--accent-rose);
+    }
+
+    .schedule-card.rest-day {
+      border-right-color: var(--accent-rest);
+      opacity: 0.85;
+    }
+
+    .schedule-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .schedule-day {
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #FFF;
+    }
+
+    .schedule-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 8px;
+      background: rgba(244, 63, 94, 0.15);
+      color: var(--accent-rose);
+    }
+
+    .schedule-tag.rest {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--accent-rest);
+    }
+
+    .schedule-details {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .diet-card {
+      background: var(--surface-glass);
+      border: 1px solid var(--surface-border);
+      border-radius: 18px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-right: 4px solid var(--primary);
+    }
+
+    .diet-day-title {
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed rgba(255,255,255,0.08);
+      padding-bottom: 6px;
+    }
+
+    .meal-row {
+      margin-bottom: 6px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .meal-name {
+      color: #FFF;
+      font-weight: 800;
+    }
+
+    .water-meter {
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 10px;
+      padding: 6px 10px;
+      margin-top: 8px;
+      font-size: 0.74rem;
+      color: #93C5FD;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* كروت الدليل الفني للتمارين (Guide) */
+    .guide-card {
+      background: var(--surface-glass);
+      border: 1px solid var(--surface-border);
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 14px;
+      border-top: 3px solid var(--accent-purple);
+    }
+
+    .guide-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .guide-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #FFF;
+    }
+
+    .guide-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+      background: rgba(168, 85, 247, 0.15);
+      color: var(--accent-purple);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    .guide-section-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      margin-top: 8px;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .guide-text {
+      font-size: 0.78rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    .guide-mistake-box {
+      background: rgba(244, 63, 94, 0.08);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      border-radius: 12px;
+      padding: 8px 10px;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: #FECDD3;
+      line-height: 1.4;
+    }
+
+    /* شريط التنقل السفلي المحدث (4 أقسام) */
     .dock-navigation {
       position: fixed;
       bottom: 0;
@@ -422,11 +575,11 @@
       width: 100%;
       max-width: 480px;
       height: var(--nav-height);
-      background: rgba(10, 15, 26, 0.92);
+      background: rgba(10, 15, 26, 0.94);
       backdrop-filter: blur(20px);
       border-top: 1px solid var(--surface-border);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       align-items: center;
       z-index: 50;
     }
@@ -441,6 +594,11 @@
       cursor: pointer;
     }
 
+    .dock-tab span:last-child {
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+
     .dock-tab.active { color: var(--accent-rose); }
   </style>
 </head>
@@ -453,13 +611,13 @@
         <div class="brand-avatar">👑</div>
         <div class="brand-titles">
           <h1>كابتن إلهام الجزار</h1>
-          <span>نظام التكرارات والأنيميشن الحركي</span>
+          <span>المنظومة التدريبية والدليل التشريحي</span>
         </div>
       </div>
-      <div class="pill-badge">CANVAS REPS</div>
+      <div class="pill-badge">VIP ELITE</div>
     </header>
 
-    <!-- شاشة إعداد التمرين الرئيسي -->
+    <!-- 1. شاشة التمرين الرئيسية والمشغل -->
     <div id="workoutScreen" class="screen-view">
       <div class="hero-banner">
         <div class="hero-content">
@@ -530,7 +688,7 @@
       </button>
     </div>
 
-    <!-- شاشة مشغل التمرين والأنيميشن الحركي -->
+    <!-- 2. مشغل التمرين والأنيميشن الحركي -->
     <div id="playerScreen" class="screen-view hidden">
       <div class="player-header">
         <button class="round-btn-icon" onclick="exitWorkout()">✕</button>
@@ -574,22 +732,357 @@
       </div>
     </div>
 
-    <!-- شريط التنقل السفلي -->
+    <!-- 3. شاشة جدول التمارين الأسبوعي المفصل -->
+    <div id="scheduleScreen" class="screen-view hidden">
+      <div class="hero-banner" style="margin-bottom:12px;">
+        <div class="hero-content">
+          <h2>الجدول الرياضي الأسبوعي 📅</h2>
+          <p>نظام 4 أيام تمرين + 3 أيام استشفاء لشد ونحت متوازن</p>
+        </div>
+        <span style="font-size:1.6rem;">📋</span>
+      </div>
+
+      <div class="schedule-card">
+        <div class="schedule-header">
+          <span class="schedule-day">السبت: يوم السحب ونحت الظهر (Pull)</span>
+          <span class="schedule-tag">تمرين نشط</span>
+        </div>
+        <div class="schedule-details">
+          • سحب المجنص بمثبت الباب (Lat Pulldown): 3 مجموعات × 12 تكرار.<br>
+          • سحب الظهر جالساً (Seated Row): 3 مجموعات × 12 تكرار.<br>
+          • تبادل البايسبس بالحزام (Bicep Curl): 3 مجموعات × 12 تكرار.
+        </div>
+      </div>
+
+      <div class="schedule-card">
+        <div class="schedule-header">
+          <span class="schedule-day">الأحد: نحت وشد الجزء السفلي (Legs & Glutes)</span>
+          <span class="schedule-tag">تمرين نشط</span>
+        </div>
+        <div class="schedule-details">
+          • سكوات المقاومة (Band Squat): 3 مجموعات × 15 تكرار.<br>
+          • الرفعة الرومانية (Romanian Deadlift): 3 مجموعات × 12 تكرار.<br>
+          • جسر الأرداف بالحزام (Glute Bridge): 3 مجموعات × 15 تكرار.
+        </div>
+      </div>
+
+      <div class="schedule-card rest-day">
+        <div class="schedule-header">
+          <span class="schedule-day">الإثنين: استشفاء نشط وتجديد مرونة (Recovery)</span>
+          <span class="schedule-tag rest">راحة واستشفاء ☕</span>
+        </div>
+        <div class="schedule-details">
+          • مشي خفيف لمدة 30-40 دقيقة.<br>
+          • إطالات هادئة لعضلات الحوض والظهر لتفادي الشد العضلي.
+        </div>
+      </div>
+
+      <div class="schedule-card">
+        <div class="schedule-header">
+          <span class="schedule-day">الثلاثاء: شد الصدر والأكتاف والذراعين (Push)</span>
+          <span class="schedule-tag">تمرين نشط</span>
+        </div>
+        <div class="schedule-details">
+          • دفع الصدر بمثبت الباب (Chest Press): 3 مجموعات × 12 تكرار.<br>
+          • دفع الأكتاف للأعلى (Overhead Press): 3 مجموعات × 12 تكرار.<br>
+          • شد الترايسبس بالحزام (Triceps Pushdown): 3 مجموعات × 15 تكرار.
+        </div>
+      </div>
+
+      <div class="schedule-card">
+        <div class="schedule-header">
+          <span class="schedule-day">الأربعاء: نحت شامل لكامل الجسم وحرق (Full Body)</span>
+          <span class="schedule-tag">تمرين نشط</span>
+        </div>
+        <div class="schedule-details">
+          • توليفة تمارين مركبة تجمع السكوات مع دفع الكتف، وسحب الظهر الدائري.<br>
+          • 4 مجموعات × 12 تكرار بإيقاع سريع لرفع معدل الأيض.
+        </div>
+      </div>
+
+      <div class="schedule-card rest-day">
+        <div class="schedule-header">
+          <span class="schedule-day">الخميس والجمعة: راحة كاملة وتغذية عضلية</span>
+          <span class="schedule-tag rest">عطلة نهاية الأسبوع 🌿</span>
+        </div>
+        <div class="schedule-details">
+          • نوم عميق (7-8 ساعات) لتجديد ألياف العضلات واستعادة الحيوية.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. شاشة جدول التغذية والشرب الأسبوعي المفصل -->
+    <div id="nutritionScreen" class="screen-view hidden">
+      <div class="hero-banner" style="margin-bottom:12px;">
+        <div class="hero-content">
+          <h2>الجدول الغذائي وخطة الترطيب 🥗</h2>
+          <p>1,650 سعرة حرارية • 110 جم بروتين صافي • ترطيب 2.5 إلى 3 لتر</p>
+        </div>
+        <span style="font-size:1.6rem;">💧</span>
+      </div>
+
+      <div class="diet-card">
+        <div class="diet-day-title"><span>السبت: طاقة التمرين ونحت الظهر</span> <span>يوم سحب</span></div>
+        <div class="meal-row"><span class="meal-name">الفطور:</span> 2 بيضة مسلوقة + نصف رغيف بلدي أسمر + خيار وجرجير.</div>
+        <div class="meal-row"><span class="meal-name">سناك:</span> قهوة بدون سكر + حبة موز قبل التمرين بـ 45 دقيقة.</div>
+        <div class="meal-row"><span class="meal-name">الغداء:</span> 150 جم صدر دجاج مشوي + 4 ملاعق رز بني + سلطة خضراء بزيت زيتون.</div>
+        <div class="meal-row"><span class="meal-name">العشاء:</span> علبة زبادي يوناني + ملعقة بذور شيا + رشة قرفة.</div>
+        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء موزع على مدار اليوم.</div>
+      </div>
+
+      <div class="diet-card">
+        <div class="diet-day-title"><span>الأحد: بناء واستشفاء الجزء السفلي</span> <span>يوم أرجل</span></div>
+        <div class="meal-row"><span class="meal-name">الفطور:</span> أومليت بيضتين مع سبانخ ومشروم + شريحة توست حبوب كاملة.</div>
+        <div class="meal-row"><span class="meal-name">سناك:</span> 5 حبات لوز نيء + تفاحة خضراء.</div>
+        <div class="meal-row"><span class="meal-name">الغداء:</span> 150 جم سمك فيليه مشوي + بطاطا مشوية متوسطة + سلطة جرجير.</div>
+        <div class="meal-row"><span class="meal-name">العشاء:</span> جبن قريش بقطع الطماطم والزعتر وقطرات زيت زيتون + خيار.</div>
+        <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لترطيب أوتار ومفاصل الركبة.</div>
+      </div>
+
+      <div class="diet-card" style="border-right-color: var(--accent-rest);">
+        <div class="diet-day-title" style="color:var(--accent-rest);"><span>الإثنين: تنقية واستشفاء مفاصل</span> <span>يوم استشفاء</span></div>
+        <div class="meal-row"><span class="meal-name">الفطور:</span> 4 ملاعق شوفان بحليب لوز + ملعقة عسل نحل طبيعي + توت.</div>
+        <div class="meal-row"><span class="meal-name">سناك:</span> شاي أخضر بالنعناع والليمون.</div>
+        <div class="meal-row"><span class="meal-name">الغداء:</span> علبة تونة مصفاة من الزيت + فاصوليا حمراء + سلطة ذرة وخضار ورقية.</div>
+        <div class="meal-row"><span class="meal-name">العشاء:</span> طبق شوربة خضار دافئة + نصف كوب زبادي.</div>
+        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء مع شرائح خيار وليمون.</div>
+      </div>
+
+      <div class="diet-card">
+        <div class="diet-day-title"><span>الثلاثاء: بروتين للأكتاف والصدر</span> <span>يوم دفع</span></div>
+        <div class="meal-row"><span class="meal-name">الفطور:</span> 2 بيضة مسلوقة + 30 جم جبن فيتا لايت + شرائح طماطم وأوراق خس.</div>
+        <div class="meal-row"><span class="meal-name">سناك:</span> 1 تمرة سكري + فنجان قهوة قبل التمرين.</div>
+        <div class="meal-row"><span class="meal-name">الغداء:</span> 150 جم لحم بقري مفروم قليل الدهن مطبوخ بالخضار + 4 ملاعق برغل.</div>
+        <div class="meal-row"><span class="meal-name">العشاء:</span> سلطة بيض مسلوق بالخضار والليمون.</div>
+        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء لتعويض السوائل.</div>
+      </div>
+
+      <div class="diet-card">
+        <div class="diet-day-title"><span>الأربعاء: طاقة الحرق والنشاط الشامل</span> <span>يوم كامل</span></div>
+        <div class="meal-row"><span class="meal-name">الفطور:</span> بان كيك صحي (شوفان + بيضة + موز مهروس) بدون سكر.</div>
+        <div class="meal-row"><span class="meal-name">سناك:</span> جزرتين طازجتين + 4 أنصاف جوز (عين جمل).</div>
+        <div class="meal-row"><span class="meal-name">الغداء:</span> كرات كفتة دجاج مشوية (150 جم) + أرز بسمتي (4 ملاعق) + سلطة زبادي بالخيار.</div>
+        <div class="meal-row"><span class="meal-name">العشاء:</span> 2 شريحة جبن حلوم لايت مشوية + سلطة خيار وخس ورشة سماق.</div>
+        <div class="water-meter">💧 الترطيب المطلوب: 3 لتر ماء لرفع كفاءة الحرق.</div>
+      </div>
+
+      <div class="diet-card" style="border-right-color: var(--accent-gold);">
+        <div class="diet-day-title" style="color:var(--accent-gold);"><span>الخميس والجمعة: توازن واستشفاء عائلي</span> <span>راحة</span></div>
+        <div class="meal-row"><span class="meal-name">الفطور:</span> فول مدمس بزيت الزيتون والليمون + بيضة مسلوقة + خضار ورقي.</div>
+        <div class="meal-row"><span class="meal-name">الغداء:</span> وجبة عائلية متوازنة مع التركيز على البروتين والسلطة والتحكم بالنشويات.</div>
+        <div class="meal-row"><span class="meal-name">العشاء:</span> سلطة يونانية خفيفة + زبادي يوناني.</div>
+        <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء للمحافظة على نضارة الجسم.</div>
+      </div>
+    </div>
+
+    <!-- 5. شاشة الدليل الفني والتشريحي المفصل للتمارين (Guide) -->
+    <div id="guideScreen" class="screen-view hidden">
+      <div class="hero-banner" style="margin-bottom:12px;">
+        <div class="hero-content">
+          <h2>الدليل الفني للتمارين 📚</h2>
+          <p>شرح تشريحي دقيق: كيفية الأداء، الفوائد، والأخطاء الشائعة</p>
+        </div>
+        <span style="font-size:1.6rem;">🔬</span>
+      </div>
+
+      <!-- تمرين 1 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">1. تبادل البايسبس (Bicep Curl)</span>
+          <span class="guide-badge">سحب • ذراعين</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">العضلة ذات الرأسين العضدية (Biceps Brachii)، العضلة العضدية الكعبرية، وعضلات الساعد ومفصل الرسغ.</div>
+        
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">نحت وتحديد الذراعين من الأمام، التخلص من ترهل الذراع، وتقوية قبضة اليد والقدرة على حمل الأوزان اليومية بسهولة.</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. قفي مستقيمة مع وضع منتصف حبل المقاومة تحت منتصف باطن القدمين.<br>
+          2. أمسكي المقابض مع توجيه راحتي اليدين للأمام، وثبّتي كوعيكِ تماماً بجوار جانبي القفص الصدري.<br>
+          3. اسحبي المقابض لأعلى باتجاه الكتف في ثانيتين مع اعتصار عضلة البايسبس في القمة لمدة ثانية.<br>
+          4. انزلي ببطء وتحكم كامل في ثانيتين دون ترك الحبل يسحب يدك فجأة.
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: تأرجح الظهر للخلف أو تحريك الكوعين للأمام أثناء الصعود. يجب أن يظل الكوع ثابتاً في مكانه.
+        </div>
+      </div>
+
+      <!-- تمرين 2 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">2. سحب المجنص لأسفل (Lat Pulldown)</span>
+          <span class="guide-badge">سحب • ظهر علوي</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">عضلات الظهر العريضة (Lats)، الترابيس الوسطى والسفلية، عضلات خلف الكتف، ومساعد ثانوي للبايسبس.</div>
+
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">رسم وتحديد الظهر العلوي لإبراز الخصر ونحافته (V-Taper Look)، تحسين استقامة القامة، وعلاج انحناء الكتفين للأمام.</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. ثبتي الحزام في أعلى نقطة بالباب، واجلسي أو اركعي على ركبة ونصف في مواجهة الباب.<br>
+          2. أمسكي المقابض بذراعين مفرودتين لأعلى مع إرجاع الصدر للأمام قليلاً.<br>
+          3. اسحبي الحبل لأسفل باتجاه أعلى الصدر مع التركيز على سحب الأكواع لأسفل وضم لوحي الكتف معاً.<br>
+          4. توقفي ثانية في الأسفل، ثم اصعدي ببطء وتحكم حتى تستقيم الذراعان بالكامل.
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: السحب خلف الرقبة أو انحناء الجذع للخلف بشكل مبالغ فيه. يجب السحب أمام الصدر دائماً لحماية فقرات العنق.
+        </div>
+      </div>
+
+      <!-- تمرين 3 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">3. سحب الظهر جالساً (Seated Row)</span>
+          <span class="guide-badge">سحب • منتصف الظهر</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">عضلات منتصف الظهر (Rhomboids)، عضلات ما بين لوحي الكتف، والترابيس، وعضلات أسفل الظهر الداعمة.</div>
+
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">شد ترهلات الظهر الجانبية وتحت حمالة الصدر، تقوية العمود الفقري ضد آلام الجلوس المكتبي الطويل، وفرد الصدر بشكل طبيعي.</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. اجلسي على الأرض وساقاكِ ممدودتان للأمام مع ثني بسيط جداً في الركبتين لحماية المفاصل.<br>
+          2. لفي الحزام حول باطن القدمين (أو ثبتيه بأسفل/منتصف الباب) وامسكي الطرفين.<br>
+          3. حافظي على استقامة الظهر واسحبي المقابض باتجاه البطن مع إرجاع الكوعين للخلف وعصر لوحي الكتف.<br>
+          4. عودي للبداية ببطء مع الحفاظ على استقامة الظهر دون الانحناء للأمام.
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: تقويس أسفل الظهر أو رفع الأكتاف نحو الأذنين أثناء السحب. حافظي على رقبتك مرتاحة وكتفيكِ لأسفل.
+        </div>
+      </div>
+
+      <!-- تمرين 4 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">4. دفع الصدر بمثبت الباب (Chest Press)</span>
+          <span class="guide-badge">دفع • صدر وترايسبس</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">عضلة الصدر الكبرى (Pectoralis Major)، الأكتاف الأمامية، وعضلة الترايسبس الخلفية للذراع.</div>
+
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">رفع وشد عضلات الصدر العلوية بشكل طبيعي، والتخلص من ترهلات الذراعين من الخلف (عضلة الباي باي).</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. ثبتي الحبل في منتصف الباب (بارتفاع الصدر)، وادر ظهرك للباب مع تقديم خطوة للأمام لاتخاذ وضعية الاندفاع (Lunge) للتوازن.<br>
+          2. ابدئي والمقابض بجوار صدرك، ثم ادفعي الحبل للأمام في مسار نصف دائري حتى تلتقي يداكِ أمام منتصف الصدر.<br>
+          3. اعتصري الصدر في نهاية الدفع، ثم عودي ببطء شديد حتى يصبح كوعاكِ بمحاذاة الظهر فقط (دون الرجوع للخلف أكثر).
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: إرجاع الكوعين للخلف بعيداً خلف خط الظهر، مما يضع جهداً كبيراً على أوتار الكتف الحساسة.
+        </div>
+      </div>
+
+      <!-- تمرين 5 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">5. دفع الأكتاف للأعلى (Overhead Press)</span>
+          <span class="guide-badge">دفع • أكتاف وجمال القوام</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">عضلات الكتف الثلاثية (الدالية الأمامية والجانبية)، الترايسبس، وعضلات الكور (البطن وأسفل الظهر) لتثبيت الجسم.</div>
+
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">إعطاء استدارة رياضية جذابة للكتف تجعل محيط الخصر يبدو أكثر رشاقة، وتقوية حزام الأمان الطبيعي للرقبة وأعلى الظهر.</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. قفي بالقدمين على منتصف الحبل (أو قدم واحدة لتخفيف الشد إذا كان الحزام ثقيلاً).<br>
+          2. ارفعي المقابض لمستوى الأذنين مع توجيه الكوعين للأمام قليلاً وليس للجانبين مباشرة.<br>
+          3. شدي عضلات بطنك وادفعي المقابض للأعلى فوق رأسك حتى تستقيم الذراعان دون قفل مفصل الكوع 100%.<br>
+          4. اهبطي ببطء حتى تعودي لمستوى الأذنين وكرري.
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: تقويس أسفل الظهر للخلف أثناء الدفع للأعلى. يجب شد عضلات البطن والأرداف لتثبيت العمود الفقري.
+        </div>
+      </div>
+
+      <!-- تمرين 6 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">6. سكوات المقاومة (Band Squat)</span>
+          <span class="guide-badge">أرجل • الجزء السفلي</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">عضلات الفخذ الأمامية (Quadriceps)، عضلات الأرداف (Glutes)، أوتار الركبة، وعضلات الحوض والبطن.</div>
+
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">التمرين الملكي لشد وتكوير الأرداف، نحت الفخذين، حرق أعلى كمية من السعرات الحرارية، وتقوية مفاصل الركبة.</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. قفي بالقدمين باتساع الكتفين فوق الحبل، واسحبي الطرفين لتثبيتهما على الكتفين براحتي اليدين.<br>
+          2. ادفعي حوضك للخلف واهبطي ببطء كأنك تجلسين على كرسي خلفك، مع توجيه الركبتين للخارج بنفس زاوية أصابع القدمين.<br>
+          3. انزلي حتى يصبح فخذاكِ موازيين للأرض تقريباً مع بقاء الصدر مرفوعاً للأعلى.<br>
+          4. اطلعي بقوة من خلال الضغط على كعبي القدمين واعتصري الأرداف بقوة في القمة.
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: ميل الركبتين للداخل أثناء الصعود أو رفع كعبي القدم عن الأرض. يجب أن يظل الكعب ملتصقاً تماماً بالأرض.
+        </div>
+      </div>
+
+      <!-- تمرين 7 -->
+      <div class="guide-card">
+        <div class="guide-card-header">
+          <span class="guide-title">7. الرفعة الميتة الرومانية (Romanian Deadlift)</span>
+          <span class="guide-badge">أرجل • خلفيات وأرداف</span>
+        </div>
+        <div class="guide-section-label">🎯 العضلات المستهدفة:</div>
+        <div class="guide-text">عضلات الفخذ الخلفية (Hamstrings)، العضلة الألوية الكبرى (Gluteus Maximus)، وعضلات فيليه أسفل الظهر.</div>
+
+        <div class="guide-section-label">✨ الفائدة الجمالية والوظيفية:</div>
+        <div class="guide-text">نحت الجزء الفاصل بين الفخذ والأرداف ورفعه للأعلى، التخلص من السيلوليت الخلفي، وحماية الظهر من الانزلاقات الغضروفية.</div>
+
+        <div class="guide-section-label">📝 كيفية التنفيذ بالشكل الصحيح:</div>
+        <div class="guide-text">
+          1. قفي فوق الحبل مع إمساك المقابض أو تقصير الحبل لزيادة الشد.<br>
+          2. مع ثني خفيف جداً في الركبتين (Soft Knees)، ادفعي الحوض للخلف تماماً مع نزول الجذع مفروداً بمحاذاة الساقين.<br>
+          3. انزلي حتى تشعري بإطالة قوية في خلفيات الفخذ (تحت مستوى الركبة بقليل).<br>
+          4. عودي للصعود من خلال دفع الحوض للأمام وعصر الأرداف بقوة في القمة دون الرجوع بظهرك للخلف.
+        </div>
+
+        <div class="guide-mistake-box">
+          ⚠️ خطأ شائع: تقويس الظهر أثناء النزول. الحركة كلها ناتجة عن مفصل الحوض (Hip Hinge) وليس من ثني العمود الفقري.
+        </div>
+      </div>
+    </div>
+
+    <!-- شريط التنقل السفلي المنسق بـ 4 تبويبات واضحة -->
     <nav class="dock-navigation">
-      <div class="dock-tab active" onclick="showTab('workout')">
-        <span style="font-size: 1.2rem;">⚡</span>
+      <div class="dock-tab active" id="tabWorkout" onclick="switchNavTab('workout')">
+        <span style="font-size: 1.25rem;">⚡</span>
         <span>التمارين</span>
       </div>
-      <div class="dock-tab" onclick="showTab('info')">
-        <span style="font-size: 1.2rem;">👑</span>
-        <span>كابتن إلهام</span>
+      <div class="dock-tab" id="tabSchedule" onclick="switchNavTab('schedule')">
+        <span style="font-size: 1.25rem;">📅</span>
+        <span>جدول التمرين</span>
+      </div>
+      <div class="dock-tab" id="tabNutrition" onclick="switchNavTab('nutrition')">
+        <span style="font-size: 1.25rem;">🥗</span>
+        <span>الأكل والشرب</span>
+      </div>
+      <div class="dock-tab" id="tabGuide" onclick="switchNavTab('guide')">
+        <span style="font-size: 1.25rem;">📚</span>
+        <span>دليل التمارين</span>
       </div>
     </nav>
 
   </div>
 
   <script>
-    // مكتبة التمارين
     const exerciseLibrary = [
       {
         id: "bicep_curl",
@@ -665,6 +1158,28 @@
 
     let animId = null;
     let animPhase = 0;
+
+    function switchNavTab(tabName) {
+      document.querySelectorAll('.dock-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.screen-view').forEach(s => s.classList.add('hidden'));
+
+      if (tabName === 'workout') {
+        document.getElementById('workoutScreen').classList.remove('hidden');
+        document.getElementById('tabWorkout').classList.add('active');
+      } else if (tabName === 'schedule') {
+        document.getElementById('scheduleScreen').classList.remove('hidden');
+        document.getElementById('tabSchedule').classList.add('active');
+        if (animId) cancelAnimationFrame(animId);
+      } else if (tabName === 'nutrition') {
+        document.getElementById('nutritionScreen').classList.remove('hidden');
+        document.getElementById('tabNutrition').classList.add('active');
+        if (animId) cancelAnimationFrame(animId);
+      } else if (tabName === 'guide') {
+        document.getElementById('guideScreen').classList.remove('hidden');
+        document.getElementById('tabGuide').classList.add('active');
+        if (animId) cancelAnimationFrame(animId);
+      }
+    }
 
     function setGoalConfig(reps, rest, elem) {
       targetReps = reps;
@@ -810,16 +1325,13 @@
       document.getElementById('workoutScreen').classList.remove('hidden');
     }
 
-    // =========================================================================
-    // محرك Canvas 2D الحركي الفوري لكل تمرين على حدة (حركة مضمونة 100%)
-    // =========================================================================
     function startCanvasLoop() {
       const canvas = document.getElementById('animCanvas');
       const ctx = canvas.getContext('2d');
 
       function loop() {
         animPhase += 0.05;
-        const t = (Math.sin(animPhase) + 1) / 2; // قيمة ناعمة بين 0 و 1
+        const t = (Math.sin(animPhase) + 1) / 2;
         const currentEx = currentRoutine[currentExIdx];
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -836,9 +1348,8 @@
     }
 
     function drawExerciseOnCanvas(ctx, exId, t) {
-      const cx = 200; // مركز الشاشة الأفقي
+      const cx = 200;
 
-      // مسار الأرضية
       ctx.strokeStyle = "rgba(255,255,255,0.06)";
       ctx.lineWidth = 4;
       ctx.beginPath();
@@ -846,10 +1357,8 @@
       ctx.stroke();
 
       switch (exId) {
-        // 1. تبادل البايسبس
         case 'bicep_curl': {
           const handY = 220 - t * 70;
-          // الحزام
           ctx.strokeStyle = "#F59E0B";
           ctx.lineWidth = 6;
           ctx.beginPath();
@@ -859,17 +1368,14 @@
           ctx.lineTo(cx + 30, handY);
           ctx.stroke();
 
-          // الساقين والجذع
           drawBody(ctx, cx, 190, 0);
 
-          // البايسبس المتوهج
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx - 26, 175, 10 + t * 4, 0, Math.PI * 2);
           ctx.arc(cx + 26, 175, 10 + t * 4, 0, Math.PI * 2);
           ctx.fill();
 
-          // الذراعين والقبضة
           ctx.strokeStyle = "#475569";
           ctx.lineWidth = 12;
           ctx.beginPath();
@@ -883,14 +1389,11 @@
           break;
         }
 
-        // 2. سحب المجنص (Lat Pulldown)
         case 'lat_pulldown': {
           const pull = t * 50;
-          // مثبت أعلى الباب
           ctx.fillStyle = "#F59E0B";
           ctx.fillRect(cx - 40, 20, 80, 8);
 
-          // الحبل
           ctx.strokeStyle = "#000";
           ctx.lineWidth = 4;
           ctx.beginPath();
@@ -902,14 +1405,12 @@
 
           drawBody(ctx, cx, 180, 0);
 
-          // عضلات الظهر المتوهجة
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx - 18, 170, 12, 0, Math.PI * 2);
           ctx.arc(cx + 18, 170, 12, 0, Math.PI * 2);
           ctx.fill();
 
-          // الذراعين
           ctx.strokeStyle = "#475569";
           ctx.lineWidth = 12;
           ctx.beginPath();
@@ -923,10 +1424,8 @@
           break;
         }
 
-        // 3. سحب الظهر جالساً (Seated Row)
         case 'seated_row': {
           const pull = t * 45;
-          // القدمين الممدودة للأمام
           ctx.strokeStyle = "#334155";
           ctx.lineWidth = 16;
           ctx.beginPath();
@@ -934,11 +1433,9 @@
           ctx.lineTo(cx + 60, 260);
           ctx.stroke();
 
-          // مثبت الحزام عند القدم
           ctx.fillStyle = "#F59E0B";
           ctx.fillRect(cx + 55, 245, 10, 25);
 
-          // الحبل
           ctx.strokeStyle = "#000";
           ctx.lineWidth = 4;
           ctx.beginPath();
@@ -946,7 +1443,6 @@
           ctx.lineTo(cx + 10 - pull, 205);
           ctx.stroke();
 
-          // الجذع والرأس
           ctx.fillStyle = "#1E293B";
           ctx.fillRect(cx - 30, 170, 30, 80);
           ctx.fillStyle = "#64748B";
@@ -954,13 +1450,11 @@
           ctx.arc(cx - 15, 145, 16, 0, Math.PI * 2);
           ctx.fill();
 
-          // عضلة الظهر
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx - 32, 200, 10 + t * 4, 0, Math.PI * 2);
           ctx.fill();
 
-          // الذراع
           ctx.strokeStyle = "#475569";
           ctx.lineWidth = 12;
           ctx.beginPath();
@@ -971,14 +1465,11 @@
           break;
         }
 
-        // 4. دفع الصدر (Chest Press)
         case 'chest_press': {
           const push = t * 50;
-          // مثبت الحزام يسار الشاشة
           ctx.fillStyle = "#F59E0B";
           ctx.fillRect(40, 150, 10, 30);
 
-          // الحبل
           ctx.strokeStyle = "#000";
           ctx.lineWidth = 5;
           ctx.beginPath();
@@ -988,13 +1479,11 @@
 
           drawBody(ctx, cx, 190, 0);
 
-          // عضلة الصدر المتوهجة
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx + 10, 170, 12 + t * 3, 0, Math.PI * 2);
           ctx.fill();
 
-          // الذراع الدافعة للأمام
           ctx.strokeStyle = "#475569";
           ctx.lineWidth = 14;
           ctx.beginPath();
@@ -1005,10 +1494,8 @@
           break;
         }
 
-        // 5. دفع الأكتاف للأعلى (Overhead Press)
         case 'overhead_press': {
           const pressY = 160 - t * 70;
-          // الحزام
           ctx.strokeStyle = "#F59E0B";
           ctx.lineWidth = 5;
           ctx.beginPath();
@@ -1020,14 +1507,12 @@
 
           drawBody(ctx, cx, 190, 0);
 
-          // عضلات الأكتاف
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx - 25, 150, 12 + t * 3, 0, Math.PI * 2);
           ctx.arc(cx + 25, 150, 12 + t * 3, 0, Math.PI * 2);
           ctx.fill();
 
-          // الذراعين للأعلى
           ctx.strokeStyle = "#475569";
           ctx.lineWidth = 12;
           ctx.beginPath();
@@ -1039,10 +1524,8 @@
           break;
         }
 
-        // 6. سكوات المقاومة (Band Squat)
         case 'band_squat': {
           const drop = t * 45;
-          // الحبل المطاطي على الأكتاف وتحت القدمين
           ctx.strokeStyle = "#F59E0B";
           ctx.lineWidth = 5;
           ctx.beginPath();
@@ -1052,10 +1535,8 @@
           ctx.lineTo(cx + 30, 275);
           ctx.stroke();
 
-          // الجسم في وضعية السكوات
           drawBody(ctx, cx, 190 + drop, drop);
 
-          // عضلات الأرجل والفخذ المتوهجة
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx - 20, 230 + drop * 0.5, 12 + t * 4, 0, Math.PI * 2);
@@ -1064,7 +1545,6 @@
           break;
         }
 
-        // 7. الرفعة الرومانية (RDL)
         case 'romanian_deadlift': {
           const hinge = t * 35;
           ctx.strokeStyle = "#F59E0B";
@@ -1074,7 +1554,6 @@
           ctx.lineTo(cx - 20, 220 + hinge * 0.8);
           ctx.stroke();
 
-          // الساقين
           ctx.strokeStyle = "#334155";
           ctx.lineWidth = 16;
           ctx.beginPath();
@@ -1082,7 +1561,6 @@
           ctx.lineTo(cx - 15, 275);
           ctx.stroke();
 
-          // الجذع المنحني من مفصل الحوض
           ctx.save();
           ctx.translate(cx - 15, 210);
           ctx.rotate((hinge * Math.PI) / 180);
@@ -1094,7 +1572,6 @@
           ctx.fill();
           ctx.restore();
 
-          // عضلات الفخذ الخلفية
           ctx.fillStyle = "#FF1744";
           ctx.beginPath();
           ctx.arc(cx - 15, 225, 12 + t * 4, 0, Math.PI * 2);
@@ -1105,17 +1582,14 @@
     }
 
     function drawBody(ctx, x, y, drop) {
-      // الجذع
       ctx.fillStyle = "#1E293B";
       ctx.fillRect(x - 25, y - 45, 50, 75);
 
-      // الرأس
       ctx.fillStyle = "#64748B";
       ctx.beginPath();
       ctx.arc(x, y - 65, 18, 0, Math.PI * 2);
       ctx.fill();
 
-      // الساقين
       ctx.strokeStyle = "#334155";
       ctx.lineWidth = 16;
       ctx.beginPath();
@@ -1133,15 +1607,6 @@
         ctx.lineTo(x + 18, 275);
       }
       ctx.stroke();
-    }
-
-    function showTab(tab) {
-      if (tab === 'workout') {
-        document.getElementById('workoutScreen').classList.remove('hidden');
-        document.getElementById('playerScreen').classList.add('hidden');
-      } else {
-        alert("تطبيق كابتن إلهام الجزار مخصص بالكامل للتكرارات والأنيميشن الحركي الذكي.");
-      }
     }
 
     function toggleSound() {
