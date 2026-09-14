@@ -442,7 +442,6 @@
       border-right: 4px solid var(--accent-rose);
     }
 
-    /* كروت التغذية الاحترافية */
     .diet-card {
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
@@ -525,7 +524,6 @@
       gap: 6px;
     }
 
-    /* كروت الإعدادات الشاملة */
     .settings-group {
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
@@ -1570,7 +1568,7 @@
     }
 
     // =========================================================================
-    // محرك الرسوم عالي التباين والإضاءة
+    // محرك الرسوم الكينماتيكية عالي التباين والإضاءة
     // =========================================================================
     function startCanvasLoop() {
       const canvas = document.getElementById('animCanvas');
@@ -1682,11 +1680,13 @@
         case 'lat_pulldown': {
           const pull = t * 55;
 
+          // مثبت الباب العلوي
           ctx.fillStyle = "#F59E0B";
           ctx.beginPath();
           ctx.roundRect(cx - 50, 18, 100, 10, 5);
           ctx.fill();
 
+          // حبال المقاومة
           ctx.strokeStyle = "#F43F5E";
           ctx.lineWidth = 5;
           ctx.beginPath();
@@ -1698,12 +1698,14 @@
 
           drawHighContrastBody(ctx, cx, 180, 0);
 
+          // توهج عضلات المجنص
           ctx.fillStyle = `rgba(255, 23, 68, ${0.65 + t * 0.35})`;
           ctx.beginPath();
           ctx.ellipse(cx - 24, 165, 12, 22 + t * 4, 0.35, 0, Math.PI * 2);
           ctx.ellipse(cx + 24, 165, 12, 22 + t * 4, -0.35, 0, Math.PI * 2);
           ctx.fill();
 
+          // الأذرع
           ctx.strokeStyle = "#64748B";
           ctx.lineWidth = 11;
           ctx.lineCap = "round";
