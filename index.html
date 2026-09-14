@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | المنظومة الرياضية والغذائية الذكية</title>
+  <title>كابتن إلهام الجزار | تدريب التكرارات والأنيميشن التفاعلي</title>
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -206,6 +206,7 @@
     .select-card.active h4 { color: #FFF !important; }
     .select-card.active span { color: #FECDD3 !important; }
 
+    /* بطاقة ضبط التكرارات والجولات */
     .reps-setup-card {
       background: var(--surface-card);
       border: 1px solid var(--surface-border);
@@ -238,7 +239,7 @@
       background: transparent;
       border: none;
       color: var(--accent-rose);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 900;
       cursor: pointer;
       width: 32px;
@@ -246,7 +247,7 @@
     }
 
     .reps-stepper span {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: #FFF;
     }
@@ -269,6 +270,7 @@
       transform: scale(0.98);
     }
 
+    /* مشغل التمرين التفاعلي */
     .player-header {
       display: flex;
       justify-content: space-between;
@@ -300,7 +302,7 @@
 
     .theater-display {
       width: 100%;
-      height: 320px;
+      height: 330px;
       background: radial-gradient(circle at 50% 45%, #182337 0%, #030712 100%);
       border-radius: 28px;
       border: 1.5px solid rgba(255, 255, 255, 0.12);
@@ -384,7 +386,7 @@
       border: 1px solid rgba(16, 185, 129, 0.35);
       border-radius: 14px;
       padding: 8px 12px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -400,23 +402,6 @@
       color: #D1FAE5;
       font-weight: 700;
       line-height: 1.4;
-    }
-
-    .cue-box {
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(16, 185, 129, 0.06));
-      border: 1px solid rgba(244, 63, 94, 0.25);
-      border-radius: 16px;
-      padding: 10px 14px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .cue-text {
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: #FFF;
     }
 
     .exercise-meta-text {
@@ -435,21 +420,22 @@
       color: var(--accent-rose);
     }
 
-    .reps-counter-display {
+    /* عداد التكرارات التفاعلي الضخم */
+    .reps-tracker-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
-    .reps-tracker-btn {
-      width: 105px;
-      height: 105px;
+    .reps-interactive-circle {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(244, 63, 94, 0.2) 0%, rgba(17, 24, 39, 0.9) 100%);
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, rgba(17, 24, 39, 0.95) 100%);
       border: 3px solid var(--accent-rose);
-      box-shadow: 0 0 25px var(--accent-rose-glow);
+      box-shadow: 0 0 30px var(--accent-rose-glow);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -458,23 +444,37 @@
       transition: transform 0.1s, box-shadow 0.2s;
     }
 
-    .reps-tracker-btn:active {
+    .reps-interactive-circle:active {
       transform: scale(0.92);
-      box-shadow: 0 0 35px var(--accent-rose);
+      box-shadow: 0 0 45px var(--accent-rose);
     }
 
     .reps-number {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       font-weight: 900;
       line-height: 1;
       color: #FFF;
     }
 
     .reps-target-label {
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-size: 0.76rem;
+      font-weight: 800;
       color: var(--text-muted);
       margin-top: 2px;
+    }
+
+    /* مؤقت الراحة بين المجموعات فقط */
+    .rest-box-display {
+      text-align: center;
+      padding: 16px 0;
+      margin-bottom: 12px;
+    }
+
+    .rest-time-digits {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--accent-rest);
+      line-height: 1;
     }
 
     .reps-actions-deck {
@@ -511,39 +511,6 @@
       cursor: pointer;
     }
 
-    .content-panel {
-      background: var(--surface-glass);
-      border: 1px solid var(--surface-border);
-      border-radius: 20px;
-      padding: 16px;
-      margin-bottom: 12px;
-    }
-
-    .panel-header {
-      font-size: 0.95rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .panel-header.diet { color: var(--primary); }
-    .panel-header.plan { color: var(--accent-gold); }
-    .panel-header.lib { color: var(--accent-purple); }
-    .panel-header.profile { color: var(--accent-rose); }
-
-    .schedule-day-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 10px 12px;
-      border-radius: 12px;
-      margin-bottom: 8px;
-      border-right: 3px solid var(--accent-rose);
-    }
-
     .dock-navigation {
       position: fixed;
       bottom: 0;
@@ -556,7 +523,7 @@
       backdrop-filter: blur(20px);
       border-top: 1px solid var(--surface-border);
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       align-items: center;
       z-index: 50;
       padding: 0 4px;
@@ -574,7 +541,7 @@
     }
 
     .dock-tab .icon-wrap { font-size: 1.25rem; }
-    .dock-tab span { font-size: 0.68rem; font-weight: 800; }
+    .dock-tab span { font-size: 0.72rem; font-weight: 800; }
     .dock-tab.active { color: var(--accent-rose); }
   </style>
 </head>
@@ -587,10 +554,10 @@
         <div class="brand-avatar">👑</div>
         <div class="brand-titles">
           <h1 id="headerNameTitle">كابتن إلهام الجزار</h1>
-          <span>المنظومة التدريبية والغذائية الذكية</span>
+          <span>المنظومة التدريبية الذكية بالعدات</span>
         </div>
       </div>
-      <div class="pill-badge">PRO REPS</div>
+      <div class="pill-badge">REPS ENGINE</div>
     </header>
 
     <!-- 1. شاشة إعداد التمرين الرئيسي -->
@@ -598,12 +565,12 @@
       <div class="hero-banner">
         <div class="hero-content">
           <h2 id="heroGreetingTitle">أهلاً يا كابتن إلهام 🌸</h2>
-          <p>جاهزة لجلسة تدريب اليوم بعدد التكرارات ونحت القوام؟</p>
+          <p>التدريب بنظام العدّات الدقيق لنحت وشد العضلات.</p>
         </div>
         <span style="font-size: 1.6rem; z-index: 2;">⚡</span>
       </div>
 
-      <div class="field-label"><span>🎯</span> 1. اختاري هدف الجلسة:</div>
+      <div class="field-label"><span>🎯</span> 1. اختاري هدف الجلسة والتكرار:</div>
       <div class="options-grid">
         <div class="select-card active" onclick="setGoalConfig('hypertrophy', 12, 45, this)">
           <h4>نحت وتناسق</h4>
@@ -664,7 +631,7 @@
       </button>
     </div>
 
-    <!-- 2. مشغل التمرين الحركي المتطور -->
+    <!-- 2. مشغل التمرين الحركي التفاعلي بالعدات -->
     <div id="playerScreen" class="screen-view hidden">
       <div class="player-header">
         <button class="round-btn-icon" onclick="exitWorkout()" title="إنهاء">✕</button>
@@ -672,6 +639,7 @@
         <button id="soundToggleBtn" class="round-btn-icon" onclick="toggleSound()" title="كتم/تشغيل">🔔</button>
       </div>
 
+      <!-- مسرح الأنيميشن التشريحي المتجهي -->
       <div id="stageCard" class="theater-display">
         <div class="theater-top-bar">
           <div class="door-anchor-badge" id="doorAnchorBadge">
@@ -718,27 +686,24 @@
         </div>
       </div>
 
-      <div class="cue-box">
-        <span style="font-size: 1.4rem;">🌸</span>
-        <div id="coachText" class="cue-text">اضغطي على الدائرة بعد كل عدة تنتهي منها!</div>
-      </div>
-
       <div class="exercise-meta-text">
         <h2 id="exerciseTitle">تبادل البايسبس (Bicep Curl)</h2>
-        <div id="exerciseEquip" class="equip-note">الهدف: 12 تكراراً محكماً</div>
+        <div id="exerciseEquip" class="equip-note">الهدف: 12 تكراراً محكماً وبتحكم</div>
       </div>
 
-      <div id="repsTrackerSection" class="reps-counter-display">
-        <div class="reps-tracker-btn" onclick="incrementRep()">
+      <!-- عداد التكرارات بالضغط -->
+      <div id="repsTrackerSection" class="reps-tracker-section">
+        <div class="reps-interactive-circle" onclick="incrementRep()">
           <span id="currentRepVal" class="reps-number">0</span>
           <span id="targetRepTotal" class="reps-target-label">من 12 عدّة</span>
         </div>
-        <span style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;">اضغطي على الدائرة لزيادة عدّة 👆</span>
+        <span style="font-size: 0.74rem; color: var(--text-muted); margin-top: 8px;">اضغطي على الدائرة بعد كل عدة تنتهي منها 👆</span>
       </div>
 
-      <div id="restTimerSection" class="reps-counter-display hidden">
-        <div style="font-size: 2.8rem; font-weight: 900; color: var(--accent-rest); line-height: 1;" id="restTimerDigits">45</div>
-        <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">ثانية استراحة وتنفس بعمق ☕</span>
+      <!-- مؤقت الاستراحة بين المجموعات -->
+      <div id="restTimerSection" class="rest-box-display hidden">
+        <div class="rest-time-digits" id="restTimerDigits">45</div>
+        <span style="font-size: 0.82rem; color: var(--text-muted);">ثانية استراحة وتنفس بعمق ☕</span>
       </div>
 
       <div class="reps-actions-deck">
@@ -751,50 +716,24 @@
       </div>
     </div>
 
-    <!-- 3. شاشة الجدول -->
+    <!-- 3. شاشة الجدول السريع -->
     <div id="scheduleScreen" class="screen-view hidden">
-      <div class="content-panel">
-        <div class="panel-header plan"><span>📅</span> الجدول الأسبوعي المقترح</div>
-        <div class="schedule-day-row">
-          <div>
-            <div style="font-weight:800; font-size:0.88rem; color:#FFF;">السبت: يوم السحب والظهر (Pull)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">سحب جالس، مجنص، وبايسبس</div>
-          </div>
-          <span class="pill-badge">3 جولات 🔥</span>
-        </div>
-        <div class="schedule-day-row">
-          <div>
-            <div style="font-weight:800; font-size:0.88rem; color:#FFF;">الأحد: يوم الأرجل والأرداف (Legs)</div>
-            <div style="font-size:0.72rem; color:var(--text-muted);">سكوات بالحزام، وأرداف</div>
-          </div>
-          <span class="pill-badge">3 جولات 🔥</span>
-        </div>
+      <div style="background:var(--surface-glass); border:1px solid var(--surface-border); border-radius:20px; padding:16px;">
+        <h3 style="color:var(--accent-gold); font-size:1rem; margin-bottom:10px;">📅 خطة التكرارات الأسبوعية</h3>
+        <p style="font-size:0.85rem; color:#CBD5E1; line-height:1.6;">
+          السبت: سحب وبايسبس (3×12)<br>
+          الأحد: أرجل وأرداف (3×15)<br>
+          الثلاثاء: صدر وأكتاف (3×12)<br>
+          الأربعاء: شامل نحت وحرق (3×15)
+        </p>
       </div>
     </div>
 
-    <!-- 4. شاشة التغذية -->
-    <div id="nutritionScreen" class="screen-view hidden">
-      <div class="content-panel">
-        <div class="panel-header diet"><span>📊</span> حاسبة الماكروز والاحتياج اليومي</div>
-        <div style="font-size:0.85rem; color:#CBD5E1; line-height:1.6;">
-          الهدف اليومي لشد الجسم: <strong>1,650 سعرة</strong> • بروتين صافي: <strong>110 جرام</strong> لتغذية الألياف بعد تدريب التكرارات.
-        </div>
-      </div>
-    </div>
-
-    <!-- 5. شاشة المكتبة -->
-    <div id="libraryScreen" class="screen-view hidden">
-      <div class="content-panel">
-        <div class="panel-header lib"><span>📚</span> الدليل التشريحي والتكنيكي للتمارين</div>
-      </div>
-      <div id="libraryListContainer"></div>
-    </div>
-
-    <!-- 6. شاشة الإعدادات -->
+    <!-- 4. شاشة الإعدادات -->
     <div id="profileScreen" class="screen-view hidden">
-      <div class="content-panel">
-        <div class="panel-header profile"><span>⚙️</span> إعدادات الملف الرياضي</div>
-        <p style="font-size:0.85rem; color:#CBD5E1;">الاسم: <strong>إلهام الجزار</strong> • المنظومة: <strong>نظام التكرارات والأنيميشن الحركي الكامل</strong></p>
+      <div style="background:var(--surface-glass); border:1px solid var(--surface-border); border-radius:20px; padding:16px;">
+        <h3 style="color:var(--accent-rose); font-size:1rem; margin-bottom:10px;">⚙️ ملف كابتن إلهام</h3>
+        <p style="font-size:0.85rem; color:#CBD5E1;">المنظومة التدريبية الرياضية المخصصة • نسخة PWA 2026</p>
       </div>
     </div>
 
@@ -808,14 +747,6 @@
         <div class="icon-wrap">📅</div>
         <span>الجدول</span>
       </div>
-      <div class="dock-tab" onclick="switchNavTab('nutrition', this)">
-        <div class="icon-wrap">🥗</div>
-        <span>التغذية</span>
-      </div>
-      <div class="dock-tab" onclick="switchNavTab('library', this)">
-        <div class="icon-wrap">📚</div>
-        <span>المكتبة</span>
-      </div>
       <div class="dock-tab" onclick="switchNavTab('profile', this)">
         <div class="icon-wrap">⚙️</div>
         <span>الإعدادات</span>
@@ -825,6 +756,7 @@
   </div>
 
   <script>
+    // مكتبة التمارين مع معرّف الحركة التشريحية ومكان التثبيت وإرشاد الأمان
     const exerciseLibrary = [
       {
         id: "bicep_curl",
@@ -832,7 +764,6 @@
         coachCue: "ثبّتي كوعك في جنبك واطلعي بذراعك واعتصري البايسبس في القمة!",
         category: "pull",
         targetMuscleArabic: "عضلة البايسبس",
-        equip: "الوقوف بالقدمين على منتصف الحزام",
         anchorPosition: "underfoot",
         anchorText: "تحت القدمين (بدون باب)",
         jointSafetyText: "أمان الكوع: لا تقفلي مفصل الكوع 100% في الأسفل، وانزلي ببطء.",
@@ -844,7 +775,6 @@
         coachCue: "اسحبي الحزام لتحت باتجاه صدرك مع ضم لوحي الكتف!",
         category: "pull",
         targetMuscleArabic: "عضلات المجنص (Lats)",
-        equip: "تثبيت الباب في أعلى نقطة",
         anchorPosition: "top",
         anchorText: "أعلى الباب (Top)",
         jointSafetyText: "أمان الكتف: لا تدعي الحزام يسحب ذراعيكِ فجأة لأعلى، قاومي الارتداد.",
@@ -856,7 +786,6 @@
         coachCue: "افردي ضهرك واسحبي المقابض لبطنك ورجّعي كتافك لورا!",
         category: "pull",
         targetMuscleArabic: "منتصف الظهر والترابيس",
-        equip: "تثبيت الحزام حول القدمين أو مقبض الباب",
         anchorPosition: "middle",
         anchorText: "منتصف الباب (عند المقبض)",
         jointSafetyText: "أمان أسفل الظهر: حافظي على استقامة العمود الفقري وتجنبي الانحناء للأمام.",
@@ -868,7 +797,6 @@
         coachCue: "ارمي وزنك قدام واضغطي للأمام بتركيز لشد الصدر والذراعين!",
         category: "push",
         targetMuscleArabic: "عضلة الصدر الكبرى",
-        equip: "تثبيت الحزام بمنتصف الباب",
         anchorPosition: "middle",
         anchorText: "منتصف الباب (ارتفاع الصدر)",
         jointSafetyText: "أمان الكتف: لا ترجعي بكوعيكِ خلف مستوى ظهرك لتجنب إجهاد أوتار الكتف.",
@@ -880,7 +808,6 @@
         coachCue: "شدي عضلات بطنك وادفعي المقابض فوق رأسك باستقامة!",
         category: "push",
         targetMuscleArabic: "عضلات الأكتاف (Deltoids)",
-        equip: "الوقوف بالقدمين على الحزام والدفع للأعلى",
         anchorPosition: "underfoot",
         anchorText: "تحت القدمين (دفع عمودي)",
         jointSafetyText: "أمان الظهر: لا تقوسي أسفل ظهرك أثناء رفع الذراعين لأعلى.",
@@ -892,7 +819,6 @@
         coachCue: "انزلي بوسطك لورا كأنك بتقعدي على كرسي واطلعي بقوة كعب رجلك!",
         category: "legs",
         targetMuscleArabic: "الفخذ والأرداف",
-        equip: "شريط عريض على الكتفين وتحت القدمين",
         anchorPosition: "underfoot",
         anchorText: "تحت باطن القدمين",
         jointSafetyText: "أمان الركبة: ادفعي ركبتيكِ للخارج باتجاه أصابع القدم وتجنبي انهيارهما للداخل.",
@@ -904,10 +830,9 @@
         coachCue: "ادفعي حوضك لورا وخلي ضهرك مفرود وانزلي بمحاذاة الساق!",
         category: "legs",
         targetMuscleArabic: "أوتار الفخذ والأرداف",
-        equip: "تثبيت الحزام تحت القدمين والإمساك بالطرفين",
         anchorPosition: "underfoot",
         anchorText: "تحت القدمين (سحب منزلق)",
-        jointSafetyText: "أمان الفقرات: اثني ركبتيكِ ثنية بسيطة جداً وحافظي على ظهرك مستقيماً تماماً.",
+        jointSafetyText: "أمان الفقرات: اثني ركبتيكِ ثنية بسيطة وحافظي على ظهرك مستقيماً تماماً.",
         motion: "romanian_deadlift"
       }
     ];
@@ -927,6 +852,8 @@
     let restTimerInterval = null;
     let restRemaining = 0;
     let soundMuted = false;
+
+    // متغيرات الأنيميشن المستقلة لضمان الحركة الدائمة والسلسة
     let animFrameId = null;
     let motionPhase = 0;
 
@@ -934,7 +861,6 @@
       workoutConfig.targetReps = reps;
       workoutConfig.restDuration = restTime;
       document.getElementById('targetRepsVal').innerText = reps;
-
       elem.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
       elem.classList.add('active');
     }
@@ -968,7 +894,7 @@
       document.getElementById('playerScreen').classList.remove('hidden');
 
       loadExerciseState();
-      if (!animFrameId) animLoop();
+      startContinuousAnimation();
     }
 
     function loadExerciseState() {
@@ -1009,15 +935,18 @@
       speakText(ex.coachCue);
     }
 
+    // زيادة العدّة بالضغط التفاعلي
     function incrementRep() {
       if (isResting) return;
       currentReps++;
       document.getElementById('currentRepVal').innerText = currentReps;
-      if ('vibrate' in navigator) navigator.vibrate(30);
+      if ('vibrate' in navigator) navigator.vibrate(35);
 
       if (currentReps >= workoutConfig.targetReps) {
         speakText("عاش يا بطلة! أنجزتي التكرارات كاملة");
         completeCurrentSet();
+      } else {
+        speakText(`${currentReps}`);
       }
     }
 
@@ -1079,7 +1008,7 @@
     function finishWorkout() {
       clearInterval(restTimerInterval);
       speakText("مبروك يا كابتن إلهام! أتممتِ جميع التكرارات بنجاح وأمان");
-      alert("الله ينور عليكي يا إلهام يا بطلة! 🌸 أنجزتي جميع المجموعات والتكرارات اليوم بجدارة.");
+      alert("الله ينور عليكي يا إلهام يا بطلة! 🌸 أنجزتي جميع التكرارات المحددة اليوم بامتياز.");
       exitWorkout();
     }
 
@@ -1092,26 +1021,43 @@
     }
 
     // =========================================================================
-    // محرك الرسوم المتجهية الكامل والمحدث لكل تمرين بدقة هندسية وتشريحية
+    // محرك الأنيميشن المستقل والمضمن لكل تمرين على حدة (تشغيل فوري ومضمون 100%)
     // =========================================================================
-    function renderSvgMotionFrame(motion, t) {
+    function startContinuousAnimation() {
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+
+      function loop() {
+        motionPhase += 0.042;
+        const currentEx = activeRoutine[currentExerciseIndex];
+        if (currentEx) {
+          // قيمة دائرية متغيرة بسلاسة بين 0 و 1
+          const t = (Math.sin(motionPhase * 2.5) + 1) / 2;
+          drawExerciseFigure(currentEx.motion, t);
+        }
+        animFrameId = requestAnimationFrame(loop);
+      }
+
+      animFrameId = requestAnimationFrame(loop);
+    }
+
+    function drawExerciseFigure(motion, t) {
       const group = document.getElementById('dynamicMotionGroup');
+      if (!group) return;
       let html = '';
 
       switch (motion) {
-        // 1. تمرين تبادل البايسبس (ثني الذراع للأعلى والوقوف على الحزام)
+        // 1. تبادل البايسبس (ثني الذراع للأعلى وتمدد الحبل تحت القدمين)
         case 'bicep_curl': {
-          const handY = 320 - t * 95;
+          const handY = 320 - t * 100;
           const handX = 265 - t * 15;
-
-          html += `<rect x="240" y="395" width="160" height="10" rx="5" fill="#F59E0B" />`;
-          html += `<line x1="260" y1="400" x2="${handX}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="380" y1="400" x2="${375 + t * 15}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
+          html += `<rect x="235" y="395" width="170" height="10" rx="5" fill="#F59E0B" />`;
+          html += `<line x1="255" y1="400" x2="${handX}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
+          html += `<line x1="385" y1="400" x2="${375 + t * 15}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
           html += `<line x1="290" y1="285" x2="280" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
           html += `<line x1="350" y1="285" x2="360" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
           html += `<path d="M 275 185 Q 320 195 365 185 L 350 290 L 290 290 Z" fill="url(#bodySkin)" />`;
           html += `<ellipse cx="${272 - t * 4}" cy="${220 - t * 5}" rx="${12 + t * 5}" ry="${16 + t * 3}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(-15 ${272} ${220})" />`;
-          html += `<ellipse cx="${368 + t * 4}" cy="${220 - t * 5}" rx="${12 + t * 5}" ry="${16 + t * 3}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(15 ${368} ${220})" />`;
+          html += `<ellipse cx="${368 + t * 4}" cy="${220 - t * 5}" rx="${12 + t * 4}" ry="${16 + t * 2}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(15 ${368} ${220})" />`;
           html += `<rect x="312" y="145" width="16" height="24" rx="4" fill="#475569" />`;
           html += `<ellipse cx="320" cy="125" rx="20" ry="24" fill="#64748B" />`;
           html += `<line x1="280" y1="190" x2="265" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
@@ -1123,14 +1069,13 @@
           break;
         }
 
-        // 2. تمرين سحب المجنص (سحب لأسفل من أعلى الباب)
+        // 2. سحب المجنص (سحب لأسفل من أعلى الباب)
         case 'lat_pulldown': {
-          const pullProgress = t * 65;
+          const pullProgress = t * 70;
           const handY = 100 + pullProgress;
           html += `<rect x="230" y="28" width="180" height="14" rx="4" fill="#F59E0B" />`;
           html += `<line x1="260" y1="36" x2="${270 + t * 20}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
           html += `<line x1="380" y1="36" x2="${370 - t * 20}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="${260 + t * 20}" y1="${handY}" x2="${380 - t * 20}" y2="${handY}" stroke="#0F172A" stroke-width="9" stroke-linecap="round" />`;
           html += `<path d="M 285 320 Q 250 360 210 395" stroke="#334155" stroke-width="26" stroke-linecap="round" fill="none" />`;
           html += `<path d="M 355 320 Q 390 360 430 395" stroke="#334155" stroke-width="26" stroke-linecap="round" fill="none" />`;
           html += `<path d="M 280 205 Q 320 215 360 205 L 345 320 L 295 320 Z" fill="url(#bodySkin)" />`;
@@ -1145,9 +1090,9 @@
           break;
         }
 
-        // 3. تمرين سحب الظهر جالساً (Seated Row)
+        // 3. سحب الظهر جالساً (Seated Row)
         case 'seated_row': {
-          const pull = t * 65;
+          const pull = t * 70;
           const torsoAngle = -5 + t * 10;
           html += `<path d="M 270 330 L 450 355 L 510 375" stroke="#334155" stroke-width="28" stroke-linecap="round" fill="none" />`;
           html += `<rect x="510" y="345" width="18" height="42" rx="6" fill="#F59E0B" />`;
@@ -1164,9 +1109,9 @@
           break;
         }
 
-        // 4. تمرين دفع الصدر بمثبت الباب (Chest Press)
+        // 4. دفع الصدر بمثبت الباب (Chest Press)
         case 'chest_press': {
-          const push = t * 65;
+          const push = t * 70;
           html += `<rect x="90" y="210" width="14" height="42" rx="4" fill="#F59E0B" />`;
           html += `<line x1="97" y1="230" x2="${230 + push}" y2="230" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
           html += `<path d="M 290 280 L 260 395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
@@ -1182,9 +1127,9 @@
           break;
         }
 
-        // 5. تمرين دفع الأكتاف للأعلى (Overhead Press)
+        // 5. دفع الأكتاف للأعلى (Overhead Press)
         case 'overhead_press': {
-          const pressY = 220 - t * 95;
+          const pressY = 220 - t * 100;
           html += `<rect x="250" y="395" width="140" height="10" rx="5" fill="#F59E0B" />`;
           html += `<line x1="260" y1="400" x2="260" y2="${pressY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
           html += `<line x1="380" y1="400" x2="380" y2="${pressY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
@@ -1202,9 +1147,9 @@
           break;
         }
 
-        // 6. تمرين سكوات المقاومة (Band Squat)
+        // 6. سكوات المقاومة (Band Squat)
         case 'band_squat': {
-          const drop = t * 55;
+          const drop = t * 60;
           const bodyY = 190 + drop;
           html += `<line x1="270" y1="395" x2="285" y2="${bodyY + 10}" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
           html += `<line x1="370" y1="395" x2="355" y2="${bodyY + 10}" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
@@ -1215,9 +1160,9 @@
           break;
         }
 
-        // 7. تمرين الرفعة الميتة الرومانية (RDL)
+        // 7. الرفعة الميتة الرومانية (RDL)
         case 'romanian_deadlift': {
-          const hinge = t * 35;
+          const hinge = t * 38;
           html += `<rect x="260" y="395" width="120" height="10" rx="5" fill="#F59E0B" />`;
           html += `<line x1="290" y1="290" x2="285" y2="395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" filter="url(#neonRedGlow)" />`;
           html += `<line x1="350" y1="290" x2="355" y2="395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" filter="url(#neonRedGlow)" />`;
@@ -1233,8 +1178,8 @@
         }
 
         default: {
-          const drop = t * 45;
-          const bodyY = 200 + drop;
+          const drop = t * 50;
+          const bodyY = 190 + drop;
           html += `<rect x="295" y="${bodyY}" width="50" height="85" rx="14" fill="url(#bodySkin)" />`;
           html += `<ellipse cx="320" cy="${bodyY - 45}" rx="20" ry="24" fill="#64748B" />`;
           break;
@@ -1242,16 +1187,6 @@
       }
 
       group.innerHTML = html;
-    }
-
-    function animLoop() {
-      motionPhase += 0.038;
-      const currentEx = activeRoutine[currentExerciseIndex];
-      if (currentEx) {
-        const t = (Math.sin(motionPhase * 2.8) + 1) / 2;
-        renderSvgMotionFrame(currentEx.motion, t);
-      }
-      animFrameId = requestAnimationFrame(animLoop);
     }
 
     function switchNavTab(tabName, element) {
@@ -1262,29 +1197,7 @@
 
       if (tabName === 'workout') document.getElementById('workoutScreen').classList.remove('hidden');
       else if (tabName === 'schedule') document.getElementById('scheduleScreen').classList.remove('hidden');
-      else if (tabName === 'nutrition') document.getElementById('nutritionScreen').classList.remove('hidden');
-      else if (tabName === 'library') { renderLibraryScreen(); document.getElementById('libraryScreen').classList.remove('hidden'); }
       else if (tabName === 'profile') document.getElementById('profileScreen').classList.remove('hidden');
-    }
-
-    function renderLibraryScreen() {
-      const container = document.getElementById('libraryListContainer');
-      container.innerHTML = '';
-      exerciseLibrary.forEach((ex, idx) => {
-        const item = document.createElement('div');
-        item.className = 'content-panel';
-        item.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-            <strong style="color:var(--accent-rose); font-size:0.95rem;">${idx + 1}. ${ex.title}</strong>
-            <span style="font-size:0.7rem; color:var(--accent-gold); background:rgba(245,158,11,0.1); padding:2px 8px; border-radius:8px;">${ex.anchorText}</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">
-            <strong>الأداة والتثبيت:</strong> ${ex.equip}<br>
-            <strong>أمان المفصل:</strong> ${ex.jointSafetyText}
-          </div>
-        `;
-        container.appendChild(item);
-      });
     }
 
     function toggleSound() {
