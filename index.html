@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | تدريب التكرارات والأنيميشن التفاعلي</title>
+  <title>كابتن إلهام الجزار | تدريب التكرارات</title>
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="كابتن إلهام">
-  <link rel="apple-touch-icon" href="icon-192.png">
   <meta name="theme-color" content="#030712">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +20,13 @@
       --surface-glass: rgba(17, 24, 39, 0.85);
       --surface-card: rgba(31, 41, 55, 0.75);
       --surface-border: rgba(255, 255, 255, 0.08);
-      --surface-border-active: #F43F5E;
       --primary: #10B981;
       --accent-rose: #F43F5E;
       --accent-rose-glow: rgba(244, 63, 94, 0.35);
-      --accent-rest: #3B82F6;
       --accent-gold: #F59E0B;
-      --accent-purple: #8B5CF6;
+      --accent-rest: #3B82F6;
       --text: #F8FAFC;
       --text-muted: #94A3B8;
-      --text-sub: #64748B;
       --nav-height: 72px;
     }
 
@@ -39,16 +34,13 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      font-family: 'Cairo', system-ui, sans-serif;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
     }
 
     body {
       background-color: var(--bg);
-      background-image: 
-        radial-gradient(at 10% 10%, rgba(244, 63, 94, 0.12) 0px, transparent 50%),
-        radial-gradient(at 90% 90%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
       color: var(--text);
       display: flex;
       justify-content: center;
@@ -83,20 +75,19 @@
     }
 
     .brand-avatar {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       background: linear-gradient(135deg, var(--accent-rose), #BE123C);
-      border-radius: 16px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.35rem;
-      box-shadow: 0 4px 20px var(--accent-rose-glow);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px var(--accent-rose-glow);
     }
 
     .brand-titles h1 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 900;
       color: #FFF;
     }
@@ -108,7 +99,7 @@
     }
 
     .pill-badge {
-      background: rgba(244, 63, 94, 0.12);
+      background: rgba(244, 63, 94, 0.15);
       color: var(--accent-rose);
       border: 1px solid rgba(244, 63, 94, 0.3);
       font-size: 0.65rem;
@@ -174,39 +165,35 @@
       background: var(--surface-glass);
       border: 1.5px solid var(--surface-border);
       border-radius: 16px;
-      padding: 12px 10px;
+      padding: 12px 8px;
       text-align: center;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 3px;
-      transition: all 0.2s ease;
+      gap: 2px;
+      transition: all 0.2s;
     }
 
     .select-card h4 {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 800;
       color: #CBD5E1;
     }
 
     .select-card span {
       font-size: 0.68rem;
-      color: var(--text-sub);
+      color: #64748B;
     }
 
     .select-card.active {
       border-color: var(--accent-rose) !important;
-      background: rgba(244, 63, 94, 0.14) !important;
-      box-shadow: 0 0 18px rgba(244, 63, 94, 0.35) !important;
-      transform: translateY(-2px);
+      background: rgba(244, 63, 94, 0.15) !important;
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.3) !important;
     }
 
     .select-card.active h4 { color: #FFF !important; }
-    .select-card.active span { color: #FECDD3 !important; }
 
-    /* بطاقة ضبط التكرارات والجولات */
     .reps-setup-card {
       background: var(--surface-card);
       border: 1px solid var(--surface-border);
@@ -218,14 +205,6 @@
       gap: 12px;
     }
 
-    .reps-input-box label {
-      display: block;
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
     .reps-stepper {
       display: flex;
       align-items: center;
@@ -233,6 +212,7 @@
       background: rgba(0, 0, 0, 0.4);
       border-radius: 12px;
       padding: 6px 12px;
+      margin-top: 4px;
     }
 
     .reps-stepper button {
@@ -242,8 +222,7 @@
       font-size: 1.4rem;
       font-weight: 900;
       cursor: pointer;
-      width: 32px;
-      height: 32px;
+      width: 30px;
     }
 
     .reps-stepper span {
@@ -263,33 +242,28 @@
       font-size: 1.05rem;
       cursor: pointer;
       box-shadow: 0 8px 24px var(--accent-rose-glow);
-      transition: transform 0.15s;
     }
 
-    .btn-main-action:active {
-      transform: scale(0.98);
-    }
-
-    /* مشغل التمرين التفاعلي */
+    /* مشغل التمرين */
     .player-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .round-chip {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 800;
       background: var(--surface-glass);
-      padding: 6px 18px;
+      padding: 6px 16px;
       border-radius: 20px;
       border: 1px solid var(--surface-border);
     }
 
     .round-btn-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
@@ -300,12 +274,12 @@
       justify-content: center;
     }
 
-    .theater-display {
+    .canvas-container {
       width: 100%;
-      height: 330px;
-      background: radial-gradient(circle at 50% 45%, #182337 0%, #030712 100%);
-      border-radius: 28px;
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      height: 310px;
+      background: radial-gradient(circle at 50% 50%, #172338 0%, #030712 100%);
+      border-radius: 24px;
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
       position: relative;
       display: flex;
       align-items: center;
@@ -314,99 +288,37 @@
       margin-bottom: 10px;
     }
 
-    #stageSvg {
+    #animCanvas {
       width: 100%;
       height: 100%;
       display: block;
     }
 
-    .theater-top-bar {
+    .canvas-top-bar {
       position: absolute;
-      top: 12px;
+      top: 10px;
       left: 12px;
       right: 12px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       pointer-events: none;
-      z-index: 5;
     }
 
-    .door-anchor-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(3, 7, 18, 0.88);
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      padding: 4px 10px;
-      border-radius: 12px;
-      color: var(--accent-gold);
-      font-size: 0.7rem;
-      font-weight: 800;
-    }
-
-    .door-mini-graphic {
-      width: 14px;
-      height: 22px;
-      border: 1.5px solid #64748B;
-      border-radius: 2px;
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .anchor-point-dot {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent-gold);
-      box-shadow: 0 0 6px var(--accent-gold);
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .indicator-tag {
+    .tag-pill {
       font-size: 0.72rem;
       font-weight: 800;
-      padding: 4px 12px;
-      border-radius: 14px;
+      padding: 4px 10px;
+      border-radius: 12px;
       background: rgba(3, 7, 18, 0.85);
-      border: 1px solid var(--surface-border);
-      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .indicator-tag.muscle {
-      color: #FF1744;
-      background: rgba(255, 23, 68, 0.15);
-      border-color: rgba(255, 23, 68, 0.35);
-    }
-
-    .joint-safety-card {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(3, 7, 18, 0.7));
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      border-radius: 14px;
-      padding: 8px 12px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .safety-icon {
-      font-size: 1.25rem;
-      color: var(--primary);
-    }
-
-    .safety-text {
-      font-size: 0.74rem;
-      color: #D1FAE5;
-      font-weight: 700;
-      line-height: 1.4;
-    }
+    .tag-anchor { color: var(--accent-gold); border-color: rgba(245, 158, 11, 0.4); }
+    .tag-muscle { color: #FF1744; border-color: rgba(255, 23, 68, 0.4); }
 
     .exercise-meta-text {
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .exercise-meta-text h2 {
@@ -420,54 +332,50 @@
       color: var(--accent-rose);
     }
 
-    /* عداد التكرارات التفاعلي الضخم */
     .reps-tracker-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .reps-interactive-circle {
-      width: 120px;
-      height: 120px;
+      width: 115px;
+      height: 115px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, rgba(17, 24, 39, 0.95) 100%);
-      border: 3px solid var(--accent-rose);
-      box-shadow: 0 0 30px var(--accent-rose-glow);
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, rgba(17, 24, 39, 0.9) 100%);
+      border: 3.5px solid var(--accent-rose);
+      box-shadow: 0 0 25px var(--accent-rose-glow);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: transform 0.1s, box-shadow 0.2s;
+      transition: transform 0.1s;
     }
 
     .reps-interactive-circle:active {
       transform: scale(0.92);
-      box-shadow: 0 0 45px var(--accent-rose);
     }
 
     .reps-number {
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       font-weight: 900;
       line-height: 1;
       color: #FFF;
     }
 
     .reps-target-label {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 800;
       color: var(--text-muted);
       margin-top: 2px;
     }
 
-    /* مؤقت الراحة بين المجموعات فقط */
     .rest-box-display {
       text-align: center;
-      padding: 16px 0;
-      margin-bottom: 12px;
+      padding: 14px 0;
+      margin-bottom: 10px;
     }
 
     .rest-time-digits {
@@ -479,7 +387,7 @@
 
     .reps-actions-deck {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
     }
 
@@ -493,10 +401,6 @@
       font-weight: 900;
       font-size: 1rem;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
     }
 
     .btn-skip-exercise {
@@ -507,7 +411,6 @@
       border-radius: 16px;
       padding: 14px;
       font-weight: 800;
-      font-size: 0.9rem;
       cursor: pointer;
     }
 
@@ -523,10 +426,9 @@
       backdrop-filter: blur(20px);
       border-top: 1px solid var(--surface-border);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       align-items: center;
       z-index: 50;
-      padding: 0 4px;
     }
 
     .dock-tab {
@@ -534,14 +436,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 3px;
+      gap: 2px;
       color: var(--text-sub);
       cursor: pointer;
-      transition: color 0.15s;
     }
 
-    .dock-tab .icon-wrap { font-size: 1.25rem; }
-    .dock-tab span { font-size: 0.72rem; font-weight: 800; }
     .dock-tab.active { color: var(--accent-rose); }
   </style>
 </head>
@@ -553,146 +452,106 @@
       <div class="brand-meta">
         <div class="brand-avatar">👑</div>
         <div class="brand-titles">
-          <h1 id="headerNameTitle">كابتن إلهام الجزار</h1>
-          <span>المنظومة التدريبية الذكية بالعدات</span>
+          <h1>كابتن إلهام الجزار</h1>
+          <span>نظام التكرارات والأنيميشن الحركي</span>
         </div>
       </div>
-      <div class="pill-badge">REPS ENGINE</div>
+      <div class="pill-badge">CANVAS REPS</div>
     </header>
 
-    <!-- 1. شاشة إعداد التمرين الرئيسي -->
+    <!-- شاشة إعداد التمرين الرئيسي -->
     <div id="workoutScreen" class="screen-view">
       <div class="hero-banner">
         <div class="hero-content">
-          <h2 id="heroGreetingTitle">أهلاً يا كابتن إلهام 🌸</h2>
-          <p>التدريب بنظام العدّات الدقيق لنحت وشد العضلات.</p>
+          <h2>أهلاً يا كابتن إلهام 🌸</h2>
+          <p>جاهزة لجلسة اليوم بنظام التكرارات ونحت القوام؟</p>
         </div>
-        <span style="font-size: 1.6rem; z-index: 2;">⚡</span>
+        <span style="font-size: 1.6rem;">⚡</span>
       </div>
 
       <div class="field-label"><span>🎯</span> 1. اختاري هدف الجلسة والتكرار:</div>
       <div class="options-grid">
-        <div class="select-card active" onclick="setGoalConfig('hypertrophy', 12, 45, this)">
+        <div class="select-card active" onclick="setGoalConfig(12, 45, this)">
           <h4>نحت وتناسق</h4>
-          <span>12 عدّة • راحة 45ث</span>
+          <span>12 عدّة • 45ث راحة</span>
         </div>
-        <div class="select-card" onclick="setGoalConfig('fatburn', 15, 30, this)">
+        <div class="select-card" onclick="setGoalConfig(15, 30, this)">
           <h4>حرق وتنشيف</h4>
-          <span>15 عدّة • راحة 30ث</span>
+          <span>15 عدّة • 30ث راحة</span>
         </div>
-        <div class="select-card" onclick="setGoalConfig('strength', 8, 60, this)">
+        <div class="select-card" onclick="setGoalConfig(8, 60, this)">
           <h4>قوة ومرونة</h4>
-          <span>8 عدات • راحة 60ث</span>
+          <span>8 عدات • 60ث راحة</span>
         </div>
       </div>
 
       <div class="field-label"><span>🔢</span> 2. تخصيص التكرارات والمجموعات:</div>
       <div class="reps-setup-card">
-        <div class="reps-input-box">
-          <label>العدات المستهدفة (Reps):</label>
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700;">العدات المستهدفة:</label>
           <div class="reps-stepper">
-            <button onclick="adjustRepsConfig('reps', -1)">-</button>
+            <button onclick="adjustReps('reps', -1)">-</button>
             <span id="targetRepsVal">12</span>
-            <button onclick="adjustRepsConfig('reps', 1)">+</button>
+            <button onclick="adjustReps('reps', 1)">+</button>
           </div>
         </div>
-        <div class="reps-input-box">
-          <label>عدد الجولات (Sets):</label>
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700;">عدد الجولات:</label>
           <div class="reps-stepper">
-            <button onclick="adjustRepsConfig('sets', -1)">-</button>
+            <button onclick="adjustReps('sets', -1)">-</button>
             <span id="targetSetsVal">3</span>
-            <button onclick="adjustRepsConfig('sets', 1)">+</button>
+            <button onclick="adjustReps('sets', 1)">+</button>
           </div>
         </div>
       </div>
 
-      <div class="field-label"><span>📊</span> 3. تقسيم اليوم التدريبي (Split):</div>
+      <div class="field-label"><span>📊</span> 3. اختيار جدول اليوم:</div>
       <div class="options-grid options-grid-2">
         <div class="select-card active" onclick="setSplit('pull', this)">
           <h4>يوم السحب (Pull)</h4>
-          <span>سحب جالس • ظهر وبايسبس</span>
+          <span>ظهر وبايسبس ومجنص</span>
+        </div>
+        <div class="select-card" onclick="setSplit('push', this)">
+          <h4>يوم الدفع (Push)</h4>
+          <span>صدر وأكتاف وترايسبس</span>
         </div>
         <div class="select-card" onclick="setSplit('legs', this)">
           <h4>نحت الأرجل (Legs)</h4>
-          <span>حوض • أرداف • أفخاذ</span>
-        </div>
-        <div class="select-card" onclick="setSplit('push', this)">
-          <h4>شد الصدر والأكتاف</h4>
-          <span>صدر • كتاف • ترايسبس</span>
+          <span>أفخاذ وأرداف وحوض</span>
         </div>
         <div class="select-card" onclick="setSplit('full', this)">
-          <h4>شامل متكامل (Full Body)</h4>
-          <span>توازن كامل للجسم</span>
+          <h4>شامل الجسم (Full)</h4>
+          <span>تكامل لكامل العضلات</span>
         </div>
       </div>
 
-      <button class="btn-main-action" onclick="startConfiguredWorkout()">
-        <span>⚡ بدء جلسة التكرارات الآن يا بطلة</span>
+      <button class="btn-main-action" onclick="startWorkout()">
+        <span>⚡ بدء جلسة التكرارات الآن</span>
       </button>
     </div>
 
-    <!-- 2. مشغل التمرين الحركي التفاعلي بالعدات -->
+    <!-- شاشة مشغل التمرين والأنيميشن الحركي -->
     <div id="playerScreen" class="screen-view hidden">
       <div class="player-header">
-        <button class="round-btn-icon" onclick="exitWorkout()" title="إنهاء">✕</button>
+        <button class="round-btn-icon" onclick="exitWorkout()">✕</button>
         <div id="roundIndicator" class="round-chip">تمرين 1 من 3 • جولة 1 من 3</div>
-        <button id="soundToggleBtn" class="round-btn-icon" onclick="toggleSound()" title="كتم/تشغيل">🔔</button>
+        <button id="soundToggleBtn" class="round-btn-icon" onclick="toggleSound()">🔔</button>
       </div>
 
-      <!-- مسرح الأنيميشن التشريحي المتجهي -->
-      <div id="stageCard" class="theater-display">
-        <div class="theater-top-bar">
-          <div class="door-anchor-badge" id="doorAnchorBadge">
-            <div class="door-mini-graphic">
-              <div class="anchor-point-dot" id="anchorDot" style="top: 2px;"></div>
-            </div>
-            <span id="anchorLabelText">تثبيت أعلى الباب</span>
-          </div>
-
-          <div id="activeMuscleTag" class="indicator-tag muscle">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#FF1744;"></span>
-            <span id="muscleName">عضلة البايسبس</span>
-          </div>
+      <div class="canvas-container">
+        <div class="canvas-top-bar">
+          <div id="anchorBadge" class="tag-pill tag-anchor">⚓ تحت القدمين</div>
+          <div id="muscleBadge" class="tag-pill tag-muscle">عضلة البايسبس</div>
         </div>
-
-        <svg id="stageSvg" viewBox="0 0 640 440">
-          <defs>
-            <linearGradient id="bodySkin" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#38455A"/>
-              <stop offset="100%" stop-color="#1E293B"/>
-            </linearGradient>
-            <linearGradient id="muscleHotRed" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FF5252"/>
-              <stop offset="50%" stop-color="#FF1744"/>
-              <stop offset="100%" stop-color="#B71C1C"/>
-            </linearGradient>
-            <filter id="neonRedGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="8" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          <ellipse cx="320" cy="405" rx="240" ry="16" fill="rgba(255,255,255,0.03)" />
-          <g id="dynamicMotionGroup"></g>
-        </svg>
-      </div>
-
-      <div class="joint-safety-card">
-        <span class="safety-icon">🛡️</span>
-        <div class="safety-text" id="jointSafetyCue">
-          أمان المفاصل: تحكمي في الرجوع ببطء (ثانيتين) ولا تدعي الحزام يسحبك فجأة!
-        </div>
+        <canvas id="animCanvas" width="400" height="310"></canvas>
       </div>
 
       <div class="exercise-meta-text">
         <h2 id="exerciseTitle">تبادل البايسبس (Bicep Curl)</h2>
-        <div id="exerciseEquip" class="equip-note">الهدف: 12 تكراراً محكماً وبتحكم</div>
+        <div id="exerciseEquip" class="equip-note">الهدف: 12 تكراراً محكماً</div>
       </div>
 
-      <!-- عداد التكرارات بالضغط -->
-      <div id="repsTrackerSection" class="reps-tracker-section">
+      <div id="repsSection" class="reps-tracker-section">
         <div class="reps-interactive-circle" onclick="incrementRep()">
           <span id="currentRepVal" class="reps-number">0</span>
           <span id="targetRepTotal" class="reps-target-label">من 12 عدّة</span>
@@ -700,178 +559,128 @@
         <span style="font-size: 0.74rem; color: var(--text-muted); margin-top: 8px;">اضغطي على الدائرة بعد كل عدة تنتهي منها 👆</span>
       </div>
 
-      <!-- مؤقت الاستراحة بين المجموعات -->
-      <div id="restTimerSection" class="rest-box-display hidden">
+      <div id="restSection" class="rest-box-display hidden">
         <div class="rest-time-digits" id="restTimerDigits">45</div>
-        <span style="font-size: 0.82rem; color: var(--text-muted);">ثانية استراحة وتنفس بعمق ☕</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">ثانية استراحة وتنفس بعمق ☕</span>
       </div>
 
       <div class="reps-actions-deck">
-        <button id="completeSetBtn" class="btn-complete-set" onclick="completeCurrentSet()">
+        <button id="completeBtn" class="btn-complete-set" onclick="completeSet()">
           <span>✅ تمّت المجموعة</span>
         </button>
-        <button class="btn-skip-exercise" onclick="skipToNextExercise()">
+        <button class="btn-skip-exercise" onclick="skipExercise()">
           <span>تخطي ⏭</span>
         </button>
       </div>
     </div>
 
-    <!-- 3. شاشة الجدول السريع -->
-    <div id="scheduleScreen" class="screen-view hidden">
-      <div style="background:var(--surface-glass); border:1px solid var(--surface-border); border-radius:20px; padding:16px;">
-        <h3 style="color:var(--accent-gold); font-size:1rem; margin-bottom:10px;">📅 خطة التكرارات الأسبوعية</h3>
-        <p style="font-size:0.85rem; color:#CBD5E1; line-height:1.6;">
-          السبت: سحب وبايسبس (3×12)<br>
-          الأحد: أرجل وأرداف (3×15)<br>
-          الثلاثاء: صدر وأكتاف (3×12)<br>
-          الأربعاء: شامل نحت وحرق (3×15)
-        </p>
-      </div>
-    </div>
-
-    <!-- 4. شاشة الإعدادات -->
-    <div id="profileScreen" class="screen-view hidden">
-      <div style="background:var(--surface-glass); border:1px solid var(--surface-border); border-radius:20px; padding:16px;">
-        <h3 style="color:var(--accent-rose); font-size:1rem; margin-bottom:10px;">⚙️ ملف كابتن إلهام</h3>
-        <p style="font-size:0.85rem; color:#CBD5E1;">المنظومة التدريبية الرياضية المخصصة • نسخة PWA 2026</p>
-      </div>
-    </div>
-
     <!-- شريط التنقل السفلي -->
     <nav class="dock-navigation">
-      <div class="dock-tab active" onclick="switchNavTab('workout', this)">
-        <div class="icon-wrap">⚡</div>
+      <div class="dock-tab active" onclick="showTab('workout')">
+        <span style="font-size: 1.2rem;">⚡</span>
         <span>التمارين</span>
       </div>
-      <div class="dock-tab" onclick="switchNavTab('schedule', this)">
-        <div class="icon-wrap">📅</div>
-        <span>الجدول</span>
-      </div>
-      <div class="dock-tab" onclick="switchNavTab('profile', this)">
-        <div class="icon-wrap">⚙️</div>
-        <span>الإعدادات</span>
+      <div class="dock-tab" onclick="showTab('info')">
+        <span style="font-size: 1.2rem;">👑</span>
+        <span>كابتن إلهام</span>
       </div>
     </nav>
 
   </div>
 
   <script>
-    // مكتبة التمارين مع معرّف الحركة التشريحية ومكان التثبيت وإرشاد الأمان
+    // مكتبة التمارين
     const exerciseLibrary = [
       {
         id: "bicep_curl",
         title: "تبادل البايسبس (Bicep Curl)",
-        coachCue: "ثبّتي كوعك في جنبك واطلعي بذراعك واعتصري البايسبس في القمة!",
         category: "pull",
-        targetMuscleArabic: "عضلة البايسبس",
-        anchorPosition: "underfoot",
-        anchorText: "تحت القدمين (بدون باب)",
-        jointSafetyText: "أمان الكوع: لا تقفلي مفصل الكوع 100% في الأسفل، وانزلي ببطء.",
-        motion: "bicep_curl"
+        muscle: "عضلة البايسبس",
+        anchor: "تحت القدمين (بدون باب)",
+        cue: "ثبّتي كوعك في جنبك واطلعي بذراعك واعتصري البايسبس في القمة!"
       },
       {
         id: "lat_pulldown",
         title: "سحب المجنص لأسفل (Lat Pulldown)",
-        coachCue: "اسحبي الحزام لتحت باتجاه صدرك مع ضم لوحي الكتف!",
         category: "pull",
-        targetMuscleArabic: "عضلات المجنص (Lats)",
-        anchorPosition: "top",
-        anchorText: "أعلى الباب (Top)",
-        jointSafetyText: "أمان الكتف: لا تدعي الحزام يسحب ذراعيكِ فجأة لأعلى، قاومي الارتداد.",
-        motion: "lat_pulldown"
+        muscle: "عضلات المجنص (Lats)",
+        anchor: "أعلى الباب (Top)",
+        cue: "اسحبي الحزام لتحت باتجاه صدرك مع ضم لوحي الكتف!"
       },
       {
         id: "seated_row",
         title: "سحب الظهر جالساً (Seated Row)",
-        coachCue: "افردي ضهرك واسحبي المقابض لبطنك ورجّعي كتافك لورا!",
         category: "pull",
-        targetMuscleArabic: "منتصف الظهر والترابيس",
-        anchorPosition: "middle",
-        anchorText: "منتصف الباب (عند المقبض)",
-        jointSafetyText: "أمان أسفل الظهر: حافظي على استقامة العمود الفقري وتجنبي الانحناء للأمام.",
-        motion: "seated_row"
+        muscle: "منتصف الظهر والترابيس",
+        anchor: "منتصف الباب أو القدمين",
+        cue: "افردي ضهرك واسحبي المقابض لبطنك ورجّعي كتافك لورا!"
       },
       {
         id: "chest_press",
         title: "دفع الصدر بمثبت الباب (Chest Press)",
-        coachCue: "ارمي وزنك قدام واضغطي للأمام بتركيز لشد الصدر والذراعين!",
         category: "push",
-        targetMuscleArabic: "عضلة الصدر الكبرى",
-        anchorPosition: "middle",
-        anchorText: "منتصف الباب (ارتفاع الصدر)",
-        jointSafetyText: "أمان الكتف: لا ترجعي بكوعيكِ خلف مستوى ظهرك لتجنب إجهاد أوتار الكتف.",
-        motion: "chest_press"
+        muscle: "عضلة الصدر الكبرى",
+        anchor: "منتصف الباب (ارتفاع الصدر)",
+        cue: "ارمي وزنك قدام واضغطي للأمام بتركيز لشد الصدر!"
       },
       {
         id: "overhead_press",
         title: "دفع الأكتاف للأعلى (Overhead Press)",
-        coachCue: "شدي عضلات بطنك وادفعي المقابض فوق رأسك باستقامة!",
         category: "push",
-        targetMuscleArabic: "عضلات الأكتاف (Deltoids)",
-        anchorPosition: "underfoot",
-        anchorText: "تحت القدمين (دفع عمودي)",
-        jointSafetyText: "أمان الظهر: لا تقوسي أسفل ظهرك أثناء رفع الذراعين لأعلى.",
-        motion: "overhead_press"
+        muscle: "عضلات الأكتاف (Deltoids)",
+        anchor: "تحت القدمين",
+        cue: "شدي عضلات بطنك وادفعي المقابض فوق رأسك باستقامة!"
       },
       {
         id: "band_squat",
         title: "سكوات المقاومة (Band Squat)",
-        coachCue: "انزلي بوسطك لورا كأنك بتقعدي على كرسي واطلعي بقوة كعب رجلك!",
         category: "legs",
-        targetMuscleArabic: "الفخذ والأرداف",
-        anchorPosition: "underfoot",
-        anchorText: "تحت باطن القدمين",
-        jointSafetyText: "أمان الركبة: ادفعي ركبتيكِ للخارج باتجاه أصابع القدم وتجنبي انهيارهما للداخل.",
-        motion: "band_squat"
+        muscle: "الأفخاذ والأرداف",
+        anchor: "تحت القدمين والكتف",
+        cue: "انزلي بوسطك لورا كأنك بتقعدي على كرسي واطلعي بقوة كعب رجلك!"
       },
       {
         id: "romanian_deadlift",
-        title: "الرفعة الميتة الرومانية (RDL)",
-        coachCue: "ادفعي حوضك لورا وخلي ضهرك مفرود وانزلي بمحاذاة الساق!",
+        title: "الرفعة الرومانية (RDL)",
         category: "legs",
-        targetMuscleArabic: "أوتار الفخذ والأرداف",
-        anchorPosition: "underfoot",
-        anchorText: "تحت القدمين (سحب منزلق)",
-        jointSafetyText: "أمان الفقرات: اثني ركبتيكِ ثنية بسيطة وحافظي على ظهرك مستقيماً تماماً.",
-        motion: "romanian_deadlift"
+        muscle: "أوتار الفخذ والأرداف",
+        anchor: "تحت القدمين",
+        cue: "ادفعي حوضك لورا وخلي ضهرك مفرود وانزلي بمحاذاة الساق!"
       }
     ];
 
-    let workoutConfig = {
-      targetReps: 12,
-      targetSets: 3,
-      restDuration: 45
-    };
-
+    let targetReps = 12;
+    let targetSets = 3;
+    let restDuration = 45;
     let selectedSplit = 'pull';
-    let activeRoutine = [];
-    let currentExerciseIndex = 0;
+    let currentRoutine = [];
+
+    let currentExIdx = 0;
     let currentSet = 1;
     let currentReps = 0;
     let isResting = false;
-    let restTimerInterval = null;
+    let restInterval = null;
     let restRemaining = 0;
     let soundMuted = false;
 
-    // متغيرات الأنيميشن المستقلة لضمان الحركة الدائمة والسلسة
-    let animFrameId = null;
-    let motionPhase = 0;
+    let animId = null;
+    let animPhase = 0;
 
-    function setGoalConfig(goal, reps, restTime, elem) {
-      workoutConfig.targetReps = reps;
-      workoutConfig.restDuration = restTime;
+    function setGoalConfig(reps, rest, elem) {
+      targetReps = reps;
+      restDuration = rest;
       document.getElementById('targetRepsVal').innerText = reps;
       elem.parentElement.querySelectorAll('.select-card').forEach(c => c.classList.remove('active'));
       elem.classList.add('active');
     }
 
-    function adjustRepsConfig(type, delta) {
+    function adjustReps(type, delta) {
       if (type === 'reps') {
-        workoutConfig.targetReps = Math.max(5, Math.min(30, workoutConfig.targetReps + delta));
-        document.getElementById('targetRepsVal').innerText = workoutConfig.targetReps;
+        targetReps = Math.max(5, Math.min(30, targetReps + delta));
+        document.getElementById('targetRepsVal').innerText = targetReps;
       } else {
-        workoutConfig.targetSets = Math.max(1, Math.min(6, workoutConfig.targetSets + delta));
-        document.getElementById('targetSetsVal').innerText = workoutConfig.targetSets;
+        targetSets = Math.max(1, Math.min(6, targetSets + delta));
+        document.getElementById('targetSetsVal').innerText = targetSets;
       }
     }
 
@@ -881,11 +690,11 @@
       elem.classList.add('active');
     }
 
-    function startConfiguredWorkout() {
-      activeRoutine = exerciseLibrary.filter(e => e.category === selectedSplit || selectedSplit === 'full');
-      if (activeRoutine.length === 0) return;
+    function startWorkout() {
+      currentRoutine = exerciseLibrary.filter(e => e.category === selectedSplit || selectedSplit === 'full');
+      if (currentRoutine.length === 0) return;
 
-      currentExerciseIndex = 0;
+      currentExIdx = 0;
       currentSet = 1;
       currentReps = 0;
       isResting = false;
@@ -893,76 +702,56 @@
       document.getElementById('workoutScreen').classList.add('hidden');
       document.getElementById('playerScreen').classList.remove('hidden');
 
-      loadExerciseState();
-      startContinuousAnimation();
+      loadExercise();
+      startCanvasLoop();
     }
 
-    function loadExerciseState() {
-      const ex = activeRoutine[currentExerciseIndex];
-      document.getElementById('roundIndicator').innerText = `تمرين ${currentExerciseIndex + 1} من ${activeRoutine.length} • جولة ${currentSet} من ${workoutConfig.targetSets}`;
+    function loadExercise() {
+      const ex = currentRoutine[currentExIdx];
+      document.getElementById('roundIndicator').innerText = `تمرين ${currentExIdx + 1} من ${currentRoutine.length} • جولة ${currentSet} من ${targetSets}`;
       document.getElementById('exerciseTitle').innerText = ex.title;
-      document.getElementById('exerciseEquip').innerText = `الهدف: ${workoutConfig.targetReps} عدّة محكمة`;
-      document.getElementById('muscleName').innerText = ex.targetMuscleArabic;
-
-      const anchorDot = document.getElementById('anchorDot');
-      const anchorLabel = document.getElementById('anchorLabelText');
-      anchorLabel.innerText = ex.anchorText;
-
-      if (ex.anchorPosition === 'top') {
-        anchorDot.style.top = '2px';
-        anchorDot.style.bottom = 'auto';
-      } else if (ex.anchorPosition === 'middle') {
-        anchorDot.style.top = '8px';
-        anchorDot.style.bottom = 'auto';
-      } else if (ex.anchorPosition === 'bottom') {
-        anchorDot.style.top = 'auto';
-        anchorDot.style.bottom = '2px';
-      } else {
-        anchorDot.style.top = 'auto';
-        anchorDot.style.bottom = '-2px';
-      }
-
-      document.getElementById('jointSafetyCue').innerText = ex.jointSafetyText;
+      document.getElementById('exerciseEquip').innerText = `الهدف: ${targetReps} عدّة محكمة`;
+      document.getElementById('anchorBadge').innerText = "⚓ " + ex.anchor;
+      document.getElementById('muscleBadge').innerText = ex.muscle;
 
       currentReps = 0;
       document.getElementById('currentRepVal').innerText = currentReps;
-      document.getElementById('targetRepTotal').innerText = `من ${workoutConfig.targetReps} عدّة`;
+      document.getElementById('targetRepTotal').innerText = `من ${targetReps} عدّة`;
 
-      document.getElementById('repsTrackerSection').classList.remove('hidden');
-      document.getElementById('restTimerSection').classList.add('hidden');
-      document.getElementById('completeSetBtn').style.display = 'flex';
+      document.getElementById('repsSection').classList.remove('hidden');
+      document.getElementById('restSection').classList.add('hidden');
+      document.getElementById('completeBtn').style.display = 'block';
 
-      speakText(ex.coachCue);
+      speakText(ex.cue);
     }
 
-    // زيادة العدّة بالضغط التفاعلي
     function incrementRep() {
       if (isResting) return;
       currentReps++;
       document.getElementById('currentRepVal').innerText = currentReps;
-      if ('vibrate' in navigator) navigator.vibrate(35);
+      if ('vibrate' in navigator) navigator.vibrate(30);
 
-      if (currentReps >= workoutConfig.targetReps) {
+      if (currentReps >= targetReps) {
         speakText("عاش يا بطلة! أنجزتي التكرارات كاملة");
-        completeCurrentSet();
+        completeSet();
       } else {
         speakText(`${currentReps}`);
       }
     }
 
-    function completeCurrentSet() {
-      clearInterval(restTimerInterval);
+    function completeSet() {
+      clearInterval(restInterval);
       isResting = true;
 
-      document.getElementById('repsTrackerSection').classList.add('hidden');
-      document.getElementById('restTimerSection').classList.remove('hidden');
-      document.getElementById('completeSetBtn').style.display = 'none';
+      document.getElementById('repsSection').classList.add('hidden');
+      document.getElementById('restSection').classList.remove('hidden');
+      document.getElementById('completeBtn').style.display = 'none';
 
-      restRemaining = workoutConfig.restDuration;
+      restRemaining = restDuration;
       document.getElementById('restTimerDigits').innerText = restRemaining;
-      speakText("استريحي وتنفسي بعمق، استعداداً للجولة القادمة");
+      speakText("استريحي وتنفسي بعمق");
 
-      restTimerInterval = setInterval(() => {
+      restInterval = setInterval(() => {
         restRemaining--;
         document.getElementById('restTimerDigits').innerText = restRemaining;
 
@@ -971,233 +760,388 @@
         }
 
         if (restRemaining <= 0) {
-          clearInterval(restTimerInterval);
-          advanceNextSetOrExercise();
+          clearInterval(restInterval);
+          nextSetOrExercise();
         }
       }, 1000);
     }
 
-    function advanceNextSetOrExercise() {
+    function nextSetOrExercise() {
       isResting = false;
-      if (currentSet < workoutConfig.targetSets) {
+      if (currentSet < targetSets) {
         currentSet++;
-        loadExerciseState();
+        loadExercise();
       } else {
-        if (currentExerciseIndex < activeRoutine.length - 1) {
-          currentExerciseIndex++;
+        if (currentExIdx < currentRoutine.length - 1) {
+          currentExIdx++;
           currentSet = 1;
-          loadExerciseState();
+          loadExercise();
         } else {
           finishWorkout();
         }
       }
     }
 
-    function skipToNextExercise() {
-      clearInterval(restTimerInterval);
-      if (currentExerciseIndex < activeRoutine.length - 1) {
-        currentExerciseIndex++;
+    function skipExercise() {
+      clearInterval(restInterval);
+      if (currentExIdx < currentRoutine.length - 1) {
+        currentExIdx++;
         currentSet = 1;
         isResting = false;
-        loadExerciseState();
+        loadExercise();
       } else {
         finishWorkout();
       }
     }
 
     function finishWorkout() {
-      clearInterval(restTimerInterval);
-      speakText("مبروك يا كابتن إلهام! أتممتِ جميع التكرارات بنجاح وأمان");
-      alert("الله ينور عليكي يا إلهام يا بطلة! 🌸 أنجزتي جميع التكرارات المحددة اليوم بامتياز.");
+      clearInterval(restInterval);
+      if (animId) cancelAnimationFrame(animId);
+      speakText("مبروك يا كابتن إلهام! أتممتِ الجلسة بنجاح فائق");
+      alert("الله ينور عليكي يا إلهام يا بطلة! 🌸 أنجزتي جميع التكرارات بنجاح.");
       exitWorkout();
     }
 
     function exitWorkout() {
-      clearInterval(restTimerInterval);
-      if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
+      clearInterval(restInterval);
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       document.getElementById('playerScreen').classList.add('hidden');
       document.getElementById('workoutScreen').classList.remove('hidden');
     }
 
     // =========================================================================
-    // محرك الأنيميشن المستقل والمضمن لكل تمرين على حدة (تشغيل فوري ومضمون 100%)
+    // محرك Canvas 2D الحركي الفوري لكل تمرين على حدة (حركة مضمونة 100%)
     // =========================================================================
-    function startContinuousAnimation() {
-      if (animFrameId) cancelAnimationFrame(animFrameId);
+    function startCanvasLoop() {
+      const canvas = document.getElementById('animCanvas');
+      const ctx = canvas.getContext('2d');
 
       function loop() {
-        motionPhase += 0.042;
-        const currentEx = activeRoutine[currentExerciseIndex];
+        animPhase += 0.05;
+        const t = (Math.sin(animPhase) + 1) / 2; // قيمة ناعمة بين 0 و 1
+        const currentEx = currentRoutine[currentExIdx];
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         if (currentEx) {
-          // قيمة دائرية متغيرة بسلاسة بين 0 و 1
-          const t = (Math.sin(motionPhase * 2.5) + 1) / 2;
-          drawExerciseFigure(currentEx.motion, t);
+          drawExerciseOnCanvas(ctx, currentEx.id, t);
         }
-        animFrameId = requestAnimationFrame(loop);
+
+        animId = requestAnimationFrame(loop);
       }
 
-      animFrameId = requestAnimationFrame(loop);
+      if (animId) cancelAnimationFrame(animId);
+      animId = requestAnimationFrame(loop);
     }
 
-    function drawExerciseFigure(motion, t) {
-      const group = document.getElementById('dynamicMotionGroup');
-      if (!group) return;
-      let html = '';
+    function drawExerciseOnCanvas(ctx, exId, t) {
+      const cx = 200; // مركز الشاشة الأفقي
 
-      switch (motion) {
-        // 1. تبادل البايسبس (ثني الذراع للأعلى وتمدد الحبل تحت القدمين)
+      // مسار الأرضية
+      ctx.strokeStyle = "rgba(255,255,255,0.06)";
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.ellipse(cx, 280, 140, 10, 0, 0, Math.PI * 2);
+      ctx.stroke();
+
+      switch (exId) {
+        // 1. تبادل البايسبس
         case 'bicep_curl': {
-          const handY = 320 - t * 100;
-          const handX = 265 - t * 15;
-          html += `<rect x="235" y="395" width="170" height="10" rx="5" fill="#F59E0B" />`;
-          html += `<line x1="255" y1="400" x2="${handX}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="385" y1="400" x2="${375 + t * 15}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="290" y1="285" x2="280" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<line x1="350" y1="285" x2="360" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<path d="M 275 185 Q 320 195 365 185 L 350 290 L 290 290 Z" fill="url(#bodySkin)" />`;
-          html += `<ellipse cx="${272 - t * 4}" cy="${220 - t * 5}" rx="${12 + t * 5}" ry="${16 + t * 3}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(-15 ${272} ${220})" />`;
-          html += `<ellipse cx="${368 + t * 4}" cy="${220 - t * 5}" rx="${12 + t * 4}" ry="${16 + t * 2}" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" transform="rotate(15 ${368} ${220})" />`;
-          html += `<rect x="312" y="145" width="16" height="24" rx="4" fill="#475569" />`;
-          html += `<ellipse cx="320" cy="125" rx="20" ry="24" fill="#64748B" />`;
-          html += `<line x1="280" y1="190" x2="265" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<line x1="360" y1="190" x2="375" y2="255" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<line x1="265" y1="255" x2="${handX}" y2="${handY}" stroke="#38455A" stroke-width="16" stroke-linecap="round" />`;
-          html += `<circle cx="${handX}" cy="${handY}" r="9" fill="#0F172A" />`;
-          html += `<line x1="375" y1="255" x2="${375 + t * 15}" y2="${handY}" stroke="#38455A" stroke-width="16" stroke-linecap="round" />`;
-          html += `<circle cx="${375 + t * 15}" cy="${handY}" r="9" fill="#0F172A" />`;
+          const handY = 220 - t * 70;
+          // الحزام
+          ctx.strokeStyle = "#F59E0B";
+          ctx.lineWidth = 6;
+          ctx.beginPath();
+          ctx.moveTo(cx - 30, 275);
+          ctx.lineTo(cx - 30, handY);
+          ctx.moveTo(cx + 30, 275);
+          ctx.lineTo(cx + 30, handY);
+          ctx.stroke();
+
+          // الساقين والجذع
+          drawBody(ctx, cx, 190, 0);
+
+          // البايسبس المتوهج
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx - 26, 175, 10 + t * 4, 0, Math.PI * 2);
+          ctx.arc(cx + 26, 175, 10 + t * 4, 0, Math.PI * 2);
+          ctx.fill();
+
+          // الذراعين والقبضة
+          ctx.strokeStyle = "#475569";
+          ctx.lineWidth = 12;
+          ctx.beginPath();
+          ctx.moveTo(cx - 26, 150);
+          ctx.lineTo(cx - 30, 190);
+          ctx.lineTo(cx - 30, handY);
+          ctx.moveTo(cx + 26, 150);
+          ctx.lineTo(cx + 30, 190);
+          ctx.lineTo(cx + 30, handY);
+          ctx.stroke();
           break;
         }
 
-        // 2. سحب المجنص (سحب لأسفل من أعلى الباب)
+        // 2. سحب المجنص (Lat Pulldown)
         case 'lat_pulldown': {
-          const pullProgress = t * 70;
-          const handY = 100 + pullProgress;
-          html += `<rect x="230" y="28" width="180" height="14" rx="4" fill="#F59E0B" />`;
-          html += `<line x1="260" y1="36" x2="${270 + t * 20}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="380" y1="36" x2="${370 - t * 20}" y2="${handY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<path d="M 285 320 Q 250 360 210 395" stroke="#334155" stroke-width="26" stroke-linecap="round" fill="none" />`;
-          html += `<path d="M 355 320 Q 390 360 430 395" stroke="#334155" stroke-width="26" stroke-linecap="round" fill="none" />`;
-          html += `<path d="M 280 205 Q 320 215 360 205 L 345 320 L 295 320 Z" fill="url(#bodySkin)" />`;
-          html += `<path d="M 280 210 Q 250 250 285 295 Q 295 250 280 210 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `<path d="M 360 210 Q 390 250 355 295 Q 345 250 360 210 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `<rect x="312" y="165" width="16" height="24" rx="4" fill="#475569" />`;
-          html += `<ellipse cx="320" cy="145" rx="20" ry="24" fill="#64748B" />`;
-          html += `<line x1="285" y1="205" x2="${250 - t * 15}" y2="${175 + t * 25}" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<line x1="${250 - t * 15}" y1="${175 + t * 25}" x2="${270 + t * 20}" y2="${handY}" stroke="#334155" stroke-width="17" stroke-linecap="round" />`;
-          html += `<line x1="355" y1="205" x2="${390 + t * 15}" y2="${175 + t * 25}" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<line x1="${390 + t * 15}" y1="${175 + t * 25}" x2="${370 - t * 20}" y2="${handY}" stroke="#334155" stroke-width="17" stroke-linecap="round" />`;
+          const pull = t * 50;
+          // مثبت أعلى الباب
+          ctx.fillStyle = "#F59E0B";
+          ctx.fillRect(cx - 40, 20, 80, 8);
+
+          // الحبل
+          ctx.strokeStyle = "#000";
+          ctx.lineWidth = 4;
+          ctx.beginPath();
+          ctx.moveTo(cx, 25);
+          ctx.lineTo(cx - 50 + pull * 0.2, 80 + pull);
+          ctx.moveTo(cx, 25);
+          ctx.lineTo(cx + 50 - pull * 0.2, 80 + pull);
+          ctx.stroke();
+
+          drawBody(ctx, cx, 180, 0);
+
+          // عضلات الظهر المتوهجة
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx - 18, 170, 12, 0, Math.PI * 2);
+          ctx.arc(cx + 18, 170, 12, 0, Math.PI * 2);
+          ctx.fill();
+
+          // الذراعين
+          ctx.strokeStyle = "#475569";
+          ctx.lineWidth = 12;
+          ctx.beginPath();
+          ctx.moveTo(cx - 26, 150);
+          ctx.lineTo(cx - 55, 120 + pull * 0.5);
+          ctx.lineTo(cx - 50 + pull * 0.2, 80 + pull);
+          ctx.moveTo(cx + 26, 150);
+          ctx.lineTo(cx + 55, 120 + pull * 0.5);
+          ctx.lineTo(cx + 50 - pull * 0.2, 80 + pull);
+          ctx.stroke();
           break;
         }
 
         // 3. سحب الظهر جالساً (Seated Row)
         case 'seated_row': {
-          const pull = t * 70;
-          const torsoAngle = -5 + t * 10;
-          html += `<path d="M 270 330 L 450 355 L 510 375" stroke="#334155" stroke-width="28" stroke-linecap="round" fill="none" />`;
-          html += `<rect x="510" y="345" width="18" height="42" rx="6" fill="#F59E0B" />`;
-          html += `<line x1="510" y1="365" x2="${410 - pull}" y2="280" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
-          html += `<rect x="${405 - pull}" y="268" width="14" height="24" rx="5" fill="#0F172A" stroke="#64748B" stroke-width="3" />`;
-          html += `<g transform="translate(260, 270) rotate(${torsoAngle})">`;
-          html += `<rect x="-24" y="-55" width="48" height="105" rx="14" fill="url(#bodySkin)" />`;
-          html += `<path d="M -24 -40 Q -46 0 -24 35 Q -12 0 -24 -40 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `<path d="M 24 -40 Q 46 0 24 35 Q 12 0 24 -40 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `</g>`;
-          html += `<ellipse cx="255" cy="185" rx="19" ry="23" fill="#64748B" />`;
-          html += `<line x1="265" y1="230" x2="${315 - pull * 0.3}" y2="280" stroke="#475569" stroke-width="22" stroke-linecap="round" />`;
-          html += `<line x1="${315 - pull * 0.3}" y1="280" x2="${410 - pull}" y2="280" stroke="#FF1744" stroke-width="18" stroke-linecap="round" />`;
+          const pull = t * 45;
+          // القدمين الممدودة للأمام
+          ctx.strokeStyle = "#334155";
+          ctx.lineWidth = 16;
+          ctx.beginPath();
+          ctx.moveTo(cx - 20, 250);
+          ctx.lineTo(cx + 60, 260);
+          ctx.stroke();
+
+          // مثبت الحزام عند القدم
+          ctx.fillStyle = "#F59E0B";
+          ctx.fillRect(cx + 55, 245, 10, 25);
+
+          // الحبل
+          ctx.strokeStyle = "#000";
+          ctx.lineWidth = 4;
+          ctx.beginPath();
+          ctx.moveTo(cx + 60, 255);
+          ctx.lineTo(cx + 10 - pull, 205);
+          ctx.stroke();
+
+          // الجذع والرأس
+          ctx.fillStyle = "#1E293B";
+          ctx.fillRect(cx - 30, 170, 30, 80);
+          ctx.fillStyle = "#64748B";
+          ctx.beginPath();
+          ctx.arc(cx - 15, 145, 16, 0, Math.PI * 2);
+          ctx.fill();
+
+          // عضلة الظهر
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx - 32, 200, 10 + t * 4, 0, Math.PI * 2);
+          ctx.fill();
+
+          // الذراع
+          ctx.strokeStyle = "#475569";
+          ctx.lineWidth = 12;
+          ctx.beginPath();
+          ctx.moveTo(cx - 15, 175);
+          ctx.lineTo(cx - pull * 0.4, 210);
+          ctx.lineTo(cx + 10 - pull, 205);
+          ctx.stroke();
           break;
         }
 
-        // 4. دفع الصدر بمثبت الباب (Chest Press)
+        // 4. دفع الصدر (Chest Press)
         case 'chest_press': {
-          const push = t * 70;
-          html += `<rect x="90" y="210" width="14" height="42" rx="4" fill="#F59E0B" />`;
-          html += `<line x1="97" y1="230" x2="${230 + push}" y2="230" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
-          html += `<path d="M 290 280 L 260 395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<path d="M 330 280 L 370 395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<g transform="translate(310, 220)">`;
-          html += `<rect x="-26" y="-50" width="52" height="100" rx="14" fill="url(#bodySkin)" />`;
-          html += `<path d="M -22 -35 Q 0 -55 22 -35 Q 0 -10 -22 -35 Z" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `</g>`;
-          html += `<ellipse cx="310" cy="140" rx="20" ry="24" fill="#64748B" />`;
-          const elbowX = 280 - (1 - t) * 35;
-          html += `<line x1="310" y1="195" x2="${elbowX}" y2="230" stroke="#475569" stroke-width="22" stroke-linecap="round" />`;
-          html += `<line x1="${elbowX}" y1="230" x2="${230 + push}" y2="230" stroke="#FF1744" stroke-width="18" stroke-linecap="round" />`;
+          const push = t * 50;
+          // مثبت الحزام يسار الشاشة
+          ctx.fillStyle = "#F59E0B";
+          ctx.fillRect(40, 150, 10, 30);
+
+          // الحبل
+          ctx.strokeStyle = "#000";
+          ctx.lineWidth = 5;
+          ctx.beginPath();
+          ctx.moveTo(45, 165);
+          ctx.lineTo(cx - 10 + push, 175);
+          ctx.stroke();
+
+          drawBody(ctx, cx, 190, 0);
+
+          // عضلة الصدر المتوهجة
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx + 10, 170, 12 + t * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          // الذراع الدافعة للأمام
+          ctx.strokeStyle = "#475569";
+          ctx.lineWidth = 14;
+          ctx.beginPath();
+          ctx.moveTo(cx, 160);
+          ctx.lineTo(cx - 20 + push * 0.3, 185);
+          ctx.lineTo(cx - 10 + push, 175);
+          ctx.stroke();
           break;
         }
 
         // 5. دفع الأكتاف للأعلى (Overhead Press)
         case 'overhead_press': {
-          const pressY = 220 - t * 100;
-          html += `<rect x="250" y="395" width="140" height="10" rx="5" fill="#F59E0B" />`;
-          html += `<line x1="260" y1="400" x2="260" y2="${pressY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="380" y1="400" x2="380" y2="${pressY}" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="290" y1="285" x2="280" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<line x1="350" y1="285" x2="360" y2="395" stroke="#334155" stroke-width="26" stroke-linecap="round" />`;
-          html += `<path d="M 275 185 Q 320 195 365 185 L 350 290 L 290 290 Z" fill="url(#bodySkin)" />`;
-          html += `<ellipse cx="270" cy="185" rx="16" ry="14" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `<ellipse cx="370" cy="185" rx="16" ry="14" fill="url(#muscleHotRed)" filter="url(#neonRedGlow)" />`;
-          html += `<rect x="312" y="145" width="16" height="24" rx="4" fill="#475569" />`;
-          html += `<ellipse cx="320" cy="125" rx="20" ry="24" fill="#64748B" />`;
-          html += `<line x1="275" y1="190" x2="260" y2="${pressY}" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<circle cx="260" cy="${pressY}" r="9" fill="#0F172A" />`;
-          html += `<line x1="365" y1="190" x2="380" y2="${pressY}" stroke="#475569" stroke-width="20" stroke-linecap="round" />`;
-          html += `<circle cx="380" cy="${pressY}" r="9" fill="#0F172A" />`;
+          const pressY = 160 - t * 70;
+          // الحزام
+          ctx.strokeStyle = "#F59E0B";
+          ctx.lineWidth = 5;
+          ctx.beginPath();
+          ctx.moveTo(cx - 30, 275);
+          ctx.lineTo(cx - 30, pressY);
+          ctx.moveTo(cx + 30, 275);
+          ctx.lineTo(cx + 30, pressY);
+          ctx.stroke();
+
+          drawBody(ctx, cx, 190, 0);
+
+          // عضلات الأكتاف
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx - 25, 150, 12 + t * 3, 0, Math.PI * 2);
+          ctx.arc(cx + 25, 150, 12 + t * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          // الذراعين للأعلى
+          ctx.strokeStyle = "#475569";
+          ctx.lineWidth = 12;
+          ctx.beginPath();
+          ctx.moveTo(cx - 26, 150);
+          ctx.lineTo(cx - 30, pressY);
+          ctx.moveTo(cx + 26, 150);
+          ctx.lineTo(cx + 30, pressY);
+          ctx.stroke();
           break;
         }
 
         // 6. سكوات المقاومة (Band Squat)
         case 'band_squat': {
-          const drop = t * 60;
-          const bodyY = 190 + drop;
-          html += `<line x1="270" y1="395" x2="285" y2="${bodyY + 10}" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
-          html += `<line x1="370" y1="395" x2="355" y2="${bodyY + 10}" stroke="#020617" stroke-width="8" stroke-linecap="round" />`;
-          html += `<path d="M 290 ${bodyY + 70} Q 255 ${bodyY + 110} 270 395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" fill="none" filter="url(#neonRedGlow)" />`;
-          html += `<path d="M 350 ${bodyY + 70} Q 385 ${bodyY + 110} 370 395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" fill="none" filter="url(#neonRedGlow)" />`;
-          html += `<rect x="295" y="${bodyY}" width="50" height="85" rx="14" fill="url(#bodySkin)" />`;
-          html += `<ellipse cx="320" cy="${bodyY - 45}" rx="20" ry="24" fill="#64748B" />`;
+          const drop = t * 45;
+          // الحبل المطاطي على الأكتاف وتحت القدمين
+          ctx.strokeStyle = "#F59E0B";
+          ctx.lineWidth = 5;
+          ctx.beginPath();
+          ctx.moveTo(cx - 30, 275);
+          ctx.lineTo(cx - 25, 150 + drop);
+          ctx.lineTo(cx + 25, 150 + drop);
+          ctx.lineTo(cx + 30, 275);
+          ctx.stroke();
+
+          // الجسم في وضعية السكوات
+          drawBody(ctx, cx, 190 + drop, drop);
+
+          // عضلات الأرجل والفخذ المتوهجة
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx - 20, 230 + drop * 0.5, 12 + t * 4, 0, Math.PI * 2);
+          ctx.arc(cx + 20, 230 + drop * 0.5, 12 + t * 4, 0, Math.PI * 2);
+          ctx.fill();
           break;
         }
 
-        // 7. الرفعة الميتة الرومانية (RDL)
+        // 7. الرفعة الرومانية (RDL)
         case 'romanian_deadlift': {
-          const hinge = t * 38;
-          html += `<rect x="260" y="395" width="120" height="10" rx="5" fill="#F59E0B" />`;
-          html += `<line x1="290" y1="290" x2="285" y2="395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" filter="url(#neonRedGlow)" />`;
-          html += `<line x1="350" y1="290" x2="355" y2="395" stroke="url(#muscleHotRed)" stroke-width="26" stroke-linecap="round" filter="url(#neonRedGlow)" />`;
-          html += `<g transform="translate(320, 290) rotate(${hinge}) translate(-320, -290)">`;
-          html += `<rect x="295" y="190" width="50" height="100" rx="14" fill="url(#bodySkin)" />`;
-          html += `<ellipse cx="320" cy="155" rx="20" ry="24" fill="#64748B" />`;
-          html += `<line x1="305" y1="210" x2="305" y2="340" stroke="#475569" stroke-width="18" stroke-linecap="round" />`;
-          html += `<line x1="335" y1="210" x2="335" y2="340" stroke="#475569" stroke-width="18" stroke-linecap="round" />`;
-          html += `<line x1="275" y1="395" x2="305" y2="340" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `<line x1="365" y1="395" x2="335" y2="340" stroke="#020617" stroke-width="7" stroke-linecap="round" />`;
-          html += `</g>`;
-          break;
-        }
+          const hinge = t * 35;
+          ctx.strokeStyle = "#F59E0B";
+          ctx.lineWidth = 5;
+          ctx.beginPath();
+          ctx.moveTo(cx - 25, 275);
+          ctx.lineTo(cx - 20, 220 + hinge * 0.8);
+          ctx.stroke();
 
-        default: {
-          const drop = t * 50;
-          const bodyY = 190 + drop;
-          html += `<rect x="295" y="${bodyY}" width="50" height="85" rx="14" fill="url(#bodySkin)" />`;
-          html += `<ellipse cx="320" cy="${bodyY - 45}" rx="20" ry="24" fill="#64748B" />`;
+          // الساقين
+          ctx.strokeStyle = "#334155";
+          ctx.lineWidth = 16;
+          ctx.beginPath();
+          ctx.moveTo(cx - 15, 210);
+          ctx.lineTo(cx - 15, 275);
+          ctx.stroke();
+
+          // الجذع المنحني من مفصل الحوض
+          ctx.save();
+          ctx.translate(cx - 15, 210);
+          ctx.rotate((hinge * Math.PI) / 180);
+          ctx.fillStyle = "#1E293B";
+          ctx.fillRect(-15, -70, 30, 70);
+          ctx.fillStyle = "#64748B";
+          ctx.beginPath();
+          ctx.arc(0, -85, 15, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+
+          // عضلات الفخذ الخلفية
+          ctx.fillStyle = "#FF1744";
+          ctx.beginPath();
+          ctx.arc(cx - 15, 225, 12 + t * 4, 0, Math.PI * 2);
+          ctx.fill();
           break;
         }
       }
-
-      group.innerHTML = html;
     }
 
-    function switchNavTab(tabName, element) {
-      document.querySelectorAll('.dock-tab').forEach(i => i.classList.remove('active'));
-      element.classList.add('active');
+    function drawBody(ctx, x, y, drop) {
+      // الجذع
+      ctx.fillStyle = "#1E293B";
+      ctx.fillRect(x - 25, y - 45, 50, 75);
 
-      document.querySelectorAll('.screen-view').forEach(s => s.classList.add('hidden'));
+      // الرأس
+      ctx.fillStyle = "#64748B";
+      ctx.beginPath();
+      ctx.arc(x, y - 65, 18, 0, Math.PI * 2);
+      ctx.fill();
 
-      if (tabName === 'workout') document.getElementById('workoutScreen').classList.remove('hidden');
-      else if (tabName === 'schedule') document.getElementById('scheduleScreen').classList.remove('hidden');
-      else if (tabName === 'profile') document.getElementById('profileScreen').classList.remove('hidden');
+      // الساقين
+      ctx.strokeStyle = "#334155";
+      ctx.lineWidth = 16;
+      ctx.beginPath();
+      if (drop > 0) {
+        ctx.moveTo(x - 18, y + 30);
+        ctx.lineTo(x - 30, y + 55);
+        ctx.lineTo(x - 20, 275);
+        ctx.moveTo(x + 18, y + 30);
+        ctx.lineTo(x + 30, y + 55);
+        ctx.lineTo(x + 20, 275);
+      } else {
+        ctx.moveTo(x - 18, y + 30);
+        ctx.lineTo(x - 18, 275);
+        ctx.moveTo(x + 18, y + 30);
+        ctx.lineTo(x + 18, 275);
+      }
+      ctx.stroke();
+    }
+
+    function showTab(tab) {
+      if (tab === 'workout') {
+        document.getElementById('workoutScreen').classList.remove('hidden');
+        document.getElementById('playerScreen').classList.add('hidden');
+      } else {
+        alert("تطبيق كابتن إلهام الجزار مخصص بالكامل للتكرارات والأنيميشن الحركي الذكي.");
+      }
     }
 
     function toggleSound() {
@@ -1212,7 +1156,6 @@
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'ar-SA';
         utterance.rate = 1.0;
-        utterance.pitch = 1.45;
         window.speechSynthesis.speak(utterance);
       }
     }
