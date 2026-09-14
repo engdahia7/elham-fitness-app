@@ -293,7 +293,7 @@
     .canvas-container {
       width: 100%;
       height: 330px;
-      background: radial-gradient(circle at 50% 45%, #182438 0%, #030712 100%);
+      background: radial-gradient(circle at 50% 45%, #162032 0%, #030712 100%);
       border-radius: 26px;
       border: 1.5px solid rgba(255, 255, 255, 0.1);
       position: relative;
@@ -318,6 +318,7 @@
       display: flex;
       justify-content: space-between;
       pointer-events: none;
+      z-index: 2;
     }
 
     .tag-pill {
@@ -497,6 +498,10 @@
       color: #CBD5E1;
       padding: 2px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .item-row:last-child {
+      border-bottom: none;
     }
 
     .item-cal {
@@ -713,7 +718,7 @@
 
       <div class="canvas-container">
         <div class="canvas-top-bar">
-          <div id="anchorBadge" class="tag-pill tag-anchor">⚓ تحت القدمين</div>
+          <div id="anchorBadge" class="tag-pill tag-anchor">⚓ تحت القدمين (بدون باب)</div>
           <div id="muscleBadge" class="tag-pill tag-muscle">عضلة البايسبس</div>
         </div>
         <canvas id="animCanvas" width="400" height="330"></canvas>
@@ -1158,21 +1163,21 @@
     }
 
     // =========================================================================
-    // محرك الرسم الاحترافي المحسن للتمارين (Pro Vector Athletic Figure)
+    // محرك الرسوم الكينماتيكية الدقيقة (Kinematic Vector Animation Engine)
     // =========================================================================
     function startCanvasLoop() {
       const canvas = document.getElementById('animCanvas');
       const ctx = canvas.getContext('2d');
 
       function loop() {
-        animPhase += 0.048;
-        const t = (Math.sin(animPhase) + 1) / 2;
+        animPhase += 0.046;
+        const t = (Math.sin(animPhase) + 1) / 2; // قيمة ناعمة بين 0 و 1
         const currentEx = currentRoutine[currentExIdx];
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         if (currentEx) {
-          drawProAthleticCanvas(ctx, currentEx.id, t);
+          renderKinematicFigure(ctx, currentEx.id, t);
         }
 
         animId = requestAnimationFrame(loop);
@@ -1182,34 +1187,114 @@
       animId = requestAnimationFrame(loop);
     }
 
-    function drawProAthleticCanvas(ctx, exId, t) {
-      const w = ctx.canvas.width;
-      const cx = w / 2;
+    function renderKinematicFigure(ctx, exId, t) {
+      const cx = ctx.canvas.width / 2;
 
-      // أرضية متوهجة بنعومة
-      const floorGrad = ctx.createRadialGradient(cx, 280, 10, cx, 280, 140);
-      floorGrad.addColorStop(0, "rgba(244, 63, 94, 0.22)");
-      floorGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = floorGrad;
+      // 1. أرضية ثلاثية الأبعاد بوهج وردي ناعم
+      const groundGrad = ctx.createRadialGradient(cx, 285, 10, cx, 285, 130);
+      groundGrad.addColorStop(0, "rgba(244, 63, 94, 0.22)");
+      groundGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = groundGrad;
       ctx.beginPath();
-      ctx.ellipse(cx, 280, 140, 14, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, 285, 130, 14, 0, 0, Math.PI * 2);
       ctx.fill();
 
       switch (exId) {
-        // 1. سحب المجنص لأسفل (Lat Pulldown) - تمرين صورتك
+        // -------------------------------------------------------------
+        // 1. تمرين تبادل البايسبس (Bicep Curl) - تصحيح حركي وتشريحي دقيق
+        // -------------------------------------------------------------
+        case 'bicep_curl': {
+          // رسم جسد اللاعبة الرياضي الثابت
+          drawFemaleTorsoAndLegs(ctx, cx, 185, 0);
+
+          // إحداثيات الكتفين الطبيعية
+          const leftShoulderX = cx - 26, rightShoulderX = cx + 26;
+          const shoulderY = 145;
+
+          // الكوع ثابت تماماً بجانب القفص الصدري (حركة العضد)
+          const leftElbowX = cx - 28, rightElbowX = cx + 28;
+          const elbowY = 188;
+
+          // زاوية الساعد الدورانية الدقيقة (من 20 درجة نزول إلى 130 درجة صعود في القمة)
+          const curlAngle = 0.35 + t * 1.95; // راديان
+          const forearmLength = 46;
+
+          // إحداثيات قبضة اليد الناتجة عن دوران الساعد حول الكوع
+          const leftHandX = leftElbowX - Math.sin(curlAngle) * 14;
+          const leftHandY = elbowY - Math.cos(curlAngle) * forearmLength;
+
+          const rightHandX = rightElbowX + Math.sin(curlAngle) * 14;
+          const rightHandY = elbowY - Math.cos(curlAngle) * forearmLength;
+
+          // 1. حبل المقاومة المطاطي الممتد من تحت باطن القدمين حتى اليدين
+          ctx.strokeStyle = "#F59E0B";
+          ctx.lineWidth = 4.5;
+          ctx.beginPath();
+          // الطرف الأيسر
+          ctx.moveTo(cx - 20, 280);
+          ctx.lineTo(leftHandX, leftHandY + 4);
+          // الطرف الأيمن
+          ctx.moveTo(cx + 20, 280);
+          ctx.lineTo(rightHandX, rightHandY + 4);
+          ctx.stroke();
+
+          // مثبت باطن القدم
+          ctx.fillStyle = "#F59E0B";
+          ctx.fillRect(cx - 28, 276, 56, 4);
+
+          // 2. العضد (Upper Arm) من الكتف إلى الكوع
+          ctx.strokeStyle = "#38455A";
+          ctx.lineWidth = 11;
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          ctx.moveTo(leftShoulderX, shoulderY);
+          ctx.lineTo(leftElbowX, elbowY);
+          ctx.moveTo(rightShoulderX, shoulderY);
+          ctx.lineTo(rightElbowX, elbowY);
+          ctx.stroke();
+
+          // 3. انتفاخ وتوهج عضلة البايسبس في مرحلة الصعود (توهج تشريحي واقعي على العضد)
+          const bicepPeak = t;
+          ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + bicepPeak * 0.6})`;
+          ctx.beginPath();
+          ctx.ellipse(leftElbowX + 2, elbowY - 20, 7 + bicepPeak * 3, 13 + bicepPeak * 2, -0.15, 0, Math.PI * 2);
+          ctx.ellipse(rightElbowX - 2, elbowY - 20, 7 + bicepPeak * 3, 13 + bicepPeak * 2, 0.15, 0, Math.PI * 2);
+          ctx.fill();
+
+          // 4. الساعدين والقبضات
+          ctx.strokeStyle = "#475569";
+          ctx.lineWidth = 9;
+          ctx.beginPath();
+          ctx.moveTo(leftElbowX, elbowY);
+          ctx.lineTo(leftHandX, leftHandY);
+          ctx.moveTo(rightElbowX, elbowY);
+          ctx.lineTo(rightHandX, rightHandY);
+          ctx.stroke();
+
+          // مقابض اليد المطاطية
+          ctx.fillStyle = "#0F172A";
+          ctx.beginPath();
+          ctx.arc(leftHandX, leftHandY, 6, 0, Math.PI * 2);
+          ctx.arc(rightHandX, rightHandY, 6, 0, Math.PI * 2);
+          ctx.fill();
+          break;
+        }
+
+        // -------------------------------------------------------------
+        // 2. سحب المجنص لأسفل (Lat Pulldown)
+        // -------------------------------------------------------------
         case 'lat_pulldown': {
           const pull = t * 55;
 
-          // مثبت أعلى الباب الذهبي
+          // مثبت أعلى الباب
           ctx.fillStyle = "#F59E0B";
           ctx.beginPath();
           ctx.roundRect(cx - 50, 18, 100, 10, 5);
           ctx.fill();
 
-          // حبال المقاومة النيون الوردية المشدودة
+          // حبال المقاومة
           ctx.strokeStyle = "#F43F5E";
-          ctx.lineWidth = 5;
-          ctx.lineCap = "round";
+          ctx.lineWidth = 4.5;
           ctx.beginPath();
           ctx.moveTo(cx, 23);
           ctx.lineTo(cx - 65 + pull * 0.25, 75 + pull);
@@ -1217,46 +1302,38 @@
           ctx.lineTo(cx + 65 - pull * 0.25, 75 + pull);
           ctx.stroke();
 
-          // رسم مجسم كابتن إلهام الرياضي
-          drawProFigure(ctx, cx, 180, 0);
+          drawFemaleTorsoAndLegs(ctx, cx, 180, 0);
 
-          // توهج عضلات المجنص (Lats Wings) باللون الناري
+          // توهج أجنحة الظهر (Lats)
           ctx.fillStyle = `rgba(255, 23, 68, ${0.45 + t * 0.55})`;
           ctx.beginPath();
           ctx.ellipse(cx - 24, 165, 12, 22 + t * 4, 0.35, 0, Math.PI * 2);
           ctx.ellipse(cx + 24, 165, 12, 22 + t * 4, -0.35, 0, Math.PI * 2);
           ctx.fill();
 
-          // الأذرع الرياضية المنثنية بزاوية طبيعية نحو الأسفل
+          // الأذرع التي تسحب لأسفل
           ctx.strokeStyle = "#38455A";
           ctx.lineWidth = 11;
           ctx.lineCap = "round";
           ctx.beginPath();
-          // الذراع الأيسر
           ctx.moveTo(cx - 22, 142);
           ctx.lineTo(cx - 55, 120 + pull * 0.45);
           ctx.lineTo(cx - 65 + pull * 0.25, 75 + pull);
-          // الذراع الأيمن
+
           ctx.moveTo(cx + 22, 142);
           ctx.lineTo(cx + 55, 120 + pull * 0.45);
           ctx.lineTo(cx + 65 - pull * 0.25, 75 + pull);
           ctx.stroke();
-
-          // قبضات ومقابض يد أنيقة
-          ctx.fillStyle = "#F59E0B";
-          ctx.beginPath();
-          ctx.arc(cx - 65 + pull * 0.25, 75 + pull, 6, 0, Math.PI * 2);
-          ctx.arc(cx + 65 - pull * 0.25, 75 + pull, 6, 0, Math.PI * 2);
-          ctx.fill();
           break;
         }
 
-        // 2. سحب الظهر جالساً (Seated Row)
+        // -------------------------------------------------------------
+        // 3. سحب الظهر جالساً (Seated Row)
+        // -------------------------------------------------------------
         case 'seated_row': {
           const pull = t * 45;
           const torsoLean = -4 + t * 8;
 
-          // الساقين الممدودتين
           ctx.strokeStyle = "#0F172A";
           ctx.lineWidth = 15;
           ctx.lineCap = "round";
@@ -1266,13 +1343,11 @@
           ctx.lineTo(cx + 80, 255);
           ctx.stroke();
 
-          // مثبت الحزام الذهبي
           ctx.fillStyle = "#F59E0B";
           ctx.beginPath();
           ctx.roundRect(cx + 74, 240, 14, 24, 4);
           ctx.fill();
 
-          // حبل المقاومة المشدود
           ctx.strokeStyle = "#F43F5E";
           ctx.lineWidth = 4.5;
           ctx.beginPath();
@@ -1284,19 +1359,16 @@
           ctx.translate(cx - 25, 250);
           ctx.rotate((torsoLean * Math.PI) / 180);
 
-          // توهج عضلات الظهر
           ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
           ctx.beginPath();
           ctx.ellipse(-14, -45, 12 + t * 4, 20, 0, 0, Math.PI * 2);
           ctx.fill();
 
-          // الجذع واللباس الرياضي
           ctx.fillStyle = "#1E293B";
           ctx.beginPath();
           ctx.roundRect(-14, -75, 28, 75, 8);
           ctx.fill();
 
-          // الرأس وتسريحة الشعر
           ctx.fillStyle = "#64748B";
           ctx.beginPath();
           ctx.arc(0, -90, 16, 0, Math.PI * 2);
@@ -1306,7 +1378,6 @@
           ctx.arc(-14, -94, 6, 0, Math.PI * 2);
           ctx.fill();
 
-          // الأذرع الساحبة
           ctx.strokeStyle = "#38455A";
           ctx.lineWidth = 11;
           ctx.beginPath();
@@ -1315,55 +1386,13 @@
           ctx.lineTo(25 - pull * 0.9, -34);
           ctx.stroke();
 
-          ctx.fillStyle = "#F59E0B";
-          ctx.beginPath();
-          ctx.arc(25 - pull * 0.9, -34, 6, 0, Math.PI * 2);
-          ctx.fill();
-
           ctx.restore();
           break;
         }
 
-        // 3. تبادل البايسبس (Bicep Curl)
-        case 'bicep_curl': {
-          const handY = 225 - t * 80;
-
-          // الحبل المطاطي من تحت القدمين للأعلى
-          ctx.strokeStyle = "#F59E0B";
-          ctx.lineWidth = 5;
-          ctx.beginPath();
-          ctx.moveTo(cx - 32, 275);
-          ctx.lineTo(cx - 32, handY);
-          ctx.moveTo(cx + 32, 275);
-          ctx.lineTo(cx + 32, handY);
-          ctx.stroke();
-
-          drawProFigure(ctx, cx, 185, 0);
-
-          // توهج البايسبس
-          ctx.fillStyle = `rgba(255, 23, 68, ${0.45 + t * 0.55})`;
-          ctx.beginPath();
-          ctx.ellipse(cx - 28, 175, 9 + t * 4, 13, 0.2, 0, Math.PI * 2);
-          ctx.ellipse(cx + 28, 175, 9 + t * 4, 13, -0.2, 0, Math.PI * 2);
-          ctx.fill();
-
-          // الذراعين والساعدين
-          ctx.strokeStyle = "#38455A";
-          ctx.lineWidth = 10;
-          ctx.lineCap = "round";
-          ctx.beginPath();
-          ctx.moveTo(cx - 24, 142);
-          ctx.lineTo(cx - 30, 185);
-          ctx.lineTo(cx - 32, handY);
-
-          ctx.moveTo(cx + 24, 142);
-          ctx.lineTo(cx + 30, 185);
-          ctx.lineTo(cx + 32, handY);
-          ctx.stroke();
-          break;
-        }
-
+        // -------------------------------------------------------------
         // 4. دفع الصدر (Chest Press)
+        // -------------------------------------------------------------
         case 'chest_press': {
           const push = t * 55;
 
@@ -1379,7 +1408,7 @@
           ctx.lineTo(cx - 15 + push, 175);
           ctx.stroke();
 
-          drawProFigure(ctx, cx, 190, 0);
+          drawFemaleTorsoAndLegs(ctx, cx, 190, 0);
 
           ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
           ctx.beginPath();
@@ -1396,7 +1425,9 @@
           break;
         }
 
+        // -------------------------------------------------------------
         // 5. سكوات المقاومة (Band Squat)
+        // -------------------------------------------------------------
         case 'band_squat': {
           const drop = t * 45;
 
@@ -1409,25 +1440,25 @@
           ctx.lineTo(cx + 32, 275);
           ctx.stroke();
 
-          drawProFigure(ctx, cx, 185 + drop, drop);
+          drawFemaleTorsoAndLegs(ctx, cx, 185 + drop, drop);
 
           ctx.fillStyle = `rgba(255, 23, 68, ${0.4 + t * 0.6})`;
           ctx.beginPath();
           ctx.ellipse(cx - 20, 220 + drop * 0.6, 12 + t * 4, 18, 0.2, 0, Math.PI * 2);
-          ctx.ellipse(cx + 20, 220 + drop * 0.6, 12 + t * 4, 18, -0.2, 0, Math.PI * 2);
+          ctx.ellipse(cx + 20, 220 + drop * 0.6, 12 + t * 4, -0.2, 0, Math.PI * 2);
           ctx.fill();
           break;
         }
 
         default: {
-          drawProFigure(ctx, cx, 185, 0);
+          drawFemaleTorsoAndLegs(ctx, cx, 185, 0);
           break;
         }
       }
     }
 
-    // الدالة المسؤولة عن رسم المجسم الرياضي الاحترافي بالملامح الكاملة
-    function drawProFigure(ctx, x, y, drop) {
+    // مجسم جسد أنثوي رياضي متقن وتشريحي بالكامل
+    function drawFemaleTorsoAndLegs(ctx, x, y, drop) {
       // 1. الرأس وتسريحة الشعر الرياضية
       ctx.fillStyle = "#475569";
       ctx.beginPath();
@@ -1444,19 +1475,19 @@
       ctx.fillStyle = "#334155";
       ctx.fillRect(x - 5, y - 48, 10, 10);
 
-      // 3. الجزء العلوي (لباس رياضي مجسم بنحت الخصر)
+      // 3. الجزء العلوي (صدر وأكتاف مع نحت الخصر الجانبي)
       ctx.fillStyle = "#1E293B";
       ctx.beginPath();
-      ctx.moveTo(x - 24, y - 40);
-      ctx.lineTo(x + 24, y - 40);
-      ctx.lineTo(x + 14, y + 12);
-      ctx.lineTo(x - 14, y + 12);
+      ctx.moveTo(x - 24, y - 38);
+      ctx.lineTo(x + 24, y - 38);
+      ctx.lineTo(x + 13, y + 14);
+      ctx.lineTo(x - 13, y + 14);
       ctx.closePath();
       ctx.fill();
 
-      // شريط الخصر الوردي
+      // حزام الخصر الوردي
       ctx.fillStyle = "#F43F5E";
-      ctx.fillRect(x - 14, y + 9, 28, 4);
+      ctx.fillRect(x - 13, y + 10, 26, 4);
 
       // 4. الساقين بالليجن الرياضي الأنيق
       ctx.strokeStyle = "#0F172A";
@@ -1472,19 +1503,19 @@
         ctx.lineTo(x + 28, y + 44);
         ctx.lineTo(x + 18, 275);
       } else {
-        ctx.moveTo(x - 12, y + 14);
-        ctx.lineTo(x - 14, 275);
+        ctx.moveTo(x - 11, y + 14);
+        ctx.lineTo(x - 13, 275);
 
-        ctx.moveTo(x + 12, y + 14);
-        ctx.lineTo(x + 14, 275);
+        ctx.moveTo(x + 11, y + 14);
+        ctx.lineTo(x + 13, 275);
       }
       ctx.stroke();
 
-      // أحذية رياضية أنيقة
+      // أحذية رياضية وردية
       ctx.fillStyle = "#F43F5E";
       ctx.beginPath();
-      ctx.roundRect(x - 23, 270, 16, 8, 4);
-      ctx.roundRect(x + 7, 270, 16, 8, 4);
+      ctx.roundRect(x - 22, 270, 16, 8, 4);
+      ctx.roundRect(x + 6, 270, 16, 8, 4);
       ctx.fill();
     }
 
@@ -1494,12 +1525,14 @@
     }
 
     function speakText(text) {
-      if (soundMuted) return;
+      const voiceEnabled = document.getElementById('toggleVoice')?.checked ?? true;
+      if (soundMuted || !voiceEnabled) return;
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'ar-SA';
         utterance.rate = 1.0;
+        utterance.pitch = 1.45;
         window.speechSynthesis.speak(utterance);
       }
     }
