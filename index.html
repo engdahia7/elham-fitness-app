@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>كابتن إلهام الجزار | المنظومة الرياضية الشاملة VIP</title>
+  <title>كابتن إلهام الجزار | صُنع بحب بيد حَمُودِك</title>
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -76,27 +76,44 @@
     }
 
     .brand-avatar {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       background: linear-gradient(135deg, var(--accent-rose), #BE123C);
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       box-shadow: 0 4px 15px var(--accent-rose-glow);
     }
 
     .brand-titles h1 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 900;
       color: #FFF;
+      line-height: 1.2;
     }
 
-    .brand-titles span {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      font-weight: 600;
+    /* السلوجن أعلى الشاشة */
+    .brand-slogan {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #FDA4AF;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    .brand-slogan span.heart {
+      color: #F43F5E;
+      display: inline-block;
+      animation: heartbeat 1.8s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
     }
 
     .pill-badge {
@@ -414,7 +431,6 @@
       cursor: pointer;
     }
 
-    /* كروت الجداول */
     .schedule-card {
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
@@ -505,7 +521,7 @@
       gap: 6px;
     }
 
-    /* صفحة الإعدادات المرتبة والحديثة */
+    /* كروت الإعدادات */
     .settings-group {
       background: var(--surface-glass);
       border: 1px solid var(--surface-border);
@@ -548,11 +564,6 @@
       font-size: 0.9rem;
       font-weight: 700;
       outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .settings-input:focus {
-      border-color: var(--accent-rose);
     }
 
     .bmi-badge-box {
@@ -635,41 +646,6 @@
       transform: translateX(19px);
     }
 
-    .bands-color-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .band-pill {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1.5px solid var(--surface-border);
-      border-radius: 12px;
-      padding: 8px 4px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .band-pill.active {
-      border-color: var(--primary);
-      background: rgba(16, 185, 129, 0.15);
-    }
-
-    .band-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin: 0 auto 4px;
-    }
-
-    .band-name {
-      font-size: 0.7rem;
-      font-weight: 800;
-      display: block;
-    }
-
     .btn-save-settings {
       width: 100%;
       background: linear-gradient(135deg, var(--primary), #059669);
@@ -680,24 +656,27 @@
       font-weight: 900;
       font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
       margin-top: 4px;
     }
 
-    .btn-reset-data {
-      width: 100%;
-      background: transparent;
-      border: 1px solid rgba(244, 63, 94, 0.3);
-      color: var(--accent-rose);
-      border-radius: 14px;
-      padding: 10px;
-      font-weight: 800;
-      font-size: 0.8rem;
-      cursor: pointer;
-      margin-top: 10px;
+    /* شريط السلوجن السفلي المخصص */
+    .made-with-love-footer {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(244, 63, 94, 0.25);
+      border-radius: 16px;
     }
 
-    /* شريط التنقل السفلي المحدث (5 أقسام متكاملة) */
+    .made-with-love-footer span {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #FDA4AF;
+      letter-spacing: 0.5px;
+    }
+
     .dock-navigation {
       position: fixed;
       bottom: 0;
@@ -742,7 +721,8 @@
         <div class="brand-avatar">👑</div>
         <div class="brand-titles">
           <h1 id="headerNameTitle">كابتن إلهام الجزار</h1>
-          <span>المنظومة التدريبية الشاملة VIP</span>
+          <!-- السلوجن في الترويسة -->
+          <div class="brand-slogan">صُنع بحب بيد حَمُودِك <span class="heart">❤️</span></div>
         </div>
       </div>
       <div class="pill-badge">PRO ELITE</div>
@@ -817,6 +797,11 @@
       <button class="btn-main-action" onclick="startWorkout()">
         <span>⚡ بدء جلسة التكرارات الآن</span>
       </button>
+
+      <!-- السلوجن في نهاية شاشة التمارين -->
+      <div class="made-with-love-footer">
+        <span>صُنع بحب بيد حَمُودِك ❤️ لملكة قلبي وبطلة الرياضة</span>
+      </div>
     </div>
 
     <!-- 2. مشغل التمرين والأنيميشن الحركي -->
@@ -940,6 +925,10 @@
           • نوم عميق (7-8 ساعات) لتجديد ألياف العضلات واستعادة الحيوية.
         </div>
       </div>
+
+      <div class="made-with-love-footer">
+        <span>صُنع بحب بيد حَمُودِك ❤️</span>
+      </div>
     </div>
 
     <!-- 4. شاشة جدول التغذية والشرب -->
@@ -1004,9 +993,13 @@
         <div class="meal-row"><span class="meal-name">العشاء:</span> سلطة يونانية خفيفة + زبادي يوناني.</div>
         <div class="water-meter">💧 الترطيب المطلوب: 2.5 لتر ماء للمحافظة على نضارة الجسم.</div>
       </div>
+
+      <div class="made-with-love-footer">
+        <span>صُنع بحب بيد حَمُودِك ❤️</span>
+      </div>
     </div>
 
-    <!-- 5. شاشة الإعدادات والملف الشخصي المرتبة حديثاً -->
+    <!-- 5. شاشة الإعدادات -->
     <div id="settingsScreen" class="screen-view hidden">
       <div class="hero-banner" style="margin-bottom:12px;">
         <div class="hero-content">
@@ -1016,7 +1009,6 @@
         <span style="font-size:1.6rem;">🎛️</span>
       </div>
 
-      <!-- بطاقة الملف الشخصي والقياسات -->
       <div class="settings-group">
         <div class="settings-title"><span>👤</span> الملف الرياضي والقياسات</div>
         
@@ -1042,7 +1034,6 @@
         </div>
       </div>
 
-      <!-- تفضيلات التمرين والأمان -->
       <div class="settings-group">
         <div class="settings-title"><span>⚡</span> تفضيلات الجلسة التدريبية</div>
         
@@ -1069,35 +1060,14 @@
         </div>
       </div>
 
-      <!-- طقم أحزمة المقاومة المتوفرة في المنزل -->
-      <div class="settings-group">
-        <div class="settings-title"><span>🎗️</span> حزمة الأحزمة المتوفرة لديكِ</div>
-        <p style="font-size:0.72rem; color:var(--text-muted); margin-bottom:6px;">حددي الأحزمة المتوفرة لديك في المنزل:</p>
-        <div class="bands-color-grid">
-          <div class="band-pill active" onclick="this.classList.toggle('active')">
-            <div class="band-dot" style="background:#FACC15;"></div>
-            <span class="band-name">أصفر (خفيف)</span>
-          </div>
-          <div class="band-pill active" onclick="this.classList.toggle('active')">
-            <div class="band-dot" style="background:#EF4444;"></div>
-            <span class="band-name">أحمر (متوسط)</span>
-          </div>
-          <div class="band-pill active" onclick="this.classList.toggle('active')">
-            <div class="band-dot" style="background:#3B82F6;"></div>
-            <span class="band-name">أزرق (شاق)</span>
-          </div>
-          <div class="band-pill active" onclick="this.classList.toggle('active')">
-            <div class="band-dot" style="background:#111827; border:1px solid #64748B;"></div>
-            <span class="band-name">أسود (احترافي)</span>
-          </div>
-        </div>
-      </div>
-
       <button class="btn-save-settings" onclick="saveAllSettings()">💾 حفظ التعديلات في ملف كابتن إلهام</button>
-      <button class="btn-reset-data" onclick="resetDefaults()">إعادة ضبط الإعدادات الافتراضية</button>
+
+      <div class="made-with-love-footer">
+        <span>صُنع بحب بيد حَمُودِك ❤️</span>
+      </div>
     </div>
 
-    <!-- شريط التنقل السفلي المنسق بـ 4 تبويبات واضحة -->
+    <!-- شريط التنقل السفلي -->
     <nav class="dock-navigation">
       <div class="dock-tab active" id="tabWorkout" onclick="switchNavTab('workout')">
         <span style="font-size: 1.25rem;">⚡</span>
@@ -1666,7 +1636,6 @@
       }
     }
 
-    // دوال صفحة الإعدادات
     function updateBmiDisplay() {
       const w = parseFloat(document.getElementById('settingWeight').value) || 62;
       const h = parseFloat(document.getElementById('settingHeight').value) || 165;
@@ -1713,13 +1682,6 @@
         } catch(e) {}
       }
       updateBmiDisplay();
-    }
-
-    function resetDefaults() {
-      if (confirm("هل ترغبين في استعادة الإعدادات الافتراضية؟")) {
-        localStorage.removeItem('elham_profile_data');
-        location.reload();
-      }
     }
 
     window.onload = function() {
